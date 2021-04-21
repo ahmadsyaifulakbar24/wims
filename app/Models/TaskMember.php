@@ -5,9 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UserRole extends Model
+class TaskMember extends Model
 {
     use HasFactory;
-
-    protected $timestamps = false;
+    protected $table = 'task_members';
+    protected $fillable = [
+        'task_id',
+        'user_id',
+    ];
 }

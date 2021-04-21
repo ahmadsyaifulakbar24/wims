@@ -5,9 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UserRole extends Model
+class Board extends Model
 {
     use HasFactory;
 
-    protected $timestamps = false;
+    protected $table = 'boards';
+    protected $fillable = [
+        'division_id',
+        'title',
+    ];
 }

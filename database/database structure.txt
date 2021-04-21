@@ -16,14 +16,6 @@ city
     - city
 }
 
-params
-{
-    - id
-    - parent_id (nullable)
-    - category_param
-    - param
-}
-
 master_params
 {
     - id
@@ -33,12 +25,14 @@ master_params
     - order
 }
 
-employe_status
+params
 {
     - id
-    - name
-    - end_date (nullable)
+    - parent_id (nullable)
+    - category_param
+    - param
 }
+
 users
 {
     - id
@@ -50,8 +44,6 @@ users
     - role_id
     - profile_photo_path
     - active
-    - updated_at
-    - created_at
 }
 
 company

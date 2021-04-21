@@ -5,9 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UserRole extends Model
+class Storage extends Model
 {
     use HasFactory;
 
-    protected $timestamps = false;
+    protected $table = 'storages';
+    protected $fillable = [
+        'name',
+        'file_url',
+    ];
 }
