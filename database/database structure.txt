@@ -1,0 +1,212 @@
+user_role
+{
+    - id
+    - role
+}
+
+province
+{
+    - id
+    - province
+}
+
+city
+{
+    - id
+    - city
+}
+
+params
+{
+    - id
+    - parent_id (nullable)
+    - category_param
+    - param
+}
+
+master_params
+{
+    - id
+    - parent_id
+    - category
+    - name
+    - order
+}
+
+employe_status
+{
+    - id
+    - name
+    - end_date (nullable)
+}
+users
+{
+    - id
+    - name
+    - username
+    - email
+    - email_verified_at
+    - password
+    - role_id
+    - profile_photo_path
+    - active
+    - updated_at
+    - created_at
+}
+
+company
+{
+    - id 
+    - parent_id (nullable)
+    - name
+    - logo_path
+    - address
+    - postal_code
+    - province_id
+    - city_id
+    - umr
+    - phone_number
+    - email
+    - bpjs
+    - jkk
+    - npwp
+    - taxable_date
+    - tax_person_name
+    - tax_person_npwp
+    - signature
+}
+
+employes
+{
+    // Personal Data
+    - id
+    - user_id
+    - employe_id
+    - barcode
+    - first_name
+    - last_name
+    - identity_type
+    - expired_date_identity (nullable)
+    - no_identity
+    - postal_code
+    - identity_address
+    - residential_address
+    - place_of_birth
+    - date_of_birth
+    - mobile_phone
+    - phone
+    - gender
+    - marital_status
+    - blood_type
+    - religion_id
+    - education_id
+
+    // Company Detail
+    - company_id
+    - organization_id
+    - job_position_id
+    - job_level_id
+    - employe_status_id
+    - join_date
+    - end_contract (nullable)
+    - schedule_id
+
+    // Payrol
+    - basic_salary
+    - npwp
+    - ptkp_id (nullable)
+    - bank_name
+    - bank_account
+    - bank_account_holder
+    - bpjs_ketenagakerjaan
+    - bpjs_kesehatan
+    - bpjs_kesehatan_family
+    - type_salary (taxable, nontaxable)
+}
+
+divisi
+{
+    - id
+    - user_id
+    - pic_id
+    - name
+}
+
+board
+{
+    - id
+    - divisi_id
+    - title
+}
+
+board_member
+{
+    - id
+    - board_id
+    - user_id
+}
+
+task 
+{
+    - id
+    - board_id
+    - title
+    - start_due_date (nullable)
+    - finish_due_date (nullable)
+    - description
+}
+
+task_member
+{
+    - id
+    - task_id
+    - user_id
+}
+
+board_label
+{
+    - id
+    - board_id
+    - name
+    - color
+}
+
+checklist
+{
+    - id
+    - task_id
+    - title
+}
+
+checklist_item 
+{
+    - id
+    - checklist_id
+    - item
+    - start_due_date (nullable)
+    - finish_due_date (nullable)
+    - assign_id (nullable)
+}
+
+task_attachment
+{
+    - id
+    - task_id
+    - file (nullable)
+    - link (nullable)
+}
+
+comment 
+{
+    - id
+    - task_id
+    - task_attachment_id (nullable)
+    - comment
+}
+
+storage
+{
+    - id
+    - name
+    - file_path
+}
