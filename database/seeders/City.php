@@ -14,7 +14,7 @@ class City extends Seeder
      */
     public function run()
     {
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1101,
             'province_id' => 11,
             'city' => 'Kab. Simeulue',
@@ -24,7 +24,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1102,
             'province_id' => 11,
             'city' => 'Kab. Aceh Singkil',
@@ -34,7 +34,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1103,
             'province_id' => 11,
             'city' => 'Kab. Aceh Selatan',
@@ -44,7 +44,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1104,
             'province_id' => 11,
             'city' => 'Kab. Aceh Tenggara',
@@ -54,7 +54,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1105,
             'province_id' => 11,
             'city' => 'Kab. Aceh Timur',
@@ -64,7 +64,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1106,
             'province_id' => 11,
             'city' => 'Kab. Aceh Tengah',
@@ -74,7 +74,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1107,
             'province_id' => 11,
             'city' => 'Kab. Aceh Barat',
@@ -84,7 +84,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1108,
             'province_id' => 11,
             'city' => 'Kab. Aceh Besar',
@@ -94,7 +94,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1109,
             'province_id' => 11,
             'city' => 'Kab. Pidie',
@@ -104,7 +104,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1110,
             'province_id' => 11,
             'city' => 'Kab. Bireuen',
@@ -114,7 +114,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1111,
             'province_id' => 11,
             'city' => 'Kab. Aceh Utara',
@@ -124,7 +124,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1112,
             'province_id' => 11,
             'city' => 'Kab. Aceh Barat Daya',
@@ -134,7 +134,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1113,
             'province_id' => 11,
             'city' => 'Kab. Gayo Lues',
@@ -144,7 +144,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1114,
             'province_id' => 11,
             'city' => 'Kab. Aceh Tamiang',
@@ -154,7 +154,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1115,
             'province_id' => 11,
             'city' => 'Kab. Nagan Raya',
@@ -164,7 +164,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1116,
             'province_id' => 11,
             'city' => 'Kab. Aceh Jaya',
@@ -174,7 +174,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1117,
             'province_id' => 11,
             'city' => 'Kab. Bener Meriah',
@@ -184,7 +184,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1118,
             'province_id' => 11,
             'city' => 'Kab. Pidie Jaya',
@@ -194,7 +194,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1171,
             'province_id' => 11,
             'city' => 'Kota Banda Aceh',
@@ -204,7 +204,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1172,
             'province_id' => 11,
             'city' => 'Kota Sabang',
@@ -214,7 +214,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1173,
             'province_id' => 11,
             'city' => 'Kota Langsa',
@@ -224,7 +224,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1174,
             'province_id' => 11,
             'city' => 'Kota Lhokseumawe',
@@ -234,7 +234,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1175,
             'province_id' => 11,
             'city' => 'Kota Subulussalam',
@@ -244,7 +244,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1201,
             'province_id' => 12,
             'city' => 'Kab. Nias',
@@ -254,7 +254,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1202,
             'province_id' => 12,
             'city' => 'Kab. Mandailing Natal',
@@ -264,7 +264,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1203,
             'province_id' => 12,
             'city' => 'Kab. Tapanuli Selatan',
@@ -274,7 +274,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1204,
             'province_id' => 12,
             'city' => 'Kab. Tapanuli Tengah',
@@ -284,7 +284,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1205,
             'province_id' => 12,
             'city' => 'Kab. Tapanuli Utara',
@@ -294,7 +294,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1206,
             'province_id' => 12,
             'city' => 'Kab. Toba Samosir',
@@ -304,7 +304,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1207,
             'province_id' => 12,
             'city' => 'Kab. Labuhan Batu',
@@ -314,7 +314,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1208,
             'province_id' => 12,
             'city' => 'Kab. Asahan',
@@ -324,7 +324,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1209,
             'province_id' => 12,
             'city' => 'Kab. Simalungun',
@@ -334,7 +334,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1210,
             'province_id' => 12,
             'city' => 'Kab. Dairi',
@@ -344,7 +344,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1211,
             'province_id' => 12,
             'city' => 'Kab. Karo',
@@ -354,7 +354,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1212,
             'province_id' => 12,
             'city' => 'Kab. Deli Serdang',
@@ -364,7 +364,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1213,
             'province_id' => 12,
             'city' => 'Kab. Langkat',
@@ -374,7 +374,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1214,
             'province_id' => 12,
             'city' => 'Kab. Nias Selatan',
@@ -384,7 +384,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1215,
             'province_id' => 12,
             'city' => 'Kab. Humbang Hasundutan',
@@ -394,7 +394,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1216,
             'province_id' => 12,
             'city' => 'Kab. Pak Pak Bharat',
@@ -404,7 +404,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1217,
             'province_id' => 12,
             'city' => 'Kab. Samosir',
@@ -414,7 +414,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1218,
             'province_id' => 12,
             'city' => 'Kab. Serdang Bedagai',
@@ -424,7 +424,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1219,
             'province_id' => 12,
             'city' => 'Kab. Batu Bara',
@@ -434,7 +434,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1220,
             'province_id' => 12,
             'city' => 'Kab. Padang Lawas Utara',
@@ -444,7 +444,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1221,
             'province_id' => 12,
             'city' => 'Kab. Padang Lawas',
@@ -454,7 +454,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1222,
             'province_id' => 12,
             'city' => 'Kab. Labuhanbatu Selatan',
@@ -464,7 +464,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1223,
             'province_id' => 12,
             'city' => 'Kab. Labuhanbatu Utara',
@@ -474,7 +474,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1224,
             'province_id' => 12,
             'city' => 'Kab. Nias Utara',
@@ -484,7 +484,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1225,
             'province_id' => 12,
             'city' => 'Kab. Nias Barat',
@@ -494,7 +494,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1271,
             'province_id' => 12,
             'city' => 'Kota Sibolga',
@@ -504,7 +504,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1272,
             'province_id' => 12,
             'city' => 'Kota Tanjung Balai',
@@ -514,7 +514,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1273,
             'province_id' => 12,
             'city' => 'Kota Pematang Siantar',
@@ -524,7 +524,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1274,
             'province_id' => 12,
             'city' => 'Kota Tebing Tinggi',
@@ -534,7 +534,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1275,
             'province_id' => 12,
             'city' => 'Kota Medan',
@@ -544,7 +544,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1276,
             'province_id' => 12,
             'city' => 'Kota Binjai',
@@ -554,7 +554,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1277,
             'province_id' => 12,
             'city' => 'Kota Padang Sidempuan',
@@ -564,7 +564,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1278,
             'province_id' => 12,
             'city' => 'Kota Gunung Sitoli',
@@ -574,7 +574,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1301,
             'province_id' => 13,
             'city' => 'Kab. Kepulauan Mentawai',
@@ -584,7 +584,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1302,
             'province_id' => 13,
             'city' => 'Kab. Pesisir Selatan',
@@ -594,7 +594,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1303,
             'province_id' => 13,
             'city' => 'Kab. Solok',
@@ -604,7 +604,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1304,
             'province_id' => 13,
             'city' => 'Kab. Sawahlunto/ Sijunjung',
@@ -614,7 +614,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1305,
             'province_id' => 13,
             'city' => 'Kab. Tanah Datar',
@@ -624,7 +624,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1306,
             'province_id' => 13,
             'city' => 'Kab. Padang Pariaman',
@@ -634,7 +634,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1307,
             'province_id' => 13,
             'city' => 'Kab. Agam',
@@ -644,7 +644,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1308,
             'province_id' => 13,
             'city' => 'Kab. Lima Puluh Kota',
@@ -654,7 +654,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1309,
             'province_id' => 13,
             'city' => 'Kab. Pasaman',
@@ -664,7 +664,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1310,
             'province_id' => 13,
             'city' => 'Kab. Solok Selatan',
@@ -674,7 +674,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1311,
             'province_id' => 13,
             'city' => 'Kab. Dharmas Raya',
@@ -684,7 +684,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1312,
             'province_id' => 13,
             'city' => 'Kab. Pasaman Barat',
@@ -694,7 +694,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1371,
             'province_id' => 13,
             'city' => 'Kota Padang',
@@ -704,7 +704,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1372,
             'province_id' => 13,
             'city' => 'Kota Solok',
@@ -714,7 +714,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1373,
             'province_id' => 13,
             'city' => 'Kota Sawah Lunto',
@@ -724,7 +724,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1374,
             'province_id' => 13,
             'city' => 'Kota Padang Panjang',
@@ -734,7 +734,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1375,
             'province_id' => 13,
             'city' => 'Kota Bukittinggi',
@@ -744,7 +744,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1376,
             'province_id' => 13,
             'city' => 'Kota Payakumbuh',
@@ -754,7 +754,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1377,
             'province_id' => 13,
             'city' => 'Kota Pariaman',
@@ -764,7 +764,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1401,
             'province_id' => 14,
             'city' => 'Kab. Kuantan Singingi',
@@ -774,7 +774,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1402,
             'province_id' => 14,
             'city' => 'Kab. Indragiri Hulu',
@@ -784,7 +784,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1403,
             'province_id' => 14,
             'city' => 'Kab. Indragiri Hilir',
@@ -794,7 +794,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1404,
             'province_id' => 14,
             'city' => 'Kab. Pelalawan',
@@ -804,7 +804,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1405,
             'province_id' => 14,
             'city' => 'Kab. Siak',
@@ -814,7 +814,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1406,
             'province_id' => 14,
             'city' => 'Kab. Kampar',
@@ -824,7 +824,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1407,
             'province_id' => 14,
             'city' => 'Kab. Rokan Hulu',
@@ -834,7 +834,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1408,
             'province_id' => 14,
             'city' => 'Kab. Bengkalis',
@@ -844,7 +844,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1409,
             'province_id' => 14,
             'city' => 'Kab. Rokan Hilir',
@@ -854,7 +854,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1410,
             'province_id' => 14,
             'city' => 'Kab. Kep. Meranti',
@@ -864,7 +864,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1471,
             'province_id' => 14,
             'city' => 'Kota Pekanbaru',
@@ -874,7 +874,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1473,
             'province_id' => 14,
             'city' => 'Kota Dumai',
@@ -884,7 +884,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1501,
             'province_id' => 15,
             'city' => 'Kab. Kerinci',
@@ -894,7 +894,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1502,
             'province_id' => 15,
             'city' => 'Kab. Merangin',
@@ -904,7 +904,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1503,
             'province_id' => 15,
             'city' => 'Kab. Sarolangun',
@@ -914,7 +914,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1504,
             'province_id' => 15,
             'city' => 'Kab. Batang Hari',
@@ -924,7 +924,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1505,
             'province_id' => 15,
             'city' => 'Kab. Muaro Jambi',
@@ -934,7 +934,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1506,
             'province_id' => 15,
             'city' => 'Kab. Tanjung Jabung Timur',
@@ -944,7 +944,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1507,
             'province_id' => 15,
             'city' => 'Kab. Tanjung Jabung Barat',
@@ -954,7 +954,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1508,
             'province_id' => 15,
             'city' => 'Kab. Tebo',
@@ -964,7 +964,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1509,
             'province_id' => 15,
             'city' => 'Kab. Bungo',
@@ -974,7 +974,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1571,
             'province_id' => 15,
             'city' => 'Kota Jambi',
@@ -984,7 +984,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1572,
             'province_id' => 15,
             'city' => 'Kota. Sungai Penuh',
@@ -994,7 +994,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1601,
             'province_id' => 16,
             'city' => 'Kab. Ogan Komering Ulu',
@@ -1004,7 +1004,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1602,
             'province_id' => 16,
             'city' => 'Kab. Ogan Komering Ilir',
@@ -1014,7 +1014,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1603,
             'province_id' => 16,
             'city' => 'Kab. Muara Enim',
@@ -1024,7 +1024,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1604,
             'province_id' => 16,
             'city' => 'Kab. Lahat',
@@ -1034,7 +1034,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1605,
             'province_id' => 16,
             'city' => 'Kab. Musi Rawas',
@@ -1044,7 +1044,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1606,
             'province_id' => 16,
             'city' => 'Kab. Musi Banyu Asin',
@@ -1054,7 +1054,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1607,
             'province_id' => 16,
             'city' => 'Kab. Banyuasin',
@@ -1064,7 +1064,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1608,
             'province_id' => 16,
             'city' => 'Kab. Ogan Komering Ulu Sel.',
@@ -1074,7 +1074,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1609,
             'province_id' => 16,
             'city' => 'Kab. Ogan Komering Ulu Timur',
@@ -1084,7 +1084,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1610,
             'province_id' => 16,
             'city' => 'Kab. Ogan Ilir',
@@ -1094,7 +1094,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1611,
             'province_id' => 16,
             'city' => 'Kab. Empat Lawang',
@@ -1104,7 +1104,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1612,
             'province_id' => 16,
             'city' => 'Kab. Penukal Abab',
@@ -1114,7 +1114,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1671,
             'province_id' => 16,
             'city' => 'Kota Palembang',
@@ -1124,7 +1124,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1672,
             'province_id' => 16,
             'city' => 'Kota Prabumulih',
@@ -1134,7 +1134,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1673,
             'province_id' => 16,
             'city' => 'Kota Pagar Alam',
@@ -1144,7 +1144,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1674,
             'province_id' => 16,
             'city' => 'Kota Lubuk Linggau',
@@ -1154,7 +1154,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1701,
             'province_id' => 17,
             'city' => 'Kab. Bengkulu Selatan',
@@ -1164,7 +1164,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1702,
             'province_id' => 17,
             'city' => 'Kab. Rejang Lebong',
@@ -1174,7 +1174,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1703,
             'province_id' => 17,
             'city' => 'Kab. Bengkulu Utara',
@@ -1184,7 +1184,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1704,
             'province_id' => 17,
             'city' => 'Kab. Kaur',
@@ -1194,7 +1194,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1705,
             'province_id' => 17,
             'city' => 'Kab. Seluma',
@@ -1204,7 +1204,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1706,
             'province_id' => 17,
             'city' => 'Kab. Muko-Muko',
@@ -1214,7 +1214,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1707,
             'province_id' => 17,
             'city' => 'Kab. Lebong',
@@ -1224,7 +1224,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1708,
             'province_id' => 17,
             'city' => 'Kab. Kepahiang',
@@ -1234,7 +1234,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1709,
             'province_id' => 17,
             'city' => 'Kab. Bengkulu Tengah',
@@ -1244,7 +1244,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1771,
             'province_id' => 17,
             'city' => 'Kota Bengkulu',
@@ -1254,7 +1254,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1801,
             'province_id' => 18,
             'city' => 'Kab. Lampung Barat',
@@ -1264,7 +1264,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1802,
             'province_id' => 18,
             'city' => 'Kab. Tanggamus',
@@ -1274,7 +1274,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1803,
             'province_id' => 18,
             'city' => 'Kab. Lampung Selatan',
@@ -1284,7 +1284,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1804,
             'province_id' => 18,
             'city' => 'Kab. Lampung Timur',
@@ -1294,7 +1294,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1805,
             'province_id' => 18,
             'city' => 'Kab. Lampung Tengah',
@@ -1304,7 +1304,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1806,
             'province_id' => 18,
             'city' => 'Kab. Lampung Utara',
@@ -1314,7 +1314,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1807,
             'province_id' => 18,
             'city' => 'Kab. Way Kanan',
@@ -1324,7 +1324,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1808,
             'province_id' => 18,
             'city' => 'Kab. Tulang Bawang',
@@ -1334,7 +1334,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1809,
             'province_id' => 18,
             'city' => 'Kab. Pesawaran',
@@ -1344,7 +1344,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1810,
             'province_id' => 18,
             'city' => 'Kab. Pringsewu',
@@ -1354,7 +1354,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1811,
             'province_id' => 18,
             'city' => 'Kab. Mesuji',
@@ -1364,7 +1364,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1812,
             'province_id' => 18,
             'city' => 'Kab. Tulang Bawang Barat',
@@ -1374,7 +1374,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1813,
             'province_id' => 18,
             'city' => 'Kab. Pesisir Barat',
@@ -1384,7 +1384,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1871,
             'province_id' => 18,
             'city' => 'Kota Bandar Lampung',
@@ -1394,7 +1394,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1872,
             'province_id' => 18,
             'city' => 'Kota Metro',
@@ -1404,7 +1404,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1901,
             'province_id' => 19,
             'city' => 'Kab. Bangka',
@@ -1414,7 +1414,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1902,
             'province_id' => 19,
             'city' => 'Kab. Belitung',
@@ -1424,7 +1424,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1903,
             'province_id' => 19,
             'city' => 'Kab. Bangka Barat',
@@ -1434,7 +1434,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1904,
             'province_id' => 19,
             'city' => 'Kab. Bangka Tengah',
@@ -1444,7 +1444,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1905,
             'province_id' => 19,
             'city' => 'Kab. Bangka Selatan',
@@ -1454,7 +1454,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1906,
             'province_id' => 19,
             'city' => 'Kab. Belitung Timur',
@@ -1464,7 +1464,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 1971,
             'province_id' => 19,
             'city' => 'Kota Pangkalpinang',
@@ -1474,7 +1474,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 2101,
             'province_id' => 21,
             'city' => 'Kab. Karimun',
@@ -1484,7 +1484,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 2102,
             'province_id' => 21,
             'city' => 'Kab. Bintan',
@@ -1494,7 +1494,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 2103,
             'province_id' => 21,
             'city' => 'Kab. Natuna',
@@ -1504,7 +1504,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 2104,
             'province_id' => 21,
             'city' => 'Kab. Lingga',
@@ -1514,7 +1514,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 2105,
             'province_id' => 21,
             'city' => 'Kab. Kep. Anambas',
@@ -1524,7 +1524,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 2171,
             'province_id' => 21,
             'city' => 'Kota Batam',
@@ -1534,7 +1534,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 2172,
             'province_id' => 21,
             'city' => 'Kota Tanjungpinang',
@@ -1544,7 +1544,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3101,
             'province_id' => 31,
             'city' => 'Kab. Kepulauan Seribu',
@@ -1554,7 +1554,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3171,
             'province_id' => 31,
             'city' => 'Kota Jakarta Selatan',
@@ -1564,7 +1564,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3172,
             'province_id' => 31,
             'city' => 'Kota Jakarta Timur',
@@ -1574,7 +1574,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3173,
             'province_id' => 31,
             'city' => 'Kota Jakarta Pusat',
@@ -1584,7 +1584,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3174,
             'province_id' => 31,
             'city' => 'Kota Jakarta Barat',
@@ -1594,7 +1594,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3175,
             'province_id' => 31,
             'city' => 'Kota Jakarta Utara',
@@ -1604,7 +1604,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3201,
             'province_id' => 32,
             'city' => 'Kab. Bogor',
@@ -1614,7 +1614,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3202,
             'province_id' => 32,
             'city' => 'Kab. Sukabumi',
@@ -1624,7 +1624,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3203,
             'province_id' => 32,
             'city' => 'Kab. Cianjur',
@@ -1634,7 +1634,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3204,
             'province_id' => 32,
             'city' => 'Kab. Bandung',
@@ -1644,7 +1644,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3205,
             'province_id' => 32,
             'city' => 'Kab. Garut',
@@ -1654,7 +1654,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3206,
             'province_id' => 32,
             'city' => 'Kab. Tasikmalaya',
@@ -1664,7 +1664,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3207,
             'province_id' => 32,
             'city' => 'Kab. Ciamis',
@@ -1674,7 +1674,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3208,
             'province_id' => 32,
             'city' => 'Kab. Kuningan',
@@ -1684,7 +1684,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3209,
             'province_id' => 32,
             'city' => 'Kab. Cirebon',
@@ -1694,7 +1694,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3210,
             'province_id' => 32,
             'city' => 'Kab. Majalengka',
@@ -1704,7 +1704,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3211,
             'province_id' => 32,
             'city' => 'Kab. Sumedang',
@@ -1714,7 +1714,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3212,
             'province_id' => 32,
             'city' => 'Kab. Indramayu',
@@ -1724,7 +1724,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3213,
             'province_id' => 32,
             'city' => 'Kab. Subang',
@@ -1734,7 +1734,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3214,
             'province_id' => 32,
             'city' => 'Kab. Purwakarta',
@@ -1744,7 +1744,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3215,
             'province_id' => 32,
             'city' => 'Kab. Karawang',
@@ -1754,7 +1754,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3216,
             'province_id' => 32,
             'city' => 'Kab. Bekasi',
@@ -1764,7 +1764,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3217,
             'province_id' => 32,
             'city' => 'Kab. Bandung Barat',
@@ -1774,7 +1774,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3218,
             'province_id' => 32,
             'city' => 'Kab. Pangandaran',
@@ -1784,7 +1784,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3271,
             'province_id' => 32,
             'city' => 'Kota Bogor',
@@ -1794,7 +1794,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3272,
             'province_id' => 32,
             'city' => 'Kota Sukabumi',
@@ -1804,7 +1804,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3273,
             'province_id' => 32,
             'city' => 'Kota Bandung',
@@ -1814,7 +1814,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3274,
             'province_id' => 32,
             'city' => 'Kota Cirebon',
@@ -1824,7 +1824,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3275,
             'province_id' => 32,
             'city' => 'Kota Bekasi',
@@ -1834,7 +1834,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3276,
             'province_id' => 32,
             'city' => 'Kota Depok',
@@ -1844,7 +1844,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3277,
             'province_id' => 32,
             'city' => 'Kota Cimahi',
@@ -1854,7 +1854,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3278,
             'province_id' => 32,
             'city' => 'Kota Tasikmalaya',
@@ -1864,7 +1864,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3279,
             'province_id' => 32,
             'city' => 'Kota Banjar',
@@ -1874,7 +1874,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3301,
             'province_id' => 33,
             'city' => 'Kab. Cilacap',
@@ -1884,7 +1884,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3302,
             'province_id' => 33,
             'city' => 'Kab. Banyumas',
@@ -1894,7 +1894,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3303,
             'province_id' => 33,
             'city' => 'Kab. Purbalingga',
@@ -1904,7 +1904,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3304,
             'province_id' => 33,
             'city' => 'Kab. Banjarnegara',
@@ -1914,7 +1914,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3305,
             'province_id' => 33,
             'city' => 'Kab. Kebumen',
@@ -1924,7 +1924,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3306,
             'province_id' => 33,
             'city' => 'Kab. Purworejo',
@@ -1934,7 +1934,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3307,
             'province_id' => 33,
             'city' => 'Kab. Wonosobo',
@@ -1944,7 +1944,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3308,
             'province_id' => 33,
             'city' => 'Kab. Magelang',
@@ -1954,7 +1954,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3309,
             'province_id' => 33,
             'city' => 'Kab. Boyolali',
@@ -1964,7 +1964,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3310,
             'province_id' => 33,
             'city' => 'Kab. Klaten',
@@ -1974,7 +1974,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3311,
             'province_id' => 33,
             'city' => 'Kab. Sukoharjo',
@@ -1984,7 +1984,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3312,
             'province_id' => 33,
             'city' => 'Kab. Wonogiri',
@@ -1994,7 +1994,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3313,
             'province_id' => 33,
             'city' => 'Kab. Karanganyar',
@@ -2004,7 +2004,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3314,
             'province_id' => 33,
             'city' => 'Kab. Sragen',
@@ -2014,7 +2014,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3315,
             'province_id' => 33,
             'city' => 'Kab. Grobogan',
@@ -2024,7 +2024,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3316,
             'province_id' => 33,
             'city' => 'Kab. Blora',
@@ -2034,7 +2034,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3317,
             'province_id' => 33,
             'city' => 'Kab. Rembang',
@@ -2044,7 +2044,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3318,
             'province_id' => 33,
             'city' => 'Kab. Pati',
@@ -2054,7 +2054,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3319,
             'province_id' => 33,
             'city' => 'Kab. Kudus',
@@ -2064,7 +2064,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3320,
             'province_id' => 33,
             'city' => 'Kab. Jepara',
@@ -2074,7 +2074,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3321,
             'province_id' => 33,
             'city' => 'Kab. Demak',
@@ -2084,7 +2084,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3322,
             'province_id' => 33,
             'city' => 'Kab. Semarang',
@@ -2094,7 +2094,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3323,
             'province_id' => 33,
             'city' => 'Kab. Temanggung',
@@ -2104,7 +2104,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3324,
             'province_id' => 33,
             'city' => 'Kab. Kendal',
@@ -2114,7 +2114,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3325,
             'province_id' => 33,
             'city' => 'Kab. Batang',
@@ -2124,7 +2124,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3326,
             'province_id' => 33,
             'city' => 'Kab. Pekalongan',
@@ -2134,7 +2134,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3327,
             'province_id' => 33,
             'city' => 'Kab. Pemalang',
@@ -2144,7 +2144,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3328,
             'province_id' => 33,
             'city' => 'Kab. Tegal',
@@ -2154,7 +2154,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3329,
             'province_id' => 33,
             'city' => 'Kab. Brebes',
@@ -2164,7 +2164,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3371,
             'province_id' => 33,
             'city' => 'Kota Magelang',
@@ -2174,7 +2174,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3372,
             'province_id' => 33,
             'city' => 'Kota Surakarta',
@@ -2184,7 +2184,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3373,
             'province_id' => 33,
             'city' => 'Kota Salatiga',
@@ -2194,7 +2194,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3374,
             'province_id' => 33,
             'city' => 'Kota Semarang',
@@ -2204,7 +2204,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3375,
             'province_id' => 33,
             'city' => 'Kota Pekalongan',
@@ -2214,7 +2214,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3376,
             'province_id' => 33,
             'city' => 'Kota Tegal',
@@ -2224,7 +2224,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3401,
             'province_id' => 34,
             'city' => 'Kab. Kulon Progo',
@@ -2234,7 +2234,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3402,
             'province_id' => 34,
             'city' => 'Kab. Bantul',
@@ -2244,7 +2244,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3403,
             'province_id' => 34,
             'city' => 'Kab. Gunung Kidul',
@@ -2254,7 +2254,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3404,
             'province_id' => 34,
             'city' => 'Kab. Sleman',
@@ -2264,7 +2264,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3471,
             'province_id' => 34,
             'city' => 'Kota Yogyakarta',
@@ -2274,7 +2274,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3501,
             'province_id' => 35,
             'city' => 'Kab. Pacitan',
@@ -2284,7 +2284,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3502,
             'province_id' => 35,
             'city' => 'Kab. Ponorogo',
@@ -2294,7 +2294,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3503,
             'province_id' => 35,
             'city' => 'Kab. Trenggalek',
@@ -2304,7 +2304,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3504,
             'province_id' => 35,
             'city' => 'Kab. Tulungagung',
@@ -2314,7 +2314,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3505,
             'province_id' => 35,
             'city' => 'Kab. Blitar',
@@ -2324,7 +2324,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3506,
             'province_id' => 35,
             'city' => 'Kab. Kediri',
@@ -2334,7 +2334,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3507,
             'province_id' => 35,
             'city' => 'Kab. Malang',
@@ -2344,7 +2344,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3508,
             'province_id' => 35,
             'city' => 'Kab. Lumajang',
@@ -2354,7 +2354,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3509,
             'province_id' => 35,
             'city' => 'Kab. Jember',
@@ -2364,7 +2364,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3510,
             'province_id' => 35,
             'city' => 'Kab. Banyuwangi',
@@ -2374,7 +2374,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3511,
             'province_id' => 35,
             'city' => 'Kab. Bondowoso',
@@ -2384,7 +2384,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3512,
             'province_id' => 35,
             'city' => 'Kab. Situbondo',
@@ -2394,7 +2394,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3513,
             'province_id' => 35,
             'city' => 'Kab. Probolinggo',
@@ -2404,7 +2404,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3514,
             'province_id' => 35,
             'city' => 'Kab. Pasuruan',
@@ -2414,7 +2414,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3515,
             'province_id' => 35,
             'city' => 'Kab. Sidoarjo',
@@ -2424,7 +2424,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3516,
             'province_id' => 35,
             'city' => 'Kab. Mojokerto',
@@ -2434,7 +2434,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3517,
             'province_id' => 35,
             'city' => 'Kab. Jombang',
@@ -2444,7 +2444,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3518,
             'province_id' => 35,
             'city' => 'Kab. Nganjuk',
@@ -2454,7 +2454,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3519,
             'province_id' => 35,
             'city' => 'Kab. Madiun',
@@ -2464,7 +2464,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3520,
             'province_id' => 35,
             'city' => 'Kab. Magetan',
@@ -2474,7 +2474,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3521,
             'province_id' => 35,
             'city' => 'Kab. Ngawi',
@@ -2484,7 +2484,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3522,
             'province_id' => 35,
             'city' => 'Kab. Bojonegoro',
@@ -2494,7 +2494,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3523,
             'province_id' => 35,
             'city' => 'Kab. Tuban',
@@ -2504,7 +2504,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3524,
             'province_id' => 35,
             'city' => 'Kab. Lamongan',
@@ -2514,7 +2514,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3525,
             'province_id' => 35,
             'city' => 'Kab. Gresik',
@@ -2524,7 +2524,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3526,
             'province_id' => 35,
             'city' => 'Kab. Bangkalan',
@@ -2534,7 +2534,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3527,
             'province_id' => 35,
             'city' => 'Kab. Sampang',
@@ -2544,7 +2544,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3528,
             'province_id' => 35,
             'city' => 'Kab. Pamekasan',
@@ -2554,7 +2554,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3529,
             'province_id' => 35,
             'city' => 'Kab. Sumenep',
@@ -2564,7 +2564,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3571,
             'province_id' => 35,
             'city' => 'Kota Kediri',
@@ -2574,7 +2574,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3572,
             'province_id' => 35,
             'city' => 'Kota Blitar',
@@ -2584,7 +2584,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3573,
             'province_id' => 35,
             'city' => 'Kota Malang',
@@ -2594,7 +2594,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3574,
             'province_id' => 35,
             'city' => 'Kota Probolinggo',
@@ -2604,7 +2604,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3575,
             'province_id' => 35,
             'city' => 'Kota Pasuruan',
@@ -2614,7 +2614,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3576,
             'province_id' => 35,
             'city' => 'Kota Mojokerto',
@@ -2624,7 +2624,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3577,
             'province_id' => 35,
             'city' => 'Kota Madiun',
@@ -2634,7 +2634,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3578,
             'province_id' => 35,
             'city' => 'Kota Surabaya',
@@ -2644,7 +2644,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3579,
             'province_id' => 35,
             'city' => 'Kota Batu',
@@ -2654,7 +2654,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3601,
             'province_id' => 36,
             'city' => 'Kab. Pandeglang',
@@ -2664,7 +2664,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3602,
             'province_id' => 36,
             'city' => 'Kab. Lebak',
@@ -2674,7 +2674,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3603,
             'province_id' => 36,
             'city' => 'Kab. Tangerang',
@@ -2684,7 +2684,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3604,
             'province_id' => 36,
             'city' => 'Kab. Serang',
@@ -2694,7 +2694,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3671,
             'province_id' => 36,
             'city' => 'Kota Tangerang',
@@ -2704,7 +2704,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3672,
             'province_id' => 36,
             'city' => 'Kota Cilegon',
@@ -2714,7 +2714,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3673,
             'province_id' => 36,
             'city' => 'Kota Serang',
@@ -2724,7 +2724,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 3674,
             'province_id' => 36,
             'city' => 'Kota Tangerang Selatan',
@@ -2734,7 +2734,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5101,
             'province_id' => 51,
             'city' => 'Kab. Jembrana',
@@ -2744,7 +2744,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5102,
             'province_id' => 51,
             'city' => 'Kab. Tabanan',
@@ -2754,7 +2754,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5103,
             'province_id' => 51,
             'city' => 'Kab. Badung',
@@ -2764,7 +2764,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5104,
             'province_id' => 51,
             'city' => 'Kab. Gianyar',
@@ -2774,7 +2774,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5105,
             'province_id' => 51,
             'city' => 'Kab. Klungkung',
@@ -2784,7 +2784,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5106,
             'province_id' => 51,
             'city' => 'Kab. Bangli',
@@ -2794,7 +2794,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5107,
             'province_id' => 51,
             'city' => 'Kab. Karang Asem',
@@ -2804,7 +2804,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5108,
             'province_id' => 51,
             'city' => 'Kab. Buleleng',
@@ -2814,7 +2814,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5171,
             'province_id' => 51,
             'city' => 'Kota Denpasar',
@@ -2824,7 +2824,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5201,
             'province_id' => 52,
             'city' => 'Kab. Lombok Barat',
@@ -2834,7 +2834,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5202,
             'province_id' => 52,
             'city' => 'Kab. Lombok Tengah',
@@ -2844,7 +2844,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5203,
             'province_id' => 52,
             'city' => 'Kab. Lombok Timur',
@@ -2854,7 +2854,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5204,
             'province_id' => 52,
             'city' => 'Kab. Sumbawa',
@@ -2864,7 +2864,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5205,
             'province_id' => 52,
             'city' => 'Kab. Dompu',
@@ -2874,7 +2874,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5206,
             'province_id' => 52,
             'city' => 'Kab. Bima',
@@ -2884,7 +2884,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5207,
             'province_id' => 52,
             'city' => 'Kab. Sumbawa Barat',
@@ -2894,7 +2894,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5208,
             'province_id' => 52,
             'city' => 'Kab. Lombok Utara',
@@ -2904,7 +2904,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5271,
             'province_id' => 52,
             'city' => 'Kota Mataram',
@@ -2914,7 +2914,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5272,
             'province_id' => 52,
             'city' => 'Kota Bima',
@@ -2924,7 +2924,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5301,
             'province_id' => 53,
             'city' => 'Kab. Sumba Barat',
@@ -2934,7 +2934,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5302,
             'province_id' => 53,
             'city' => 'Kab. Sumba Timur',
@@ -2944,7 +2944,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5303,
             'province_id' => 53,
             'city' => 'Kab. Kupang',
@@ -2954,7 +2954,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5304,
             'province_id' => 53,
             'city' => 'Kab. Timor Tengah Selatan',
@@ -2964,7 +2964,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5305,
             'province_id' => 53,
             'city' => 'Kab. Timor Tengah Utara',
@@ -2974,7 +2974,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5306,
             'province_id' => 53,
             'city' => 'Kab. Belu',
@@ -2984,7 +2984,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5307,
             'province_id' => 53,
             'city' => 'Kab. Alor',
@@ -2994,7 +2994,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5308,
             'province_id' => 53,
             'city' => 'Kab. Lembata',
@@ -3004,7 +3004,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5309,
             'province_id' => 53,
             'city' => 'Kab. Flores Timur',
@@ -3014,7 +3014,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5310,
             'province_id' => 53,
             'city' => 'Kab. Sikka',
@@ -3024,7 +3024,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5311,
             'province_id' => 53,
             'city' => 'Kab. Ende',
@@ -3034,7 +3034,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5312,
             'province_id' => 53,
             'city' => 'Kab. Ngada',
@@ -3044,7 +3044,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5313,
             'province_id' => 53,
             'city' => 'Kab. Manggarai',
@@ -3054,7 +3054,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5314,
             'province_id' => 53,
             'city' => 'Kab. Rote-Ndao',
@@ -3064,7 +3064,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5315,
             'province_id' => 53,
             'city' => 'Kab. Manggarai Barat',
@@ -3074,7 +3074,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5316,
             'province_id' => 53,
             'city' => 'Kab. Sumba Tengah',
@@ -3084,7 +3084,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5317,
             'province_id' => 53,
             'city' => 'Kab. Sumba Barat Daya',
@@ -3094,7 +3094,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5318,
             'province_id' => 53,
             'city' => 'Kab. Nagekeo',
@@ -3104,7 +3104,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5319,
             'province_id' => 53,
             'city' => 'Kab. Manggarai Timur',
@@ -3114,7 +3114,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5320,
             'province_id' => 53,
             'city' => 'Kab. Sabu Raijua',
@@ -3124,7 +3124,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5321,
             'province_id' => 53,
             'city' => 'Kab. Malaka',
@@ -3134,7 +3134,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 5371,
             'province_id' => 53,
             'city' => 'Kota Kupang',
@@ -3144,7 +3144,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6101,
             'province_id' => 61,
             'city' => 'Kab. Sambas',
@@ -3154,7 +3154,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6102,
             'province_id' => 61,
             'city' => 'Kab. Bengkayang',
@@ -3164,7 +3164,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6103,
             'province_id' => 61,
             'city' => 'Kab. Landak',
@@ -3174,7 +3174,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6104,
             'province_id' => 61,
             'city' => 'Kab. Mempawah',
@@ -3184,7 +3184,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6105,
             'province_id' => 61,
             'city' => 'Kab. Sanggau',
@@ -3194,7 +3194,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6106,
             'province_id' => 61,
             'city' => 'Kab. Ketapang',
@@ -3204,7 +3204,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6107,
             'province_id' => 61,
             'city' => 'Kab. Sintang',
@@ -3214,7 +3214,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6108,
             'province_id' => 61,
             'city' => 'Kab. Kapuas Hulu',
@@ -3224,7 +3224,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6109,
             'province_id' => 61,
             'city' => 'Kab. Sekadau',
@@ -3234,7 +3234,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6110,
             'province_id' => 61,
             'city' => 'Kab. Melawi',
@@ -3244,7 +3244,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6111,
             'province_id' => 61,
             'city' => 'Kab. Kayong Utara',
@@ -3254,7 +3254,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6112,
             'province_id' => 61,
             'city' => 'Kab. Kubu Raya',
@@ -3264,7 +3264,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6171,
             'province_id' => 61,
             'city' => 'Kota Pontianak',
@@ -3274,7 +3274,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6172,
             'province_id' => 61,
             'city' => 'Kota Singkawang',
@@ -3284,7 +3284,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6201,
             'province_id' => 62,
             'city' => 'Kab. Kotawaringin Barat',
@@ -3294,7 +3294,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6202,
             'province_id' => 62,
             'city' => 'Kab. Kotawaringin Timur',
@@ -3304,7 +3304,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6203,
             'province_id' => 62,
             'city' => 'Kab. Kapuas',
@@ -3314,7 +3314,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6204,
             'province_id' => 62,
             'city' => 'Kab. Barito Selatan',
@@ -3324,7 +3324,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6205,
             'province_id' => 62,
             'city' => 'Kab. Barito Utara',
@@ -3334,7 +3334,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6206,
             'province_id' => 62,
             'city' => 'Kab. Sukamara',
@@ -3344,7 +3344,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6207,
             'province_id' => 62,
             'city' => 'Kab. Lamandau',
@@ -3354,7 +3354,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6208,
             'province_id' => 62,
             'city' => 'Kab. Seruyan',
@@ -3364,7 +3364,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6209,
             'province_id' => 62,
             'city' => 'Kab. Katingan',
@@ -3374,7 +3374,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6210,
             'province_id' => 62,
             'city' => 'Kab. Pulang Pisau',
@@ -3384,7 +3384,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6211,
             'province_id' => 62,
             'city' => 'Kab. Gunung Mas',
@@ -3394,7 +3394,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6212,
             'province_id' => 62,
             'city' => 'Kab. Barito Timur',
@@ -3404,7 +3404,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6213,
             'province_id' => 62,
             'city' => 'Kab. Murung Raya',
@@ -3414,7 +3414,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6271,
             'province_id' => 62,
             'city' => 'Kota Palangka Raya',
@@ -3424,7 +3424,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6301,
             'province_id' => 63,
             'city' => 'Kab. Tanah Laut',
@@ -3434,7 +3434,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6302,
             'province_id' => 63,
             'city' => 'Kab. Kota Baru',
@@ -3444,7 +3444,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6303,
             'province_id' => 63,
             'city' => 'Kab. Banjar',
@@ -3454,7 +3454,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6304,
             'province_id' => 63,
             'city' => 'Kab. Barito Kuala',
@@ -3464,7 +3464,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6305,
             'province_id' => 63,
             'city' => 'Kab. Tapin',
@@ -3474,7 +3474,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6306,
             'province_id' => 63,
             'city' => 'Kab. Hulu Sungai Selatan',
@@ -3484,7 +3484,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6307,
             'province_id' => 63,
             'city' => 'Kab. Hulu Sungai Tengah',
@@ -3494,7 +3494,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6308,
             'province_id' => 63,
             'city' => 'Kab. Hulu Sungai Utara',
@@ -3504,7 +3504,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6309,
             'province_id' => 63,
             'city' => 'Kab. Tabalong',
@@ -3514,7 +3514,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6310,
             'province_id' => 63,
             'city' => 'Kab. Tanah Bumbu',
@@ -3524,7 +3524,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6311,
             'province_id' => 63,
             'city' => 'Kab. Balangan',
@@ -3534,7 +3534,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6371,
             'province_id' => 63,
             'city' => 'Kota Banjarmasin',
@@ -3544,7 +3544,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6372,
             'province_id' => 63,
             'city' => 'Kota Banjarbaru',
@@ -3554,7 +3554,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6401,
             'province_id' => 64,
             'city' => 'Kab. Paser',
@@ -3564,7 +3564,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6402,
             'province_id' => 64,
             'city' => 'Kab. Kutai Barat',
@@ -3574,7 +3574,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6403,
             'province_id' => 64,
             'city' => 'Kab. Kutai Kartanegara',
@@ -3584,7 +3584,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6404,
             'province_id' => 64,
             'city' => 'Kab. Kutai Timur',
@@ -3594,7 +3594,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6405,
             'province_id' => 64,
             'city' => 'Kab. Berau',
@@ -3604,7 +3604,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6409,
             'province_id' => 64,
             'city' => 'Kab. Penajam Paser Utara',
@@ -3614,7 +3614,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6411,
             'province_id' => 64,
             'city' => 'Kab. Mahakam Ulu',
@@ -3624,7 +3624,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6471,
             'province_id' => 64,
             'city' => 'Kota Balikpapan',
@@ -3634,7 +3634,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6472,
             'province_id' => 64,
             'city' => 'Kota Samarinda',
@@ -3644,7 +3644,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6474,
             'province_id' => 64,
             'city' => 'Kota Bontang',
@@ -3654,7 +3654,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6501,
             'province_id' => 65,
             'city' => 'Kab. Malinau',
@@ -3664,7 +3664,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6502,
             'province_id' => 65,
             'city' => 'Kab. Bulungan',
@@ -3674,7 +3674,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6503,
             'province_id' => 65,
             'city' => 'Kab. Tana Tidung',
@@ -3684,7 +3684,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6504,
             'province_id' => 65,
             'city' => 'Kab. Nunukan',
@@ -3694,7 +3694,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 6571,
             'province_id' => 65,
             'city' => 'Kota Tarakan',
@@ -3704,7 +3704,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7101,
             'province_id' => 71,
             'city' => 'Kab. Bolaang Mongondow',
@@ -3714,7 +3714,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7102,
             'province_id' => 71,
             'city' => 'Kab. Minahasa',
@@ -3724,7 +3724,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7103,
             'province_id' => 71,
             'city' => 'Kab. Kepulauan Sangihe',
@@ -3734,7 +3734,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7104,
             'province_id' => 71,
             'city' => 'Kab. Kepulauan Talaud',
@@ -3744,7 +3744,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7105,
             'province_id' => 71,
             'city' => 'Kab. Minahasa Selatan',
@@ -3754,7 +3754,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7106,
             'province_id' => 71,
             'city' => 'Kab. Minahasa Utara',
@@ -3764,7 +3764,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7107,
             'province_id' => 71,
             'city' => 'Kab. Bolaang Mongondow Utara',
@@ -3774,7 +3774,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7108,
             'province_id' => 71,
             'city' => 'Kab. Siau Tagulandang Biaro',
@@ -3784,7 +3784,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7109,
             'province_id' => 71,
             'city' => 'Kab. Minahasa Tenggara',
@@ -3794,7 +3794,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7110,
             'province_id' => 71,
             'city' => 'Kab. Bolaang Mongondow Selatan',
@@ -3804,7 +3804,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7111,
             'province_id' => 71,
             'city' => 'Kab. Bolaang Mongondow Timur',
@@ -3814,7 +3814,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7171,
             'province_id' => 71,
             'city' => 'Kota Manado',
@@ -3824,7 +3824,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7172,
             'province_id' => 71,
             'city' => 'Kota Bitung',
@@ -3834,7 +3834,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7173,
             'province_id' => 71,
             'city' => 'Kota Tomohon',
@@ -3844,7 +3844,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7174,
             'province_id' => 71,
             'city' => 'Kota Kotamobagu',
@@ -3854,7 +3854,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7201,
             'province_id' => 72,
             'city' => 'Kab. Banggai Kepulauan',
@@ -3864,7 +3864,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7202,
             'province_id' => 72,
             'city' => 'Kab. Banggai',
@@ -3874,7 +3874,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7203,
             'province_id' => 72,
             'city' => 'Kab. Morowali',
@@ -3884,7 +3884,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7204,
             'province_id' => 72,
             'city' => 'Kab. Poso',
@@ -3894,7 +3894,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7205,
             'province_id' => 72,
             'city' => 'Kab. Donggala',
@@ -3904,7 +3904,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7206,
             'province_id' => 72,
             'city' => 'Kab. Toli-Toli',
@@ -3914,7 +3914,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7207,
             'province_id' => 72,
             'city' => 'Kab. Buol',
@@ -3924,7 +3924,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7208,
             'province_id' => 72,
             'city' => 'Kab. Parigi Moutong',
@@ -3934,7 +3934,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7209,
             'province_id' => 72,
             'city' => 'Kab. Tojo Una-Una',
@@ -3944,7 +3944,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7210,
             'province_id' => 72,
             'city' => 'Kab. Sigi',
@@ -3954,7 +3954,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7211,
             'province_id' => 72,
             'city' => 'Kab. Banggai Laut',
@@ -3964,7 +3964,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7271,
             'province_id' => 72,
             'city' => 'Kota Palu',
@@ -3974,7 +3974,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7301,
             'province_id' => 73,
             'city' => 'Kab. Kepulauan Selayar',
@@ -3984,7 +3984,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7302,
             'province_id' => 73,
             'city' => 'Kab. Bulukumba',
@@ -3994,7 +3994,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7303,
             'province_id' => 73,
             'city' => 'Kab. Bantaeng',
@@ -4004,7 +4004,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7304,
             'province_id' => 73,
             'city' => 'Kab. Jeneponto',
@@ -4014,7 +4014,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7305,
             'province_id' => 73,
             'city' => 'Kab. Takalar',
@@ -4024,7 +4024,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7306,
             'province_id' => 73,
             'city' => 'Kab. Gowa',
@@ -4034,7 +4034,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7307,
             'province_id' => 73,
             'city' => 'Kab. Sinjai',
@@ -4044,7 +4044,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7308,
             'province_id' => 73,
             'city' => 'Kab. Maros',
@@ -4054,7 +4054,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7309,
             'province_id' => 73,
             'city' => 'Kab. Pangkajene Kepulauan',
@@ -4064,7 +4064,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7310,
             'province_id' => 73,
             'city' => 'Kab. Barru',
@@ -4074,7 +4074,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7311,
             'province_id' => 73,
             'city' => 'Kab. Bone',
@@ -4084,7 +4084,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7312,
             'province_id' => 73,
             'city' => 'Kab. Soppeng',
@@ -4094,7 +4094,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7313,
             'province_id' => 73,
             'city' => 'Kab. Wajo',
@@ -4104,7 +4104,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7314,
             'province_id' => 73,
             'city' => 'Kab. Sidenreng Rappang',
@@ -4114,7 +4114,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7315,
             'province_id' => 73,
             'city' => 'Kab. Pinrang',
@@ -4124,7 +4124,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7316,
             'province_id' => 73,
             'city' => 'Kab. Enrekang',
@@ -4134,7 +4134,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7317,
             'province_id' => 73,
             'city' => 'Kab. Luwu',
@@ -4144,7 +4144,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7318,
             'province_id' => 73,
             'city' => 'Kab. Tana Toraja',
@@ -4154,7 +4154,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7322,
             'province_id' => 73,
             'city' => 'Kab. Luwu Utara',
@@ -4164,7 +4164,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7325,
             'province_id' => 73,
             'city' => 'Kab. Luwu Timur',
@@ -4174,7 +4174,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7326,
             'province_id' => 73,
             'city' => 'Kab. Tana Toraja Utara',
@@ -4184,7 +4184,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7371,
             'province_id' => 73,
             'city' => 'Kota Makassar',
@@ -4194,7 +4194,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7372,
             'province_id' => 73,
             'city' => 'Kota Pare-Pare',
@@ -4204,7 +4204,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7373,
             'province_id' => 73,
             'city' => 'Kota Palopo',
@@ -4214,7 +4214,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7401,
             'province_id' => 74,
             'city' => 'Kab. Buton',
@@ -4224,7 +4224,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7402,
             'province_id' => 74,
             'city' => 'Kab. Muna',
@@ -4234,7 +4234,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7403,
             'province_id' => 74,
             'city' => 'Kab. Konawe',
@@ -4244,7 +4244,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7404,
             'province_id' => 74,
             'city' => 'Kab. Kolaka',
@@ -4254,7 +4254,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7405,
             'province_id' => 74,
             'city' => 'Kab. Konawe Selatan',
@@ -4264,7 +4264,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7406,
             'province_id' => 74,
             'city' => 'Kab. Bombana',
@@ -4274,7 +4274,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7407,
             'province_id' => 74,
             'city' => 'Kab. Wakatobi',
@@ -4284,7 +4284,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7408,
             'province_id' => 74,
             'city' => 'Kab. Kolaka Utara',
@@ -4294,7 +4294,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7409,
             'province_id' => 74,
             'city' => 'Kab. Buton Utara',
@@ -4304,7 +4304,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7410,
             'province_id' => 74,
             'city' => 'Kab. Konawe Utara',
@@ -4314,7 +4314,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7411,
             'province_id' => 74,
             'city' => 'Kab. Kolaka Timur',
@@ -4324,7 +4324,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7471,
             'province_id' => 74,
             'city' => 'Kota Kendari',
@@ -4334,7 +4334,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7472,
             'province_id' => 74,
             'city' => 'Kota Baubau',
@@ -4344,7 +4344,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7501,
             'province_id' => 75,
             'city' => 'Kab. Boalemo',
@@ -4354,7 +4354,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7502,
             'province_id' => 75,
             'city' => 'Kab. Gorontalo',
@@ -4364,7 +4364,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7503,
             'province_id' => 75,
             'city' => 'Kab. Pohuwato',
@@ -4374,7 +4374,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7504,
             'province_id' => 75,
             'city' => 'Kab. Bone Bolango',
@@ -4384,7 +4384,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7505,
             'province_id' => 75,
             'city' => 'Kab. Gorontalo Utara',
@@ -4394,7 +4394,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7571,
             'province_id' => 75,
             'city' => 'Kota Gorontalo',
@@ -4404,7 +4404,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7601,
             'province_id' => 76,
             'city' => 'Kab. Majene',
@@ -4414,7 +4414,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7602,
             'province_id' => 76,
             'city' => 'Kab. Polewali Mandar',
@@ -4424,7 +4424,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7603,
             'province_id' => 76,
             'city' => 'Kab. Mamasa',
@@ -4434,7 +4434,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7604,
             'province_id' => 76,
             'city' => 'Kab. Mamuju',
@@ -4444,7 +4444,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7605,
             'province_id' => 76,
             'city' => 'Kab. Mamuju Utara',
@@ -4454,7 +4454,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 7606,
             'province_id' => 76,
             'city' => 'Kab. Mamuju Tengah',
@@ -4464,7 +4464,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 8101,
             'province_id' => 81,
             'city' => 'Kab. Maluku Tenggara Barat',
@@ -4474,7 +4474,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 8102,
             'province_id' => 81,
             'city' => 'Kab. Maluku Tenggara',
@@ -4484,7 +4484,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 8103,
             'province_id' => 81,
             'city' => 'Kab. Maluku Tengah',
@@ -4494,7 +4494,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 8104,
             'province_id' => 81,
             'city' => 'Kab. Buru',
@@ -4504,7 +4504,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 8105,
             'province_id' => 81,
             'city' => 'Kab. Kepulauan Aru',
@@ -4514,7 +4514,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 8106,
             'province_id' => 81,
             'city' => 'Kab. Seram Bagian Barat',
@@ -4524,7 +4524,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 8107,
             'province_id' => 81,
             'city' => 'Kab. Seram Bagian Timur',
@@ -4534,7 +4534,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 8108,
             'province_id' => 81,
             'city' => 'Kab. Maluku Barat Daya',
@@ -4544,7 +4544,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 8109,
             'province_id' => 81,
             'city' => 'Kab. Buru Selatan',
@@ -4554,7 +4554,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 8171,
             'province_id' => 81,
             'city' => 'Kota Ambon',
@@ -4564,7 +4564,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 8172,
             'province_id' => 81,
             'city' => 'Kota Tual',
@@ -4574,7 +4574,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 8201,
             'province_id' => 82,
             'city' => 'Kab. Halmahera Barat',
@@ -4584,7 +4584,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 8202,
             'province_id' => 82,
             'city' => 'Kab. Halmahera Tengah',
@@ -4594,7 +4594,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 8203,
             'province_id' => 82,
             'city' => 'Kab. Kepulauan Sula',
@@ -4604,7 +4604,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 8204,
             'province_id' => 82,
             'city' => 'Kab. Halmahera Selatan',
@@ -4614,7 +4614,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 8205,
             'province_id' => 82,
             'city' => 'Kab. Halmahera Utara',
@@ -4624,7 +4624,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 8206,
             'province_id' => 82,
             'city' => 'Kab. Halmahera Timur',
@@ -4634,7 +4634,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 8207,
             'province_id' => 82,
             'city' => 'Kab. Pulau Morotai',
@@ -4644,7 +4644,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 8208,
             'province_id' => 82,
             'city' => 'Kab. Pulau Taliabu',
@@ -4654,7 +4654,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 8271,
             'province_id' => 82,
             'city' => 'Kota Ternate',
@@ -4664,7 +4664,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 8272,
             'province_id' => 82,
             'city' => 'Kota Tidore Kepulauan',
@@ -4674,7 +4674,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9101,
             'province_id' => 91,
             'city' => 'Kab. Fak-Fak',
@@ -4684,7 +4684,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9102,
             'province_id' => 91,
             'city' => 'Kab. Kaimana',
@@ -4694,7 +4694,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9103,
             'province_id' => 91,
             'city' => 'Kab. Teluk Wondama',
@@ -4704,7 +4704,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9104,
             'province_id' => 91,
             'city' => 'Kab. Teluk Bintuni',
@@ -4714,7 +4714,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9105,
             'province_id' => 91,
             'city' => 'Kab. Manokwari',
@@ -4724,7 +4724,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9106,
             'province_id' => 91,
             'city' => 'Kab. Sorong Selatan',
@@ -4734,7 +4734,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9107,
             'province_id' => 91,
             'city' => 'Kab. Sorong',
@@ -4744,7 +4744,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9108,
             'province_id' => 91,
             'city' => 'Kab. Raja Ampat',
@@ -4754,7 +4754,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9109,
             'province_id' => 91,
             'city' => 'Kab. Tambrauw',
@@ -4764,7 +4764,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9110,
             'province_id' => 91,
             'city' => 'Kab. Maybrat',
@@ -4774,7 +4774,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9111,
             'province_id' => 91,
             'city' => 'Kab. Manokwari Selatan',
@@ -4784,7 +4784,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9112,
             'province_id' => 91,
             'city' => 'Kab. Peg. Arfak',
@@ -4794,7 +4794,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9171,
             'province_id' => 91,
             'city' => 'Kota Sorong',
@@ -4804,7 +4804,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9401,
             'province_id' => 94,
             'city' => 'Kab. Merauke',
@@ -4814,7 +4814,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9402,
             'province_id' => 94,
             'city' => 'Kab. Jayawijaya',
@@ -4824,7 +4824,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9403,
             'province_id' => 94,
             'city' => 'Kab. Jayapura',
@@ -4834,7 +4834,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9404,
             'province_id' => 94,
             'city' => 'Kab. Nabire',
@@ -4844,7 +4844,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9408,
             'province_id' => 94,
             'city' => 'Kab. Kepulauan Yapen',
@@ -4854,7 +4854,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9409,
             'province_id' => 94,
             'city' => 'Kab. Biak Numfor',
@@ -4864,7 +4864,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9410,
             'province_id' => 94,
             'city' => 'Kab. Paniai',
@@ -4874,7 +4874,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9411,
             'province_id' => 94,
             'city' => 'Kab. Puncak Jaya',
@@ -4884,7 +4884,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9412,
             'province_id' => 94,
             'city' => 'Kab. Mimika',
@@ -4894,7 +4894,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9413,
             'province_id' => 94,
             'city' => 'Kab. Boven Digoel',
@@ -4904,7 +4904,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9414,
             'province_id' => 94,
             'city' => 'Kab. Mappi',
@@ -4914,7 +4914,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9415,
             'province_id' => 94,
             'city' => 'Kab. Asmat',
@@ -4924,7 +4924,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9416,
             'province_id' => 94,
             'city' => 'Kab. Yahukimo',
@@ -4934,7 +4934,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9417,
             'province_id' => 94,
             'city' => 'Kab. Pegunungan Bintang',
@@ -4944,7 +4944,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9418,
             'province_id' => 94,
             'city' => 'Kab. Tolikara',
@@ -4954,7 +4954,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9419,
             'province_id' => 94,
             'city' => 'Kab. Sarmi',
@@ -4964,7 +4964,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9420,
             'province_id' => 94,
             'city' => 'Kab. Keerom',
@@ -4974,7 +4974,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9426,
             'province_id' => 94,
             'city' => 'Kab. Waropen',
@@ -4984,7 +4984,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9427,
             'province_id' => 94,
             'city' => 'Kab. Supiori',
@@ -4994,7 +4994,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9428,
             'province_id' => 94,
             'city' => 'Kab. Memberamo Raya',
@@ -5004,7 +5004,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9429,
             'province_id' => 94,
             'city' => 'Kab. Nduga',
@@ -5014,7 +5014,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9430,
             'province_id' => 94,
             'city' => 'Kab. Lanny Jaya',
@@ -5024,7 +5024,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9431,
             'province_id' => 94,
             'city' => 'Kab. Mamberamo Tengah',
@@ -5034,7 +5034,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9432,
             'province_id' => 94,
             'city' => 'Kab. Yalimo',
@@ -5044,7 +5044,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9433,
             'province_id' => 94,
             'city' => 'Kab. Puncak',
@@ -5054,7 +5054,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9434,
             'province_id' => 94,
             'city' => 'Kab. Dogiyai',
@@ -5064,7 +5064,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9435,
             'province_id' => 94,
             'city' => 'Kab. Intan Jaya',
@@ -5074,7 +5074,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9436,
             'province_id' => 94,
             'city' => 'Kab. Deiyai',
@@ -5084,7 +5084,7 @@ class City extends Seeder
 
 
 
-        DB::table('districts_cities')->insert([
+        DB::table('cities')->insert([
             'id' => 9471,
             'province_id' => 94,
             'city' => 'Kota Jayapura',

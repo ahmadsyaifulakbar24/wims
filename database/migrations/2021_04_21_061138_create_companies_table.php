@@ -16,6 +16,7 @@ class CreateCompaniesTable extends Migration
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
             $table->foreignId('parent_id')->nullable()->constrained('companies')->onDelete('cascade')->onUpdate('cascade');
+            $table->enum('type', ['center','branch']);
             $table->string('name');
             $table->string('logo_path');
             $table->text('address');

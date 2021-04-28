@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Company extends Model
 {
@@ -29,4 +30,29 @@ class Company extends Model
         'tax_person_npwp',
         'signature'
     ];
+
+    protected $appends = [
+        'logo_url',
+        'signature_url'
+    ];
+
+    public function getLogoUrlAttribute()
+    {
+        return url('') . Storage::url($this->attributes['logo_path']);
+    }
+
+    public function getSignatureUrlAttribute()
+    {
+        return url('') . Storage::url($this->attributes['logo_path']);
+    }
+
+    public function province()
+    {
+        return $this->belongsTo(Province::class, 'province_id');
+    }
+
+    public function city()
+    {
+        return $this->belongsTo(City::class, 'city_id');
+    }
 }

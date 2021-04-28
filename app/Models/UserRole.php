@@ -9,5 +9,7 @@ class UserRole extends Model
 {
     use HasFactory;
 
-    protected $timestamps = false;
+    protected $table = 'user_roles';
+    
+    public $timestamps = false;
 }
