@@ -13,6 +13,7 @@ class Company extends Model
     protected $table = 'companies';
     protected $fillable = [
         'parent_id',
+        'type',
         'name',
         'logo_path',
         'address',
@@ -43,7 +44,7 @@ class Company extends Model
 
     public function getSignatureUrlAttribute()
     {
-        return url('') . Storage::url($this->attributes['logo_path']);
+        return url('') . Storage::url($this->attributes['signature']);
     }
 
     public function province()
@@ -54,5 +55,10 @@ class Company extends Model
     public function city()
     {
         return $this->belongsTo(City::class, 'city_id');
+    }
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class, 'company_id');
     }
 }

@@ -34,6 +34,15 @@ class CreateCompanyController extends Controller
             'signature' => ['required', 'mimes:png,jpg,jpeg', 'max:2048'],
         ]);
 
+        if($request->type == 'center') {
+            $cek_company = Company::where('type', 'center')->count();
+            if($cek_company > 0) {
+                return ResponseFormatter::error([
+                    'message' => 'cannot create center company'
+                ], 'create center company failed', 402);
+            }
+        }
+        
         $input = $request->all();
         if($request->file('logo')) {
             $input['logo_path'] = FileHelpers::upload_file('company', $request->file('logo'), false);
