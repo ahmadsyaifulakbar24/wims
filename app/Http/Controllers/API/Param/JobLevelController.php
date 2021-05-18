@@ -77,7 +77,7 @@ class JobLevelController extends Controller
         $result = $param->delete();
         return ResponseFormatter::success(
             $result,
-            'success delete oraganization data'
+            'success delete job level data'
         );
     }
 }

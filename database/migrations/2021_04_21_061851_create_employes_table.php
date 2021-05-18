@@ -18,7 +18,7 @@ class CreateEmployesTable extends Migration
 
             // personal data
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('employe_id')->unique();
+            $table->string('employee_id')->unique();
             $table->string('barcode')->nullable();
             $table->string('first_name');
             $table->string('last_name')->nullable();
@@ -32,7 +32,7 @@ class CreateEmployesTable extends Migration
             $table->date('date_of_birth');
             $table->string('mobile_phone')->nullable();
             $table->string('phone')->nullable();
-            $table->enum('gender_id', ['male', 'female']);
+            $table->enum('gender', ['male', 'female']);
             $table->foreignId('marital_status_id')->constrained('master_params')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('blood_type_id')->nullable()->constrained('master_params')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('religion_id')->constrained('master_params')->onDelete('cascade')->onUpdate('cascade');
@@ -43,7 +43,7 @@ class CreateEmployesTable extends Migration
             $table->foreignId('organization_id')->constrained('params')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('job_position_id')->constrained('params')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('job_level_id')->constrained('params')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('employe_status_id')->constrained('params')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('employee_status_id')->constrained('params')->onDelete('cascade')->onUpdate('cascade');
             $table->date('join_date');
             $table->date('end_date')->nullable();
             

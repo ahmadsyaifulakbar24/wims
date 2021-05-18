@@ -27,6 +27,7 @@ class User extends Authenticatable
         'name',
         'username',
         'email',
+        'profile_photo_path',
         'password',
         'role_id',
         'active',
@@ -65,5 +66,10 @@ class User extends Authenticatable
     public function user_role()
     {
         return $this->belongsTo(UserRole::class, 'role_id');
+    }
+
+    public function employee()
+    {
+        return $this->hasOne(Employe::class, 'user_id');
     }
 }

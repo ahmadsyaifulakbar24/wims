@@ -6,6 +6,8 @@ use App\Http\Controllers\API\Company\CreateCompanyController;
 use App\Http\Controllers\API\Company\DeleteCompanyController;
 use App\Http\Controllers\API\Company\GetCompanyController;
 use App\Http\Controllers\API\Company\UpdateCompanyController;
+use App\Http\Controllers\API\Employee\CreateEmployeeController;
+use App\Http\Controllers\API\Param\EmployeeStatusController;
 use App\Http\Controllers\API\Param\JobLevelController;
 use App\Http\Controllers\API\Param\JobPositionController;
 use App\Http\Controllers\API\Param\OrganizationController;
@@ -58,5 +60,16 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::post('/create', [JobPositionController::class, 'create']);
         Route::patch('{param:id}/update', [JobPositionController::class, 'update']);
         Route::delete('{param:id}/delete', [JobPositionController::class, 'delete']);
+    });
+
+    Route::prefix('employee_status')->group(function () {
+        Route::get('/', [EmployeeStatusController::class, 'fetch']);
+        Route::post('/create', [EmployeeStatusController::class, 'create']);
+        Route::patch('{param:id}/update', [EmployeeStatusController::class, 'update']);
+        Route::delete('{param:id}/delete', [EmployeeStatusController::class, 'delete']);
+    });
+
+    Route::prefix('employee')->group(function () {
+        Route::post('create', CreateEmployeeController::class);
     });
 });
