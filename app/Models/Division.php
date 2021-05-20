@@ -15,4 +15,19 @@ class Division extends Model
         'pic_id',
         'name'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function pic()
+    {
+        return $this->belongsTo(User::class, 'pic_id');
+    }
+
+    public function board()
+    {
+        return $this->hasMany(Board::class, 'division_id');
+    }
 }

@@ -6,6 +6,10 @@ use App\Http\Controllers\API\Company\CreateCompanyController;
 use App\Http\Controllers\API\Company\DeleteCompanyController;
 use App\Http\Controllers\API\Company\GetCompanyController;
 use App\Http\Controllers\API\Company\UpdateCompanyController;
+use App\Http\Controllers\API\Division\CreateDivisionController;
+use App\Http\Controllers\API\DIvision\DeleteDivisionController;
+use App\Http\Controllers\API\DIvision\GetDivisionController;
+use App\Http\Controllers\API\DIvision\UpdateDivisionController;
 use App\Http\Controllers\API\Employee\CreateEmployeeController;
 use App\Http\Controllers\API\Employee\DeleteEmployeController;
 use App\Http\Controllers\API\Employee\GetEmployeeController;
@@ -77,5 +81,12 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::post('create', CreateEmployeeController::class);
         Route::post('{user:id}/update', UpdateEmployeeController::class);
         Route::delete('{user:id}/delete', DeleteEmployeController::class);
+    });
+
+    Route::prefix('division')->group(function () {
+        Route::get('fetch/{division_id?}', [GetDivisionController::class, 'fetch']);
+        Route::post('create', CreateDivisionController::class);
+        Route::patch('{division:id}/update', UpdateDivisionController::class);
+        Route::delete('{division:id}/delete', DeleteDivisionController::class);
     });
 });
