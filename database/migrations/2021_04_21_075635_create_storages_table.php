@@ -18,6 +18,7 @@ class CreateStoragesTable extends Migration
             $table->string('name');
             $table->text('file_url');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

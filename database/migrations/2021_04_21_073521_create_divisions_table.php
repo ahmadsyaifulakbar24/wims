@@ -19,6 +19,7 @@ class CreateDivisionsTable extends Migration
             $table->foreignId('pic_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
             $table->string('name');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

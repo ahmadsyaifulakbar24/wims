@@ -60,6 +60,7 @@ class CreateEmployesTable extends Migration
             $table->integer('bpjs_kesehatan_family')->nullable();
             $table->enum('type_salary', ['monthly', 'daily']);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

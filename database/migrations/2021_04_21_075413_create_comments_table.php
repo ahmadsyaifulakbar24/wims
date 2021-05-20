@@ -19,6 +19,7 @@ class CreateCommentsTable extends Migration
             $table->text('task_attachment_url')->nullable();
             $table->text('comment');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

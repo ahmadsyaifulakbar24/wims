@@ -7,6 +7,9 @@ use App\Http\Controllers\API\Company\DeleteCompanyController;
 use App\Http\Controllers\API\Company\GetCompanyController;
 use App\Http\Controllers\API\Company\UpdateCompanyController;
 use App\Http\Controllers\API\Employee\CreateEmployeeController;
+use App\Http\Controllers\API\Employee\DeleteEmployeController;
+use App\Http\Controllers\API\Employee\GetEmployeeController;
+use App\Http\Controllers\API\Employee\UpdateEmployeeController;
 use App\Http\Controllers\API\Param\EmployeeStatusController;
 use App\Http\Controllers\API\Param\JobLevelController;
 use App\Http\Controllers\API\Param\JobPositionController;
@@ -70,6 +73,9 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     Route::prefix('employee')->group(function () {
+        Route::get('fetch/{user_id?}', [GetEmployeeController::class, 'fetch']);
         Route::post('create', CreateEmployeeController::class);
+        Route::post('{user:id}/update', UpdateEmployeeController::class);
+        Route::delete('{user:id}/delete', DeleteEmployeController::class);
     });
 });

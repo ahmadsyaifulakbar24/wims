@@ -34,6 +34,7 @@ class CreateCompaniesTable extends Migration
             $table->string('tax_person_npwp');
             $table->string('signature');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
