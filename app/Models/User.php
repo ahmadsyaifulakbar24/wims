@@ -83,4 +83,14 @@ class User extends Authenticatable
     {
         return $this->hasOne(Employe::class, 'user_id');
     }
+
+    public function board()
+    {
+        return $this->belongsToMany(Board::class, 'board_memebers', 'user_id', 'board_id');
+    }
+
+    public function task()
+    {
+        return $this->belongsToMany(Task::class, 'task_members', 'user_id', 'task_id');
+    }
 }

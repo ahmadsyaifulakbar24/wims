@@ -2,6 +2,12 @@
 
 use App\Http\Controllers\API\Auth\LoginController;
 use App\Http\Controllers\API\Auth\LogoutController;
+use App\Http\Controllers\API\Board\BoardMemberController;
+use App\Http\Controllers\API\Board\CreateBoardController;
+use App\Http\Controllers\API\Board\DeleteBoardController;
+use App\Http\Controllers\API\Board\GetBoardController;
+use App\Http\Controllers\API\Board\LabelController;
+use App\Http\Controllers\API\Board\UpdateBoardController;
 use App\Http\Controllers\API\Company\CreateCompanyController;
 use App\Http\Controllers\API\Company\DeleteCompanyController;
 use App\Http\Controllers\API\Company\GetCompanyController;
@@ -18,6 +24,7 @@ use App\Http\Controllers\API\Param\EmployeeStatusController;
 use App\Http\Controllers\API\Param\JobLevelController;
 use App\Http\Controllers\API\Param\JobPositionController;
 use App\Http\Controllers\API\Param\OrganizationController;
+use App\Http\Controllers\API\Task\CreateTaskController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -88,5 +95,25 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::post('create', CreateDivisionController::class);
         Route::patch('{division:id}/update', UpdateDivisionController::class);
         Route::delete('{division:id}/delete', DeleteDivisionController::class);
+    });
+
+    Route::prefix('board')->group(function () {
+        Route::get('fetch/{board_id?}', [GetBoardController::class, 'fetch']);
+        Route::post('create', CreateBoardController::class);
+        Route::patch('{board:id}/update', UpdateBoardController::class);
+        Route::delete('{board:id}/soft_delete', [DeleteBoardController::class, 'soft_delete']);
+        Route::post('{board:id}/add_member', [BoardMemberController::class, 'add_member']);
+        Route::delete('{board_member:id}/delete_member', [BoardMemberController::class, 'delete_member']);
+        Route::prefix('label')->group(function() {
+            Route::get('fetch/{board:id}', [LabelController::class, 'fetch']);
+            Route::post('create', [LabelController::class, 'create']);
+            Route::patch('{board_label:id}/update', [LabelController::class, 'update']);
+            Route::delete('{board_label:id}/delete', [LabelController::class, 'delete']);
+        });
+    });
+
+    Route::prefix('task')->group(function () {
+        Route::post('create', [CreateTaskController::class, 'create_task']);
+        Route::post('{task:id}/create_task_member', [CreateTaskController::class, 'create_task_member']);
     });
 });

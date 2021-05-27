@@ -17,6 +17,7 @@ class CreateBoardsTable extends Migration
             $table->id();
             $table->foreignId('division_id')->constrained('divisions')->onDelete('cascade')->onUpdate('cascade');
             $table->string('title');
+            $table->text('description')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

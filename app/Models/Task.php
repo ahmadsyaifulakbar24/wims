@@ -12,9 +12,14 @@ class Task extends Model
     protected $table = 'tasks';
     protected $fillable = [
         'board_id',
-        'date',
+        'title',
         'start_due_date',
         'finish_due_date',
         'description'
     ];
+
+    public function task_members()
+    {
+        return $this->belongsToMany(User::class, 'task_members', 'task_id', 'user_id');
+    }
 }
