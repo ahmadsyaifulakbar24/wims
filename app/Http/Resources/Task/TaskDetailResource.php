@@ -2,10 +2,9 @@
 
 namespace App\Http\Resources\Task;
 
-use App\Models\TaskMember;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class TaskResource extends JsonResource
+class TaskDetailResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -19,6 +18,9 @@ class TaskResource extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'description' => $this->description,
+            'start_due_date' => $this->start_due_date,
+            'finish_due_date' => $this->finish_due_date,
+            'members' => TaskMemberResource::collection($this->task_member_many),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];

@@ -25,6 +25,7 @@ use App\Http\Controllers\API\Param\JobLevelController;
 use App\Http\Controllers\API\Param\JobPositionController;
 use App\Http\Controllers\API\Param\OrganizationController;
 use App\Http\Controllers\API\Task\CreateTaskController;
+use App\Http\Controllers\API\Task\GetTaskController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -113,7 +114,13 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     Route::prefix('task')->group(function () {
-        Route::post('create', [CreateTaskController::class, 'create_task']);
-        Route::post('{task:id}/create_task_member', [CreateTaskController::class, 'create_task_member']);
+        // Task Route
+            Route::post('/create', [CreateTaskController::class, 'task']);
+            Route::get('/fetch/{task_id?}', [GetTaskController::class, 'task']);
+        // End Task
+        Route::post('{task:id}/create_task_member', [CreateTaskController::class, 'task_member']);
+        Route::post('{task:id}/create_checklist', [CreateTaskController::class, 'checklist']);
+        Route::post('{checklist:id}/create_checklist_item', [CreateTaskController::class, 'checklist_item']);
+        Route::post('{task:id}/attachment', [CreateTaskController::class, 'attachment']);
     });
 });

@@ -16,7 +16,9 @@ class CreateTaskAttachmentsTable extends Migration
         Schema::create('task_attachments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('task_id')->constrained('tasks')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('name')->nullable();
             $table->text('file_url');
+            $table->string('type');
             $table->timestamps();
         });
     }

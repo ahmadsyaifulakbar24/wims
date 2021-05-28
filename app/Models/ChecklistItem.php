@@ -17,4 +17,9 @@ class ChecklistItem extends Model
         'finish_due_date',
         'assign_id'
     ];
+
+    public function assign()
+    {
+        return $this->belongsTo(User::class, 'assign_id');
+    }
 }

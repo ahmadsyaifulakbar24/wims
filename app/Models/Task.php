@@ -22,4 +22,19 @@ class Task extends Model
     {
         return $this->belongsToMany(User::class, 'task_members', 'task_id', 'user_id');
     }
+
+    public function task_member_many()
+    {
+        return $this->hasMany(TaskMember::class, 'task_id');
+    }
+
+    public function checklist()
+    {
+        return $this->hasMany(Checklist::class, 'task_id');
+    }
+
+    public function attachment()
+    {
+        return $this->hasMany(TaskAttachment::class, 'task_id');
+    }
 }
