@@ -18,6 +18,10 @@ class ChecklistItem extends Model
         'assign_id'
     ];
 
+    public function checklist()
+    {
+        return $this->belongsTo(Checklist::class, 'checklist_id');
+    }
     public function assign()
     {
         return $this->belongsTo(User::class, 'assign_id');

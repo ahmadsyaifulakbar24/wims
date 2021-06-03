@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources\Task;
+namespace App\Http\Resources\Member;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class TaskAttachmentResource extends JsonResource
+class MemberResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,10 +17,10 @@ class TaskAttachmentResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'file_url' => $this->file_url,
-            'type' => $this->type,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+            'username' => $this->username,
+            'email' => $this->email,
+            'email' => $this->email,
+            'profile_photo_url' => $this->profile_photo_url,
         ];
     }
 }

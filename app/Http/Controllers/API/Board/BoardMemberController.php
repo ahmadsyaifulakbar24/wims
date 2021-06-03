@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API\Board;
 
 use App\Helpers\ResponseFormatter;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Member\MemberResource;
 use App\Models\Board;
 use App\Models\BoardMember;
 use Illuminate\Http\Request;
@@ -11,6 +12,14 @@ use Illuminate\Validation\Rule;
 
 class BoardMemberController extends Controller
 {
+    public function get_member(Board $board)
+    {
+        return ResponseFormatter::success(
+            MemberResource::collection($board->board_member),
+            'success get board member data'
+        );
+    }
+
     public function add_member(Request $request, Board $board)
     {
         $this->validate($request, [

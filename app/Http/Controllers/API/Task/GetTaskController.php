@@ -4,6 +4,9 @@ namespace App\Http\Controllers\API\Task;
 
 use App\Helpers\ResponseFormatter;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Member\MemberResource;
+use App\Http\Resources\Task\ChecklistResource;
+use App\Http\Resources\Task\TaskAttachmentResource;
 use App\Http\Resources\Task\TaskDetailResource;
 use App\Http\Resources\Task\TaskResource;
 use App\Models\Task;
@@ -29,6 +32,30 @@ class GetTaskController extends Controller
         return ResponseFormatter::success(
             TaskResource::collection($task),
             $success_message
+        );
+    }
+
+    public function task_member(Task $task)
+    {
+        return ResponseFormatter::success(
+            MemberResource::collection($task->task_members),
+            'success get Task Member'
+        );
+    }
+
+    public function checklist(Task $task)
+    {
+        return ResponseFormatter::success(
+            ChecklistResource::collection($task->checklist),
+            'success get checklist data'
+        );
+    }
+
+    public function attachment(Task $task)
+    {
+        return ResponseFormatter::success(
+            TaskAttachmentResource::collection($task->attachment),
+            'success get task attachment'
         );
     }
 }

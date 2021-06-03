@@ -8,6 +8,10 @@ use App\Http\Controllers\API\Board\DeleteBoardController;
 use App\Http\Controllers\API\Board\GetBoardController;
 use App\Http\Controllers\API\Board\LabelController;
 use App\Http\Controllers\API\Board\UpdateBoardController;
+use App\Http\Controllers\API\Comment\CreateCommentController;
+use App\Http\Controllers\API\Comment\DeleteCommentController;
+use App\Http\Controllers\API\Comment\GetCommentController;
+use App\Http\Controllers\API\Comment\UpdateCommentController;
 use App\Http\Controllers\API\Company\CreateCompanyController;
 use App\Http\Controllers\API\Company\DeleteCompanyController;
 use App\Http\Controllers\API\Company\GetCompanyController;
@@ -25,7 +29,9 @@ use App\Http\Controllers\API\Param\JobLevelController;
 use App\Http\Controllers\API\Param\JobPositionController;
 use App\Http\Controllers\API\Param\OrganizationController;
 use App\Http\Controllers\API\Task\CreateTaskController;
+use App\Http\Controllers\API\Task\DeleteTaskController;
 use App\Http\Controllers\API\Task\GetTaskController;
+use App\Http\Controllers\API\Task\UpdateTaskController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -103,8 +109,10 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::post('create', CreateBoardController::class);
         Route::patch('{board:id}/update', UpdateBoardController::class);
         Route::delete('{board:id}/soft_delete', [DeleteBoardController::class, 'soft_delete']);
+        Route::get('{board:id}/get_member', [BoardMemberController::class, 'get_member']);
         Route::post('{board:id}/add_member', [BoardMemberController::class, 'add_member']);
         Route::delete('{board_member:id}/delete_member', [BoardMemberController::class, 'delete_member']);
+
         Route::prefix('label')->group(function() {
             Route::get('fetch/{board:id}', [LabelController::class, 'fetch']);
             Route::post('create', [LabelController::class, 'create']);
@@ -117,10 +125,41 @@ Route::middleware('auth:sanctum')->group(function () {
         // Task Route
             Route::post('/create', [CreateTaskController::class, 'task']);
             Route::get('/fetch/{task_id?}', [GetTaskController::class, 'task']);
+            Route::patch('/{task:id}/update', [UpdateTaskController::class, 'task']);
+            Route::delete('/{task:id}/archive', [DeleteTaskController::class, 'archive_task']);
         // End Task
-        Route::post('{task:id}/create_task_member', [CreateTaskController::class, 'task_member']);
-        Route::post('{task:id}/create_checklist', [CreateTaskController::class, 'checklist']);
-        Route::post('{checklist:id}/create_checklist_item', [CreateTaskController::class, 'checklist_item']);
-        Route::post('{task:id}/attachment', [CreateTaskController::class, 'attachment']);
+
+        // Task Member
+            Route::post('{task:id}/create_task_member', [CreateTaskController::class, 'task_member']);
+            Route::get('{task:id}/get_task_member', [GetTaskController::class, 'task_member']);
+            Route::delete('{task:id}/{user_id}/delete_task_member', [DeleteTaskController::class, 'task_member']);
+        // End Task Member
+
+        // Task Checklist
+            Route::get('{task:id}/get_checklist', [GetTaskController::class, 'checklist']);
+            Route::post('{task:id}/create_checklist', [CreateTaskController::class, 'checklist']);
+            Route::patch('{checklist:id}/update_checklist', [UpdateTaskController::class, 'checklist']);
+            Route::delete('{checklist:id}/delete_checklist', [DeleteTaskController::class, 'checklist']);
+        // End Task Checklist
+
+        // Task Checklist Item
+            Route::post('{checklist:id}/create_checklist_item', [CreateTaskController::class, 'checklist_item']);
+            Route::patch('{checklist_item:id}/update_checklist_item', [UpdateTaskController::class, 'checklist_item']);
+            Route::delete('{checklist_item:id}/delete_checklist_item', [DeleteTaskController::class, 'checklist_item']);
+        // End Task Checklist Item 
+
+        // Task Attachment
+            Route::get('{task:id}/get_attachment', [GetTaskController::class, 'attachment']);
+            Route::post('{task:id}/attachment', [CreateTaskController::class, 'attachment']);
+            Route::patch('{task_attachment:id}/update_attachment', [UpdateTaskController::class, 'attachment']);
+            Route::delete('{task_attachment:id}/delete_attachment', [DeleteTaskController::class, 'attachment']);
+        // End Attachment
+
+        // Task Comment
+            Route::post('{task:id}/create_comment', CreateCommentController::class);
+            Route::get('{task:id}/get_comment', GetCommentController::class);
+            Route::patch('{comment:id}/update_comment', UpdateCommentController::class);
+            Route::delete('{comment:id}/delete_comment', DeleteCommentController::class);
+        // End Task Comment
     });
 });
