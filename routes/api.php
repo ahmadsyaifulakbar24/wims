@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\Attendance\CreateAttendanceController;
 use App\Http\Controllers\API\Auth\LoginController;
 use App\Http\Controllers\API\Auth\LogoutController;
 use App\Http\Controllers\API\Board\BoardMemberController;
@@ -32,6 +33,10 @@ use App\Http\Controllers\API\Task\CreateTaskController;
 use App\Http\Controllers\API\Task\DeleteTaskController;
 use App\Http\Controllers\API\Task\GetTaskController;
 use App\Http\Controllers\API\Task\UpdateTaskController;
+use App\Http\Controllers\API\UserReport\CreateUserReportController;
+use App\Http\Controllers\API\UserReport\DeleteUserReportController;
+use App\Http\Controllers\API\UserReport\GetUserReportController;
+use App\Http\Controllers\API\UserReport\UpdateUserReportController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -161,5 +166,26 @@ Route::middleware('auth:sanctum')->group(function () {
             Route::patch('{comment:id}/update_comment', UpdateCommentController::class);
             Route::delete('{comment:id}/delete_comment', DeleteCommentController::class);
         // End Task Comment
+    });
+
+    Route::prefix('user_report')->group(function () {
+        Route::post('/create', [CreateUserReportController::class, 'user_report']);
+        Route::get('/fetch/{user_report_id?}', [GetUserReportController::class, 'user_report']);
+        Route::patch('{user_report:id}/update', [UpdateUserReportController::class, 'user_report']);
+        Route::delete('{user_report:id}/archive', [DeleteUserReportController::class, 'user_report']);
+
+        Route::prefix('attachment')->group(function () {
+            Route::post('{user_report:id}/create', [CreateUserReportController::class, 'attachment']);
+            Route::get('{user_report:id}/fetch', [GetUserReportController::class, 'attachment']);
+        });
+
+        Route::prefix('comment')->group(function () {
+            Route::post('{user_report:id}/create', [CreateUserReportController::class, 'comment']);
+            Route::get('{user_report:id}/fetch', [GetUserReportController::class, 'comment']);
+        });
+    });
+
+    Route::prefix('attendance')->group(function () {
+        Route::post('create', CreateAttendanceController::class);
     });
 });

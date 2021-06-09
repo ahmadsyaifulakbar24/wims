@@ -12,6 +12,7 @@ class TaskAttachment extends Model
     protected $table = 'task_attachments';
     protected $fillable = [
         'task_id',
+        'user_report_id',
         'name',
         'file_url',
         'type',

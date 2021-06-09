@@ -46,6 +46,7 @@ class CreateEmployesTable extends Migration
             $table->foreignId('employee_status_id')->constrained('params')->onDelete('cascade')->onUpdate('cascade');
             $table->date('join_date');
             $table->date('end_date')->nullable();
+            $table->integer('leave')->nullable();
             
 
             // payrol

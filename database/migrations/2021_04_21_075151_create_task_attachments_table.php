@@ -15,7 +15,8 @@ class CreateTaskAttachmentsTable extends Migration
     {
         Schema::create('task_attachments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('task_id')->constrained('tasks')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('task_id')->nullable()->constrained('tasks')->onDelete('cascade')->onUpdate('cascade');
+            $table->bigInteger('user_report_id')->unsigned()->nullable();
             $table->string('name')->nullable();
             $table->text('file_url');
             $table->string('type');

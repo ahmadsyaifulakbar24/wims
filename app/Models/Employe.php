@@ -42,6 +42,7 @@ class Employe extends Model
         'employee_status_id',
         'join_date',
         'end_date',
+        'leave',
 
         // Payrol
         'basic_salary',

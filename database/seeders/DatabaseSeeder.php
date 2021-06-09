@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         $this->call([
             Bank::class,
+            Param::class,
             MasterParam::class,
             Province::class,
             City::class,
