@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\API\Attendance\CreateAttendanceController;
+use App\Http\Controllers\API\attendance\DeleteAttendanceController;
+use App\Http\Controllers\API\attendance\GetAttendanceController;
+use App\Http\Controllers\API\attendance\UpdateAttendanceController;
 use App\Http\Controllers\API\Auth\LoginController;
 use App\Http\Controllers\API\Auth\LogoutController;
 use App\Http\Controllers\API\Board\BoardMemberController;
@@ -25,6 +28,10 @@ use App\Http\Controllers\API\Employee\CreateEmployeeController;
 use App\Http\Controllers\API\Employee\DeleteEmployeController;
 use App\Http\Controllers\API\Employee\GetEmployeeController;
 use App\Http\Controllers\API\Employee\UpdateEmployeeController;
+use App\Http\Controllers\API\leave\CreateLeaveController;
+use App\Http\Controllers\API\leave\DeleteLeaveController;
+use App\Http\Controllers\API\leave\GetLeaveController;
+use App\Http\Controllers\API\leave\UpdateLeaveController;
 use App\Http\Controllers\API\Param\EmployeeStatusController;
 use App\Http\Controllers\API\Param\JobLevelController;
 use App\Http\Controllers\API\Param\JobPositionController;
@@ -186,6 +193,21 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     Route::prefix('attendance')->group(function () {
-        Route::post('create', CreateAttendanceController::class);
+        Route::get('fetch/{attendance_id?}', [GetAttendanceController::class, 'fetch']);
+        Route::post('attendance_login', [CreateAttendanceController::class, 'attendance_login']);
+        Route::post('{attendance:id}/attendance_home', [CreateAttendanceController::class, 'attendance_home']);
+        Route::post('{attendance:id}/update', UpdateAttendanceController::class);
+        Route::delete('{attendance:id}/delete', DeleteAttendanceController::class);
     });
+
+    Route::prefix('leave')->group(function () {
+        Route::get('fetch/{leave_id?}', [GetLeaveController::class, 'fetch']);
+        Route::post('create', [CreateLeaveController::class, 'create']);
+        Route::post('{leave:id}/create_comment', [CreateLeaveController::class, 'comment']);
+        Route::get('{leave:id}/get_comment', [GetLeaveController::class, 'comment']);
+        Route::patch('{leave:id}/approval', [UpdateLeaveController::class, 'approval']);
+        Route::patch('{leave:id}/update', [UpdateLeaveController::class, 'update']);
+        Route::delete('{leave:id}/delete', DeleteLeaveController::class);
+    });
+
 });

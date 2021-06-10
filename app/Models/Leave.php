@@ -23,4 +23,9 @@ class Leave extends Model
     {
         return $this->belongsTo(Employe::class, 'employee_id');
     }
+
+    public function comment()
+    {
+        return $this->hasMany(Comment::class, 'leave_id');
+    }
 }
