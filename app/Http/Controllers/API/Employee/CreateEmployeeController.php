@@ -104,6 +104,9 @@ class CreateEmployeeController extends Controller
             'type_salary' => ['required', 'in:monthly,daily'],
         ]);
 
+        $parent_user = User::find($request->user()->id);
+
+        $inputUser['company_code_parent'] = $parent_user->company_code;
         $inputUser['name'] = $request->first_name.''.$request->last_name;
         $inputUser['username'] = $request->username;
         $inputUser['email'] = $request->email;

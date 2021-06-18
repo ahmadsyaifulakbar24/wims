@@ -15,26 +15,31 @@ class CreateCompaniesTable extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
+            $table->integer('ref_company_code')->unsigned();
             $table->foreignId('parent_id')->nullable()->constrained('companies')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('employee_reach_id')->nullable()->constrained('master_params')->onDelete('cascade')->onUpdate('cascade');
             $table->enum('type', ['center','branch']);
             $table->string('name');
-            $table->string('logo_path');
-            $table->text('address');
-            $table->integer('postal_code');
-            $table->foreignId('province_id')->constrained('provinces')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('city_id')->constrained('cities')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('logo_path')->nullable();
+            $table->text('address')->nullable();
+            $table->integer('postal_code')->nullable();
+            $table->foreignId('province_id')->nullable()->constrained('provinces')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('city_id')->nullable()->constrained('cities')->onDelete('cascade')->onUpdate('cascade');
             $table->bigInteger('umr')->nullable();
-            $table->string('phone_number');
-            $table->string('email');
-            $table->string('bpjs');
-            $table->string('jkk');
-            $table->string('npwp');
-            $table->date('taxable_date');
-            $table->string('tax_person_name');
-            $table->string('tax_person_npwp');
-            $table->string('signature');
+            $table->string('phone_number')->nullable();
+            $table->string('email')->nullable();
+            $table->string('bpjs')->nullable();
+            $table->string('jkk')->nullable();
+            $table->string('npwp')->nullable();
+            $table->date('taxable_date')->nullable();
+            $table->string('tax_person_name')->nullable();
+            $table->string('tax_person_npwp')->nullable();
+            $table->string('signature')->nullable();
             $table->timestamps();
             $table->softDeletes();
+        });
+        Schema::table('companies', function (Blueprint $table) {
+            $table->foreign('ref_company_code')->references('company_code')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

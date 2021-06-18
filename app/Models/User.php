@@ -11,6 +11,8 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use phpDocumentor\Reflection\Types\Self_;
+use PhpParser\Builder\Function_;
+use PhpParser\Node\Expr\FuncCall;
 
 class User extends Authenticatable
 {
@@ -30,10 +32,13 @@ class User extends Authenticatable
         'name',
         'username',
         'email',
+        'phone_number',
         'profile_photo_path',
         'password',
         'role_id',
         'active',
+        'company_code',
+        'company_code_parent'
     ];
 
     /**
@@ -92,5 +97,10 @@ class User extends Authenticatable
     public function task()
     {
         return $this->belongsToMany(Task::class, 'task_members', 'user_id', 'task_id');
+    }
+
+    public function company()
+    {
+        return $this->hasMany(Company::class, 'ref_company_code', 'company_code');
     }
 }

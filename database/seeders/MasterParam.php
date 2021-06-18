@@ -140,5 +140,33 @@ class MasterParam extends Seeder
             'name' => 'O'
         ]);
         
+        DB::table('master_params')->insert([
+            'parent_id' => null,
+            'category' => 'employee_reach',
+            'name' => '1-50'
+        ]);
+        DB::table('master_params')->insert([
+            'parent_id' => null,
+            'category' => 'employee_reach',
+            'name' => '51-100'
+        ]);
+
+        DB::table('master_params')->insert([
+            'parent_id' => null,
+            'category' => 'employee_reach',
+            'name' => '101-300'
+        ]);
+
+        DB::table('master_params')->insert([
+            'parent_id' => null,
+            'category' => 'employee_reach',
+            'name' => '301-700'
+        ]);
+
+        DB::table('master_params')->insert([
+            'parent_id' => null,
+            'category' => 'employee_reach',
+            'name' => '> 700'
+        ]);
     }
 }

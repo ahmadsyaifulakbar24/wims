@@ -6,6 +6,7 @@ use App\Helpers\ResponseFormatter;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Company\CompanyResource;
 use App\Models\Company;
+use App\Models\User;
 use Illuminate\Http\Request;
 use PHPUnit\Framework\MockObject\Stub\ReturnReference;
 
@@ -16,15 +17,18 @@ class GetCompanyController extends Controller
         $this->validate($request, [
             'type' => ['required', 'in:center,branch']
         ]);
+
+        $user = User::find($request->user()->id);
+        $company_code = ($user->role_id == 1) ? $user->company_code : $user->company_code_parent;
         $message = 'succes get company data';
+        $company = Company::where('ref_company_code', $company_code);
         if($request->type == 'center') {
-            $company = Company::where('type', 'center')->first();
+            $company = $company->where('type', 'center')->first();
             return ResponseFormatter::success(
                 new CompanyResource($company),
                 $message
             );
         } else {
-            $company = Company::query();
             $company->where('type', 'branch');
             return ResponseFormatter::success(
                 $company->get(),

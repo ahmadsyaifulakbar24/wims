@@ -12,6 +12,8 @@ class Company extends Model
 
     protected $table = 'companies';
     protected $fillable = [
+        'ref_company_code',
+        'employee_reach_id',
         'parent_id',
         'type',
         'name',

@@ -15,11 +15,15 @@ class CreateDivisionsTable extends Migration
     {
         Schema::create('divisions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('ref_company_code')->unsigned();
             $table->foreignId('pic_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
             $table->string('name');
             $table->timestamps();
             $table->softDeletes();
+        });
+
+        Schema::table('divisions', function (Blueprint $table) {
+            $table->foreign('ref_company_code')->references('company_code')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

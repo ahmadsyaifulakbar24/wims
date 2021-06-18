@@ -36,10 +36,12 @@ use App\Http\Controllers\API\Param\EmployeeStatusController;
 use App\Http\Controllers\API\Param\JobLevelController;
 use App\Http\Controllers\API\Param\JobPositionController;
 use App\Http\Controllers\API\Param\OrganizationController;
+use App\Http\Controllers\API\Registration\CreateRegistrationController;
 use App\Http\Controllers\API\Task\CreateTaskController;
 use App\Http\Controllers\API\Task\DeleteTaskController;
 use App\Http\Controllers\API\Task\GetTaskController;
 use App\Http\Controllers\API\Task\UpdateTaskController;
+use App\Http\Controllers\API\User\CreateUserController;
 use App\Http\Controllers\API\UserReport\CreateUserReportController;
 use App\Http\Controllers\API\UserReport\DeleteUserReportController;
 use App\Http\Controllers\API\UserReport\GetUserReportController;
@@ -64,6 +66,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::post('login', LoginController::class);
+Route::post('registration', CreateRegistrationController::class);
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('logout', LogoutController::class);
 
@@ -208,6 +211,10 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::patch('{leave:id}/approval', [UpdateLeaveController::class, 'approval']);
         Route::patch('{leave:id}/update', [UpdateLeaveController::class, 'update']);
         Route::delete('{leave:id}/delete', DeleteLeaveController::class);
+    });
+
+    Route::prefix('user')->group(function () {
+        Route::post('create_admin', [CreateUserController::class, 'admin']);
     });
 
 });

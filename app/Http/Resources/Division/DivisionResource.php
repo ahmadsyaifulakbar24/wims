@@ -16,12 +16,6 @@ class DivisionResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'user' => [
-                'name' => $this->user->name,
-                'username' => $this->user->username,
-                'email' => $this->user->email,
-                'profile_photo_url' => $this->user->profile_photo_url
-            ],
             'pic' => [
                 'name' => $this->pic->name,
                 'username' => $this->pic->username,

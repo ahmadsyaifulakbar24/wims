@@ -9,13 +9,17 @@ use App\Http\Resources\Company\CompanyResource;
 use App\Models\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rule;
 
 class UpdateCompanyController extends Controller
 {
     public function __invoke(Request $request, Company $company)
     {
         $this->validate($request, [
-            'parent_id' => ['nullable', 'exists:companies,id'],
+            'parent_id' => [
+                Rule::requiredIf($company->type == 'branch'), 
+                'exists:companies,id'
+            ],
             'name' => ['required', 'string'],
             'logo' => ['nullable', 'mimes:png,jpg,jpeg', 'max:2048'],
             'address' => ['required', 'string'],
@@ -35,7 +39,9 @@ class UpdateCompanyController extends Controller
         ]);
 
         if($company) {
-            $input['parent_id'] = $request->parent_id;
+            if($company->type == 'branch') {
+                $input['parent_id'] = $request->parent_id;
+            }
             $input['name'] = $request->name;
             $input['address'] = $request->address;
             $input['postal_code'] = $request->postal_code;

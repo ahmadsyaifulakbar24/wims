@@ -7,6 +7,7 @@ use App\Helpers\ResponseFormatter;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Company\CompanyResource;
 use App\Models\Company;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class CreateCompanyController extends Controller
@@ -14,8 +15,7 @@ class CreateCompanyController extends Controller
     public function __invoke(Request $request)
     {
         $this->validate($request, [
-            'parent_id' => ['nullable', 'exists:companies,id'],
-            'type' => ['required', 'in:center,branch'],
+            'parent_id' => ['required', 'exists:companies,id'],
             'name' => ['required', 'string'],
             'logo' => ['required', 'mimes:png,jpg,jpeg', 'max:2048'],
             'address' => ['required', 'string'],
@@ -33,15 +33,6 @@ class CreateCompanyController extends Controller
             'tax_person_npwp' => ['required', 'string'],
             'signature' => ['required', 'mimes:png,jpg,jpeg', 'max:2048'],
         ]);
-
-        if($request->type == 'center') {
-            $cek_company = Company::where('type', 'center')->count();
-            if($cek_company > 0) {
-                return ResponseFormatter::error([
-                    'message' => 'cannot create center company'
-                ], 'create center company failed', 402);
-            }
-        }
         
         $input = $request->all();
         if($request->file('logo')) {
@@ -52,12 +43,14 @@ class CreateCompanyController extends Controller
             $input['signature'] = FileHelpers::upload_file('company', $request->file('signature'), false);
         }
 
+        $user = User::find($request->user()->id);
+        $input['ref_company_code'] = ($user->role_id == '1') ? $user->company_code : $user->company_code_parent;
+        $input['type'] = 'branch';
         $company = Company::create($input);
-        $message = ($request->type == 'center') ? 'success create center company' : 'success create branch company';
         
         return ResponseFormatter::success(
             new CompanyResource($company),
-            $message
+            'success create branch company'
         );
     }
 }

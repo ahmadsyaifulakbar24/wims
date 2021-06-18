@@ -15,9 +15,12 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->integer('company_code')->unsigned()->unique()->nullable();
+            $table->integer('company_code_parent')->unsigned()->nullable();
             $table->string('name');
             $table->string('username')->unique();
             $table->string('email')->nullable();
+            $table->string('phone_number')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
@@ -26,6 +29,10 @@ class CreateUsersTable extends Migration
             $table->boolean('active');
             $table->timestamps();
             $table->softDeletes();
+        });
+
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreign('company_code_parent')->references('company_code')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

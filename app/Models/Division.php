@@ -11,15 +11,10 @@ class Division extends Model
 
     protected $table = 'divisions';
     protected $fillable = [
-        'user_id',
+        'ref_company_code',
         'pic_id',
         'name'
     ];
-
-    public function user()
-    {
-        return $this->belongsTo(User::class, 'user_id');
-    }
 
     public function pic()
     {

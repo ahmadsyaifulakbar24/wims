@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\DB;
 
 class Employe extends Model
 {
@@ -60,6 +61,11 @@ class Employe extends Model
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function scopeJoinUser($query)
+    {
+        return $query->leftJoin('users', 'employes.user_id', '=', 'users.id');
     }
     
     public function marital_status()
