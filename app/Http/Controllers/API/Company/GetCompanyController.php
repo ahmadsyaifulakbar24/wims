@@ -12,7 +12,7 @@ use PHPUnit\Framework\MockObject\Stub\ReturnReference;
 
 class GetCompanyController extends Controller
 {
-    public function __invoke(Request $request)
+    public function __invoke(Request $request, $company_id = null)
     {
         $this->validate($request, [
             'type' => ['nullable', 'in:center,branch']
@@ -22,6 +22,14 @@ class GetCompanyController extends Controller
         $company_code = ($user->role_id == 1) ? $user->company_code : $user->company_code_parent;
         $message = 'succes get company data';
         $company = Company::where('ref_company_code', $company_code);
+
+        if($company_id) {
+            return ResponseFormatter::success(
+                new CompanyResource($company),
+                $message
+            );
+        }
+        
         if($request->type) {
             if($request->type == 'center') {
                 $company = $company->where('type', 'center')->first();
