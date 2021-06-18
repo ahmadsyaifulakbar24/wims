@@ -24,10 +24,13 @@ class GetCompanyController extends Controller
         $company = Company::where('ref_company_code', $company_code);
 
         if($company_id) {
-            return ResponseFormatter::success(
-                new CompanyResource($company),
-                $message
-            );
+            $company = Company::find($company_id);
+            if($company_id) {
+                return ResponseFormatter::success(
+                    new CompanyResource($company),
+                    $message
+                );
+            }
         }
         
         if($request->type) {
