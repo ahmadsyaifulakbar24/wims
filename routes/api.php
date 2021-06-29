@@ -65,7 +65,9 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-
+Route::prefix('master_param')->group(function () {
+    Route::get('employee_reach', [GetMasterParamController::class, 'employee_reach']);
+});
 Route::post('login', LoginController::class);
 Route::post('registration', CreateRegistrationController::class);
 Route::middleware('auth:sanctum')->group(function () {
