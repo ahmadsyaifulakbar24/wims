@@ -17,7 +17,6 @@ class MasterParamResource extends JsonResource
         return [
             'id' => $this->id,
             'parent_id' => $this->parent_id,
-            'category' => $this->category,
             'name' => $this->name,
         ];
     }

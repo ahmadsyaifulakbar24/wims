@@ -221,7 +221,10 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     Route::prefix('master_param')->group(function () {
-        
+        Route::get('education', [GetMasterParamController::class, 'education']);
+        Route::get('religion', [GetMasterParamController::class, 'religion']);
+        Route::get('marital_status', [GetMasterParamController::class, 'marital_status']);
+        Route::get('blood_type', [GetMasterParamController::class, 'blood_type']);
     });
 
 });
