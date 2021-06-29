@@ -221,7 +221,7 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     Route::prefix('master_param')->group(function () {
-        Route::get('employee_reach', [GetMasterParamController::class, 'employee_reach']);
+        
     });
 
 });
