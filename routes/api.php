@@ -32,6 +32,7 @@ use App\Http\Controllers\API\leave\CreateLeaveController;
 use App\Http\Controllers\API\leave\DeleteLeaveController;
 use App\Http\Controllers\API\leave\GetLeaveController;
 use App\Http\Controllers\API\leave\UpdateLeaveController;
+use App\Http\Controllers\API\MasterParam\GetMasterParamController;
 use App\Http\Controllers\API\Param\EmployeeStatusController;
 use App\Http\Controllers\API\Param\JobLevelController;
 use App\Http\Controllers\API\Param\JobPositionController;
@@ -215,6 +216,10 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::prefix('user')->group(function () {
         Route::post('create_admin', [CreateUserController::class, 'admin']);
+    });
+
+    Route::prefix('master_param')->group(function () {
+        Route::get('employee_reach', [GetMasterParamController::class, 'employee_reach']);
     });
 
 });
