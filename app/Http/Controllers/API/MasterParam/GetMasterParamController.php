@@ -19,8 +19,8 @@ class GetMasterParamController extends Controller
     {
         $data = MasterParam::where('category', $category)->orderBy('order', 'DESC')->get();
         return ResponseFormatter::success(
-            $message,
-            MasterParamResource::collection($data)
+            MasterParamResource::collection($data),
+            $message
         );
     }
 }
