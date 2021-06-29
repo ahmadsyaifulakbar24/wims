@@ -32,7 +32,7 @@ class CreateRegistrationController extends Controller
         ]);
 
         $user = User::create([
-            'company_code' => rand(1, 999999),
+            'company_code' => rand(100000, 999999),
             'name' => $request->name,
             'username' => $request->username,
             'email' => $request->email,
