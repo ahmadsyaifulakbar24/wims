@@ -103,6 +103,11 @@ class Employe extends Model
         return $this->belongsTo(Param::class, 'job_position_id');
     }
 
+    public function job_level()
+    {
+        return $this->belongsTo(Param::class, 'job_level_id');
+    }
+
     public function employee_status()
     {
         return $this->belongsTo(Param::class, 'employee_status_id');
