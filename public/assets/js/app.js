@@ -112,7 +112,7 @@ function customAlert(status, param) {
     $('.customAlert').addClass('active')
     $('.customAlert').animate({ bottom: "+=120px" }, 150)
     // if (status != 'warning') {
-    setTimeout(function() {
+    delay(function() {
         $('.customAlert').removeClass('active')
         $('.customAlert').animate({ bottom: "-=120px" }, 150)
     }, 2500)

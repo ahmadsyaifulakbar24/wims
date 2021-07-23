@@ -76,11 +76,50 @@
 							<textarea class="form-control form-control-sm" id="edit_description" rows="3"></textarea>
 							<div class="invalid-feedback"></div>
 						</div>
+						<!-- <div class="form-group">
+							<label for="members">Members</label>
+							<div class="container" id="list-members"></div>
+							<div class="btn btn-sms btn-block btn-outline-dark" onclick="return add_member()" role="button">
+								<i class="mdi mdi-plus"></i>Add Members
+							</div>
+							<div class="invalid-feedback"></div>
+						</div> -->
+						<div class="form-group">
+							<label class="mb-0">Members</label>
+							<div class="d-flex align-items-center flex-wrap">
+								<div class="d-flex flex-wrap" id="members"></div>
+								<div id="loading-member">
+									<div class="d-flex flex-wrap">
+										<div class="loader loader-sm mr-2">
+											<svg class="circular" viewBox="25 25 50 50">
+												<circle class="path-dark" cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-miterlimit="10"/>
+											</svg>
+										</div>
+									</div>
+								</div>
+								<div class="dropdown" id="dropdown-member">
+									<i class="mdi mdi-24px mdi-plus-circle-outline pr-0" id="add-member" data-toggle="dropdown" role="button"></i>
+									<div class="dropdown-menu py-0" aria-labelledby="dropdown-member">
+										<h6 class="dropdown-header text-center">Add members</h6>
+										<hr class="mt-0">
+										<div class="container">
+											<div class="form-group">
+												<!-- <input class="form-control" id="search_user_id" placeholder="Search member" autocomplete="off"> -->
+												<!-- <select class="custom-select" id="user_id" role="button">
+													<option value="" disabled selected>Select</option>
+												</select> -->
+											</div>
+										</div>
+										<div id="list-members" class="mb-2"></div>
+									</div>
+								</div>
+							</div>
+						</div>
 		            </div>
-		            <div class="modal-footer border-top-0">
+		            <!-- <div class="modal-footer border-top-0">
 		                <button class="btn btn-outline-dark" data-dismiss="modal">Close</button>
 		                <button class="btn btn-dark" id="edit" disabled="true">Save Changes</button>
-		            </div>
+		            </div> -->
 				</form>
 	        </div>
 	    </div>

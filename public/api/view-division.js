@@ -1,3 +1,5 @@
+let board_id = null
+
 get_data()
 
 function get_data() {
@@ -47,6 +49,79 @@ $.ajax({
         $('#division').html(value.name)
     }
 })
+
+$.ajax({
+    url: `${api_url}/employee/fetch`,
+    type: 'GET',
+    data: {
+        pic_id: user
+    },
+    beforeSend: function(xhr) {
+        xhr.setRequestHeader("Authorization", "Bearer " + token)
+    },
+    success: function(result) {
+        employees = result.data
+        $.each(result.data, function(index, value) {
+            // append = `<option value="${value.id}" data-photo="${value.profile_photo_url}">${value.name}</option>`
+            append = `<div class="dropdown-item members" data-id="${value.id}" data-name="${value.name}" role="button">
+					<img src="${value.profile_photo_url}" class="rounded-circle mr-2" width="24">
+					<span class="pl-0">${value.name}</span>
+				</div>`
+            $('#list-members').append(append)
+        })
+        // $.each(result.data, function(index, value) {
+        //     // console.log(value)
+        //     append = `<option value="${value.id}">${value.name}</option>`
+        //     $('.pic_id').append(append)
+        // })
+    }
+})
+
+$(document).on('click', '.members', function() {
+    let formData = new FormData()
+    formData.append('user_id', $(this).attr('data-id'))
+    let name = $(this).attr('data-name')
+    $.ajax({
+        url: `${api_url}/board/${board_id}/add_member`,
+        type: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function(result) {
+            console.log(result)
+            customAlert('success', `${name} added to board`)
+		    get_member(board_id)
+        },
+        error: function(xhr) {
+            let err = xhr.responseJSON.errors
+            console.log(err)
+            customAlert('danger', `${name} already added`)
+        }
+    })
+    // $('#members').append(`<img src="${photo}" class="rounded-circle mr-1" width="24" data-toggle="tooltip" data-placement="bottom" title="${name}">`)
+    // $('#dropdown-member').dropdown('show')
+})
+
+// function add_member() {
+// 	let option = ''
+// 	$.each(employees, function(index, value) {
+// 		option += `<option value="${value.id}">${value.name}</option>`
+// 	})
+// 	let append = `<div class="row align-items-center mb-3">
+// 		<select class="members custom-select col-sm-11 col-10" role="button">
+// 			<option value="" disabled selected>Select</option>
+// 			${option}
+// 		</select>
+// 		<div class="col-sm-1 col-2 text-center remove-member" role="button">
+// 			<i class="mdi mdi-18px mdi-trash-can-outline pr-0"></i>
+// 		</div>
+// 	</div>`
+// 	$('#list-members').append(append)
+// }
+
+// $(document).on('click', '.remove-member', function() {
+// 	$(this).parents('.row').remove()
+// })
 
 $(document).ajaxStop(function() {
     $('#card').show()
@@ -112,9 +187,50 @@ $(document).on('click', '.edit', function() {
             $('#edit_title').val(value.title)
             $('#edit_description').val(value.description)
             $('#edit').attr('disabled', false)
+            board_id = value.id
         }
     })
+    get_member(id)
 })
+
+function get_member(id_member) {
+	$('#members').empty()
+	$('#loading-member').show()
+	$.ajax({
+        url: `${api_url}/board/${id_member}/get_member`,
+        type: 'GET',
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader("Authorization", "Bearer " + token)
+        },
+        success: function(result) {
+            console.log(result)
+            $.each(result.data, function(index, value) {
+	            let append = `<div class="dropdown">
+					<img src="${value.profile_photo_url}" class="rounded-circle mr-1" width="24" data-toggle="dropdown" role="button">
+					<div class="dropdown-menu py-0" aria-labelledby="dropdown-member">
+						<div class="p-3 border-bottom">
+							<div class="d-flex">
+								<img src="${value.profile_photo_url}" class="rounded-circle pb-1" width="40">
+								<div class="ml-3 text-truncate">
+									<h6 class="mb-0 text-truncate">${value.name}</h6>
+									<small class="text-secondary">@${value.username}</small>
+								</div>
+							</div>
+						</div>
+						<div class="dropdown-item" role="button">Remove from task</div>
+					</div>
+				</div>`
+	            $('#members').append(append)
+	        })
+	        $('#loading-member').hide()
+        }
+    })
+}
+
+$('input').keyup(delay(function() {
+	console.log('save successfully')
+},500))
+
 $('#form-edit').submit(function(e) {
     e.preventDefault()
     let id = $('#edit').attr('data-id')

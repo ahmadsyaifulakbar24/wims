@@ -306,7 +306,7 @@ a:hover {
     bottom: -100px;
     padding: 0 15px;
     color: #fff;
-    z-index: 4;
+    z-index: 9999;
     border-radius: 6px;
     background-color: rgb(0, 0, 0, 0.8);
 }
