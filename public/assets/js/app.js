@@ -104,19 +104,21 @@ function customAlert(status, param) {
         case 'trash':
             icon = '<i class="mdi mdi-18px mdi-trash-can-outline"></i>'
     }
+    
+    let timeout = setTimeout(function() {
+        $('.customAlert').removeClass('active')
+        $('.customAlert').animate({ bottom: "-=120px" }, 150)
+    }, 2000)
+
     if ($('.customAlert').hasClass('active')) {
+        clearTimeout(timeout)
         $('.customAlert').removeClass('active')
         $('.customAlert').animate({ bottom: "-=120px" }, 150)
     }
+	    timeout
     $('.customAlert').html(icon + param)
     $('.customAlert').addClass('active')
     $('.customAlert').animate({ bottom: "+=120px" }, 150)
-    // if (status != 'warning') {
-    delay(function() {
-        $('.customAlert').removeClass('active')
-        $('.customAlert').animate({ bottom: "-=120px" }, 150)
-    }, 2500)
-    // }
 }
 
 function date_now() {
