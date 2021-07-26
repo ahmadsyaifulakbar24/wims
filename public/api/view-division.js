@@ -17,12 +17,12 @@ function get_data() {
             $.each(result.data, function(index, value) {
                 // console.log(value)
                 append = `<div class="col-xl-3 col-lg-4 col-md-6 mb-3">
-		        	<div class="card card-height">
+		        	<div class="card card-height" data-id="${value.id}" data-title="${value.title}">
 						<div class="card-header d-flex justify-content-between align-items-center">
 							<h6 class="mb-0">${value.title}</h6>
 							<div class="d-flex ml-2">
-								<i class="mdi mdi-18px mdi-pencil-outline pr-0 mr-2 edit" data-id="${value.id}" data-title="${value.title}" role="button"></i>
-								<i class="mdi mdi-18px mdi-trash-can-outline pr-0 delete" data-id="${value.id}" data-title="${value.title}" role="button"></i>
+								<i class="mdi mdi-18px mdi-pencil-outline pr-0 mr-2 edit" role="button"></i>
+								<i class="mdi mdi-18px mdi-trash-can-outline pr-0 delete" role="button"></i>
 							</div>
 						</div>
 						<a href="${root}/task-management/board/${value.id}" class="card-body text-dark">
@@ -60,68 +60,16 @@ $.ajax({
         xhr.setRequestHeader("Authorization", "Bearer " + token)
     },
     success: function(result) {
-        employees = result.data
+    	// console.log(result)
         $.each(result.data, function(index, value) {
-            // append = `<option value="${value.id}" data-photo="${value.profile_photo_url}">${value.name}</option>`
             append = `<div class="dropdown-item members" data-id="${value.id}" data-name="${value.name}" role="button">
-					<img src="${value.profile_photo_url}" class="rounded-circle mr-2" width="24">
-					<span class="pl-0">${value.name}</span>
-				</div>`
+				<img src="${value.profile_photo_url}" class="rounded-circle mr-2" width="24">
+				<span class="pl-0">${value.name}</span>
+			</div>`
             $('#list-members').append(append)
         })
-        // $.each(result.data, function(index, value) {
-        //     // console.log(value)
-        //     append = `<option value="${value.id}">${value.name}</option>`
-        //     $('.pic_id').append(append)
-        // })
     }
 })
-
-$(document).on('click', '.members', function() {
-    let formData = new FormData()
-    formData.append('user_id', $(this).attr('data-id'))
-    let name = $(this).attr('data-name')
-    $.ajax({
-        url: `${api_url}/board/${board_id}/add_member`,
-        type: 'POST',
-        data: formData,
-        processData: false,
-        contentType: false,
-        success: function(result) {
-            console.log(result)
-            customAlert('success', `${name} added to board`)
-		    get_member(board_id)
-        },
-        error: function(xhr) {
-            let err = xhr.responseJSON.errors
-            console.log(err)
-            customAlert('danger', `${name} already added`)
-        }
-    })
-    // $('#members').append(`<img src="${photo}" class="rounded-circle mr-1" width="24" data-toggle="tooltip" data-placement="bottom" title="${name}">`)
-    // $('#dropdown-member').dropdown('show')
-})
-
-// function add_member() {
-// 	let option = ''
-// 	$.each(employees, function(index, value) {
-// 		option += `<option value="${value.id}">${value.name}</option>`
-// 	})
-// 	let append = `<div class="row align-items-center mb-3">
-// 		<select class="members custom-select col-sm-11 col-10" role="button">
-// 			<option value="" disabled selected>Select</option>
-// 			${option}
-// 		</select>
-// 		<div class="col-sm-1 col-2 text-center remove-member" role="button">
-// 			<i class="mdi mdi-18px mdi-trash-can-outline pr-0"></i>
-// 		</div>
-// 	</div>`
-// 	$('#list-members').append(append)
-// }
-
-// $(document).on('click', '.remove-member', function() {
-// 	$(this).parents('.row').remove()
-// })
 
 $(document).ajaxStop(function() {
     $('#card').show()
@@ -156,7 +104,9 @@ $('#form-create').submit(function(e) {
             xhr.setRequestHeader("Authorization", "Bearer " + token)
         },
         success: function(result) {
+            // console.log(result)
             $('#modal-create').modal('hide')
+            customAlert('success', `${result.data.title} successfully created`)
             get_data()
         },
         error: function(xhr) {
@@ -172,7 +122,7 @@ $('#form-create').submit(function(e) {
 })
 
 $(document).on('click', '.edit', function() {
-    let id = $(this).data('id')
+    let id = $(this).parents('.card').attr('data-id')
     $('#modal-edit').modal('show')
     $('#edit').attr('data-id', id)
     $.ajax({
@@ -194,18 +144,18 @@ $(document).on('click', '.edit', function() {
 })
 
 function get_member(id_member) {
-	$('#members').empty()
-	$('#loading-member').show()
-	$.ajax({
+    $('#members').empty()
+    $('#loading-member').show()
+    $.ajax({
         url: `${api_url}/board/${id_member}/get_member`,
         type: 'GET',
         beforeSend: function(xhr) {
             xhr.setRequestHeader("Authorization", "Bearer " + token)
         },
         success: function(result) {
-            console.log(result)
+            // console.log(result)
             $.each(result.data, function(index, value) {
-	            let append = `<div class="dropdown">
+                let append = `<div class="dropdown">
 					<img src="${value.profile_photo_url}" class="rounded-circle mr-1" width="24" data-toggle="dropdown" role="button">
 					<div class="dropdown-menu py-0" aria-labelledby="dropdown-member">
 						<div class="p-3 border-bottom">
@@ -217,19 +167,58 @@ function get_member(id_member) {
 								</div>
 							</div>
 						</div>
-						<div class="dropdown-item" role="button">Remove from task</div>
+						<div class="dropdown-item remove-member" data-id="${value.id}" data-name="${value.name}" role="button">Remove from board</div>
 					</div>
 				</div>`
-	            $('#members').append(append)
-	        })
-	        $('#loading-member').hide()
+                $('#members').append(append)
+            })
+            $('#loading-member').hide()
         }
     })
 }
 
-$('input').keyup(delay(function() {
-	console.log('save successfully')
-},500))
+$(document).on('click', '.members', function() {
+    let name = $(this).attr('data-name')
+    let formData = new FormData()
+    formData.append('user_id', $(this).attr('data-id'))
+    $.ajax({
+        url: `${api_url}/board/${board_id}/add_member`,
+        type: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function(result) {
+            // console.log(result)
+            customAlert('success', `${name} added to board`)
+            get_member(board_id)
+        },
+        error: function(xhr) {
+            let err = xhr.responseJSON.errors
+            let msg = xhr.responseJSON.data.message
+            // console.log(xhr)
+            if (msg == "user already exists in this board") {
+	            customAlert('danger', `${name} has been added in this board`)
+            }
+        }
+    })
+})
+
+$(document).on('click', '.remove-member', function() {
+    let member_id = $(this).attr('data-id')
+    let member_name = $(this).attr('data-name')
+    $.ajax({
+        url: `${api_url}/board/${member_id}/delete_member`,
+        type: 'DELETE',
+        success: function(result) {
+            customAlert('success', `${member_name} removed from board`)
+            get_member(board_id)
+        },
+        error: function(xhr) {
+            let err = xhr.responseJSON.errors
+            // console.log(err)
+        }
+    })
+})
 
 $('#form-edit').submit(function(e) {
     e.preventDefault()
@@ -246,6 +235,8 @@ $('#form-edit').submit(function(e) {
             xhr.setRequestHeader("Authorization", "Bearer " + token)
         },
         success: function(result) {
+            // console.log(result)
+            customAlert('success', `${result.data.title} updated successfully`)
             $('#modal-edit').modal('hide')
             get_data()
         },
@@ -263,13 +254,16 @@ $('#form-edit').submit(function(e) {
 
 $(document).on('click', '.delete', function() {
     $('#modal-delete').modal('show')
-    let id = $(this).data('id')
-    let title = $(this).data('title')
+    let id = $(this).parents('.card').attr('data-id')
+    let title = $(this).parents('.card').attr('data-title')
     $('#modal-delete .modal-body b').html(title)
     $('#delete').attr('data-id', id)
+    $('#delete').attr('data-title', title)
 })
+
 $(document).on('click', '#delete', function() {
     let id = $('#delete').attr('data-id')
+    let title = $('#delete').attr('data-title')
     $.ajax({
         url: `${api_url}/board/${id}/soft_delete`,
         type: 'DELETE',
@@ -277,6 +271,8 @@ $(document).on('click', '#delete', function() {
             xhr.setRequestHeader("Authorization", "Bearer " + token)
         },
         success: function(result) {
+        	// console.log(result)
+            customAlert('success', `${title} removed from division`)
             $('#modal-delete').modal('hide')
             get_data()
         }

@@ -76,14 +76,6 @@
 							<textarea class="form-control form-control-sm" id="edit_description" rows="3"></textarea>
 							<div class="invalid-feedback"></div>
 						</div>
-						<!-- <div class="form-group">
-							<label for="members">Members</label>
-							<div class="container" id="list-members"></div>
-							<div class="btn btn-sms btn-block btn-outline-dark" onclick="return add_member()" role="button">
-								<i class="mdi mdi-plus"></i>Add Members
-							</div>
-							<div class="invalid-feedback"></div>
-						</div> -->
 						<div class="form-group">
 							<label class="mb-0">Members</label>
 							<div class="d-flex align-items-center flex-wrap">
@@ -116,10 +108,10 @@
 							</div>
 						</div>
 		            </div>
-		            <!-- <div class="modal-footer border-top-0">
+		            <div class="modal-footer border-top-0">
 		                <button class="btn btn-outline-dark" data-dismiss="modal">Close</button>
 		                <button class="btn btn-dark" id="edit" disabled="true">Save Changes</button>
-		            </div> -->
+		            </div>
 				</form>
 	        </div>
 	    </div>
