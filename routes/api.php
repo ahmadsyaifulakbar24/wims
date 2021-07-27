@@ -37,6 +37,7 @@ use App\Http\Controllers\API\Param\EmployeeStatusController;
 use App\Http\Controllers\API\Param\JobLevelController;
 use App\Http\Controllers\API\Param\JobPositionController;
 use App\Http\Controllers\API\Param\OrganizationController;
+use App\Http\Controllers\API\Ptkp\PtkpController;
 use App\Http\Controllers\API\Registration\CreateRegistrationController;
 use App\Http\Controllers\API\Task\CreateTaskController;
 use App\Http\Controllers\API\Task\DeleteTaskController;
@@ -106,6 +107,13 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::post('/create', [EmployeeStatusController::class, 'create']);
         Route::patch('{param:id}/update', [EmployeeStatusController::class, 'update']);
         Route::delete('{param:id}/delete', [EmployeeStatusController::class, 'delete']);
+    });
+
+    Route::prefix('ptkp')->group(function () {
+        Route::get('/{ptkp_id?}', [PtkpController::class, 'fetch']);
+        Route::post('/create', [PtkpController::class, 'create']);
+        Route::patch('{ptkp:id}/update', [PtkpController::class, 'update']);
+        Route::delete('{ptkp:id}/delete', [PtkpController::class, 'delete']);
     });
 
     Route::prefix('employee')->group(function () {
