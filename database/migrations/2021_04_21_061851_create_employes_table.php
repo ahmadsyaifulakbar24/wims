@@ -52,7 +52,7 @@ class CreateEmployesTable extends Migration
             // payrol
             $table->bigInteger('basic_salary');
             $table->string('npwp')->nullable();
-            $table->foreignId('ptkp_id')->nullable()->constrained('master_params')->onDelete('cascade')->onUpdate('cascade');
+            $table->bigInteger('ptkp_id')->nullable()->unsigned();
             $table->bigInteger('bank_id')->unsigned()->nullable();
             $table->string('bank_account')->nullable();
             $table->string('bank_account_holder')->nullable();
