@@ -236,6 +236,8 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::get('marital_status', [GetMasterParamController::class, 'marital_status']);
         Route::get('blood_type', [GetMasterParamController::class, 'blood_type']);
         Route::get('bank', [GetMasterParamController::class, 'bank']);
+        Route::get('province', [GetMasterParamController::class, 'province']);
+        Route::get('city/{province:id}', [GetMasterParamController::class, 'city']);
     });
 
 });
