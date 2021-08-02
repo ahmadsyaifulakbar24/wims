@@ -29,7 +29,7 @@ class CreateCompaniesTable extends Migration
             $table->string('phone_number')->nullable();
             $table->string('email')->nullable();
             $table->string('bpjs')->nullable();
-            $table->string('jkk')->nullable();
+            $table->foreignId('jkk')->nullable()->constrained('master_params')->onDelete('cascade')->onUpdate('cascade');
             $table->string('npwp')->nullable();
             $table->date('taxable_date')->nullable();
             $table->string('tax_person_name')->nullable();

@@ -30,7 +30,12 @@ class UpdateCompanyController extends Controller
             'phone_number' => ['required', 'numeric'],
             'email' => ['required', 'email'],
             'bpjs' => ['required', 'string'],
-            'jkk' => ['required', 'string'],
+            'jkk' => [
+                'required',
+                Rule::exists('master_params', 'id')->where( function($query) {
+                    return $query->where('category', 'jkk');
+                })
+            ],
             'npwp' => ['required', 'string'],
             'taxable_date' => ['required', 'date'],
             'tax_person_name' => ['required', 'string'],
