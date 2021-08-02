@@ -6,6 +6,7 @@ use App\Http\Controllers\API\attendance\GetAttendanceController;
 use App\Http\Controllers\API\attendance\UpdateAttendanceController;
 use App\Http\Controllers\API\Auth\LoginController;
 use App\Http\Controllers\API\Auth\LogoutController;
+use App\Http\Controllers\API\Auth\ResetPasswordController;
 use App\Http\Controllers\API\Board\BoardMemberController;
 use App\Http\Controllers\API\Board\CreateBoardController;
 use App\Http\Controllers\API\Board\DeleteBoardController;
@@ -73,6 +74,7 @@ Route::post('login', LoginController::class);
 Route::post('registration', CreateRegistrationController::class);
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('logout', LogoutController::class);
+    Route::post('reset_password', ResetPasswordController::class);
 
     Route::prefix('company')->group(function () {
         Route::get('/fetch/{company_id?}', GetCompanyController::class);
