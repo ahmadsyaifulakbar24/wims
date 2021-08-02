@@ -65,6 +65,11 @@ class GetMasterParamController extends Controller
         );
     }
 
+    public function jkk()
+    {
+        return $this->MasterQuery('jkk', 'success get jkk data');
+    }
+
     public function MasterQuery($category, $message)
     {
         $data = MasterParam::where('category', $category)->orderBy('order', 'DESC')->get();

@@ -168,5 +168,35 @@ class MasterParam extends Seeder
             'category' => 'employee_reach',
             'name' => '> 700'
         ]);
+
+        DB::table('master_params')->insert([
+            'parent_id' => null,
+            'category' => 'jkk',
+            'name' => 0.24
+        ]);
+
+        DB::table('master_params')->insert([
+            'parent_id' => null,
+            'category' => 'jkk',
+            'name' => 0.54
+        ]);
+
+        DB::table('master_params')->insert([
+            'parent_id' => null,
+            'category' => 'jkk',
+            'name' => 0.89
+        ]);
+
+        DB::table('master_params')->insert([
+            'parent_id' => null,
+            'category' => 'jkk',
+            'name' => 1.27
+        ]);
+
+        DB::table('master_params')->insert([
+            'parent_id' => null,
+            'category' => 'jkk',
+            'name' => 1.74
+        ]);
     }
 }

@@ -238,6 +238,7 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::get('bank', [GetMasterParamController::class, 'bank']);
         Route::get('province', [GetMasterParamController::class, 'province']);
         Route::get('city/{province:id}', [GetMasterParamController::class, 'city']);
+        Route::get('jkk', [GetMasterParamController::class, 'jkk']);
     });
 
 });
