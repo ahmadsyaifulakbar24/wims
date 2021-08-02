@@ -6,7 +6,9 @@ use App\Helpers\ResponseFormatter;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\MasterParam\MasterParamResource;
 use App\Models\Bank;
+use App\Models\City;
 use App\Models\MasterParam;
+use App\Models\Province;
 use Illuminate\Http\Request;
 
 class GetMasterParamController extends Controller
@@ -44,6 +46,25 @@ class GetMasterParamController extends Controller
             'success get bank data'
         );
     }
+
+    public function province()
+    {
+        $province = Province::all();
+        return ResponseFormatter::success(
+            $province,
+            'success get province data'
+        );
+    }
+
+    public function city(Province $province)
+    {
+        $city = City::where('province_id', $province->id)->get();
+        return ResponseFormatter::success(
+            $city,
+            'success get city data'
+        );
+    }
+
     public function MasterQuery($category, $message)
     {
         $data = MasterParam::where('category', $category)->orderBy('order', 'DESC')->get();
