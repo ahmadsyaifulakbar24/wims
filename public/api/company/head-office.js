@@ -41,7 +41,7 @@ $.ajax({
         // console.log(result)
         $.each(result.data, function(index, value) {
             append = `<option value="${value.id}">${value.name}%</option>`
-            $('#jkk').append(append)
+            $('#jkk_id').append(append)
         })
     }
 })
@@ -83,7 +83,7 @@ function get_data() {
 	        $('#phone_number').val(value.phone_number)
 	        $('#email').val(value.email)
 	        $('#bpjs').val(value.bpjs)
-	        $('#jkk').val(value.jkk)
+	        $('#jkk_id').val(value.jkk_id)
 	        $('#npwp').val(value.npwp)
 	        $('#taxable_date').val(value.taxable_date)
 	        $('#tax_person_name').val(value.tax_person_name)
@@ -114,7 +114,7 @@ $('form').submit(function(e) {
     formData.append('phone_number', $('#phone_number').val())
     formData.append('email', $('#email').val())
     formData.append('bpjs', $('#bpjs').val())
-    formData.append('jkk', $('#jkk').val())
+    formData.append('jkk_id', $('#jkk_id').val())
     formData.append('npwp', $('#npwp').val())
     formData.append('taxable_date', $('#taxable_date').val())
     formData.append('tax_person_name', $('#tax_person_name').val())
@@ -165,9 +165,9 @@ $('form').submit(function(e) {
                 $('#bpjs').addClass('is-invalid')
                 $('#bpjs').siblings('.invalid-feedback').html(err.bpjs)
             }
-            if (err.jkk) {
-                $('#jkk').addClass('is-invalid')
-                $('#jkk').siblings('.invalid-feedback').html(err.jkk)
+            if (err.jkk_id) {
+                $('#jkk_id').addClass('is-invalid')
+                $('#jkk_id').siblings('.invalid-feedback').html(err.jkk_id)
             }
             if (err.npwp) {
                 $('#npwp').addClass('is-invalid')
