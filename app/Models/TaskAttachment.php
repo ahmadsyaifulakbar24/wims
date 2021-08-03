@@ -17,4 +17,9 @@ class TaskAttachment extends Model
         'file_url',
         'type',
     ];
+
+    public function setFileUrlAttribute($value)
+    {
+        $this->attributes['file_url'] = url('storage/'.$value);
+    }
 }
