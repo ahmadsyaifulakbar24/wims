@@ -28,6 +28,21 @@ class Attendance extends Model
         'home_description',
     ];
 
+    protected $appends = [
+        'login_image_url',
+        'home_image_url'
+    ];
+
+    public function getLoginImageUrl()
+    {
+        return url('') . Storage::url($this->attributes['login_image_url']);
+    }
+
+    public function HomeLoginImageUrl()
+    {
+        return url('') . Storage::url($this->attributes['home_image_url']);
+    }
+
     public function employee()
     {
         return $this->belongsTo(Employe::class, 'employee_id');

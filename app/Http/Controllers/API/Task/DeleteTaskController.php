@@ -8,6 +8,8 @@ use App\Models\Checklist;
 use App\Models\ChecklistItem;
 use App\Models\Task;
 use App\Models\TaskAttachment;
+use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class DeleteTaskController extends Controller
 {
@@ -53,6 +55,24 @@ class DeleteTaskController extends Controller
         return ResponseFormatter::success(
             $result,
             'success delete task attachment data'
+        );
+    }
+
+    public function label(Request $request, Task $task)
+    {
+        $this->validate($request, [
+            'board_label_id' => [
+                'required',
+                Rule::exists('task_labels', 'board_label_id')->where(function($query) use ($task){
+                    return $query->where('task_id', $task->id);
+                })
+            ]
+        ]);
+
+        $result = $task->label()->where('board_label_id', $request->board_label_id)->delete();
+        return ResponseFormatter::success(
+            $result,
+            'success delete task lable data'
         );
     }
 }

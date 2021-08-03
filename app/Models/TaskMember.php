@@ -18,4 +18,9 @@ class TaskMember extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function task()
+    {
+        return $this->belongsTo(Task::class, 'task_id');
+    }
 }

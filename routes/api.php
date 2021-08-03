@@ -189,6 +189,12 @@ Route::middleware('auth:sanctum')->group(function () {
             Route::patch('{comment:id}/update_comment', UpdateCommentController::class);
             Route::delete('{comment:id}/delete_comment', DeleteCommentController::class);
         // End Task Comment
+
+        // Task Lable
+            Route::post('{task:id}/create_label', [CreateTaskController::class, 'label']);
+            Route::get('{task:id}/get_label', [GetTaskController::class, 'label']);
+            Route::delete('{task:id}/delete_label', [DeleteTaskController::class, 'label']);
+        // End Task Lable
     });
 
     Route::prefix('user_report')->group(function () {

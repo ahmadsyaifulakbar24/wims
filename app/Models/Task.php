@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\DB;
 
 class Task extends Model
 {
@@ -25,6 +26,13 @@ class Task extends Model
         return $this->belongsToMany(User::class, 'task_members', 'task_id', 'user_id');
     }
 
+    public function scopeTaskJoinTaskMember()
+    {
+        return DB::table($this->table . ' AS a')
+                ->join('task_members AS b', 'a.id', '=', 'b.task_id')
+                ->select('a.*', 'b.user_id');
+    }
+
     public function task_member_many()
     {
         return $this->hasMany(TaskMember::class, 'task_id');
@@ -43,5 +51,10 @@ class Task extends Model
     public function comment()
     {
         return $this->hasMany(Comment::class, 'task_id');
+    }
+
+    public function label()
+    {
+        return $this->hasMany(TaskLabel::class, 'task_id');
     }
 }
