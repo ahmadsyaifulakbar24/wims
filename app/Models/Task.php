@@ -52,4 +52,9 @@ class Task extends Model
     {
         return $this->hasMany(Comment::class, 'task_id');
     }
+
+    public function label()
+    {
+        return $this->hasMany(TaskLabel::class, 'task_id');
+    }
 }

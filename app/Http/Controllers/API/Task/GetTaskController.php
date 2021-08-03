@@ -8,6 +8,7 @@ use App\Http\Resources\Member\MemberResource;
 use App\Http\Resources\Task\ChecklistResource;
 use App\Http\Resources\Task\TaskAttachmentResource;
 use App\Http\Resources\Task\TaskDetailResource;
+use App\Http\Resources\Task\TaskLabelResource;
 use App\Http\Resources\Task\TaskResource;
 use App\Models\Task;
 use Illuminate\Http\Request;
@@ -66,6 +67,14 @@ class GetTaskController extends Controller
         return ResponseFormatter::success(
             TaskAttachmentResource::collection($task->attachment),
             'success get task attachment'
+        );
+    }
+
+    public function label(Task $task)
+    {
+        return ResponseFormatter::success(
+            TaskLabelResource::collection($task->label),
+            'success get task label data'
         );
     }
 }

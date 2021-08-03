@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\Task\ChecklistItemResource;
 use App\Http\Resources\Task\ChecklistResource;
 use App\Http\Resources\Task\TaskAttachmentResource;
+use App\Http\Resources\Task\TaskLabelResource;
 use App\Http\Resources\Task\TaskResource;
 use App\Models\Checklist;
 use App\Models\Task;
@@ -118,6 +119,30 @@ class CreateTaskController extends Controller
         return ResponseFormatter::success(
             new TaskAttachmentResource($attachment),
             'success attachment data'
+        );
+    }
+
+    public function label(Request $request, Task $task)
+    {
+        $this->validate($request, [
+            'board_label_id' => [
+                'required',
+                Rule::exists('board_labels', 'id')->where(function($query) use ($task){
+                    return $query->where('board_id', $task->board_id);
+                })
+            ]
+        ]);
+
+        if($task->label()->where('board_label_id', $request->board_label_id)->count() >= 1) {
+            return ResponseFormatter::error([
+                'label already exists'
+            ], 'error create label', 422);
+        }
+
+        $label = $task->label()->create($request->all());
+        return ResponseFormatter::success(
+            new TaskLabelResource($label),
+            'success create task label'
         );
     }
 }
