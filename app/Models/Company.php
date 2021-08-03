@@ -26,7 +26,7 @@ class Company extends Model
         'phone_number',
         'email',
         'bpjs',
-        'jkk',
+        'jkk_id',
         'npwp',
         'taxable_date',
         'tax_person_name',
