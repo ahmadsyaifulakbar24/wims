@@ -18,12 +18,22 @@ class GetTaskController extends Controller
     {
         $this->validate($request, [
             'board_id' => ['required', 'exists:boards,id'],
+            'user_id' => ['nullable', 'exists:users,id']
         ]);
         $success_message = 'success get task data';
+        
         if($task_id) {
             $task = Task::find($task_id);
             return ResponseFormatter::success(
                 new TaskDetailResource($task),
+                $success_message
+            );
+        }
+
+        if($request->user_id){
+            $task = Task::taskJoinTaskMember()->where([ ['user_id', $request->user_id], ['board_id', $request->board_id] ])->get();
+            return ResponseFormatter::success(
+                TaskResource::collection($task),
                 $success_message
             );
         }
