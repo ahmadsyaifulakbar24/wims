@@ -1,13 +1,13 @@
 @extends('layouts/app')
 
-@section('title','Employees')
+@section('title','Employee')
 
 @section('content')
 	<div class="container">
 		<div class="card">
 			<div class="card-header border-bottom-0">
 				<div class="d-flex align-items-center justify-content-between">
-					<h4 class="d-none d-md-block mb-0">Employees</h4>
+					<h4 class="d-none d-md-block mb-0">Employee</h4>
 					<div>
 						<!-- <i class="mdi mdi-24px mdi-magnify" role="button"></i>
 						<i class="mdi mdi-24px mdi-tune" data-toggle="modal" data-target="#modal-filter" role="button"></i> -->
@@ -39,7 +39,7 @@
 @endsection
 
 @section('script')
-	<script src="{{asset('api/employees.js')}}"></script>
+	<script src="{{asset('api/employee.js')}}"></script>
 	<script>
 		$(function () {
 			$('[data-toggle="tooltip"]').tooltip()

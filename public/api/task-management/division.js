@@ -23,7 +23,7 @@ function get_data() {
 								<i class="mdi mdi-18px mdi-trash-can-outline pr-0 delete" data-id="${value.id}" data-name="${value.name}" role="button"></i>
 							</div>
 						</div>
-						<a href="${root}/task-management/division/${value.id}" class="card-body text-dark">
+						<a href="${root}/task-management/board/${value.id}" class="card-body text-dark">
 							<p class="text-secondary">${value.pic.name}</p>
 						</a>
 					</div>
@@ -38,7 +38,7 @@ $.ajax({
     url: `${api_url}/employee/fetch`,
     type: 'GET',
     data: {
-        pic_id: user
+        pic_id: user_id
     },
     beforeSend: function(xhr) {
         xhr.setRequestHeader("Authorization", "Bearer " + token)
@@ -74,7 +74,7 @@ $('#form-create').submit(function(e) {
     let formData = new FormData()
     formData.append('name', $('#name').val())
     formData.append('pic_id', $('#pic_id').val())
-    formData.append('user_id', user)
+    formData.append('user_id', user_id)
     $('#submit').attr('disabled', true)
     $.ajax({
         url: `${api_url}/division/create`,

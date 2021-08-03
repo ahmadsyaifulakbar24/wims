@@ -1,8 +1,14 @@
 $.ajax({
-    url: `${api_url}/employee/fetch`,
+    url: `${api_url}/company/fetch`,
     type: 'GET',
+    data: {
+        type: 'branch'
+    },
+    beforeSend: function(xhr) {
+        xhr.setRequestHeader("Authorization", "Bearer " + token)
+    },
     success: function(result) {
-        // console.log(result)
+        console.log(result)
         if (result.data != '') {
             $.each(result.data, function(index, value) {
                 append = `<tr>
@@ -13,14 +19,11 @@ $.ajax({
 							<span>${value.name}</span>
 						</a>
 					</td>
-					<td class="text-truncate">${value.employee_id}</td>
-					<td class="text-truncate">${value.organization_id.param}</td>
-					<td class="text-truncate">${value.job_position_id.param}</td>
-					<td class="text-truncate">${value.job_level_id.param}</td>
-					<td class="text-truncate">
-						<i class="mdi mdi-18px mdi-pencil-outline"></i>
-						<i class="mdi mdi-18px mdi-trash-can-outline"></i>
-					</td>
+					<td class="text-truncate">${value.ref_company_code}</td>
+					<td class="text-truncate">${value.employee_reach_id}</td>
+					<td class="text-truncate">${value.email}</td>
+					<td class="text-truncate">${value.phone_number}</td>
+					<td class="text-truncate"></td>
 				</tr>`
                 $('#table').append(append)
             })

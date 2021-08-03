@@ -23,8 +23,10 @@ Route::group(['middleware'=>['beforeMiddleware']], function () {
 		return view('dashboard');
 	});
 
-	Route::get('employees', function () {
-		return view('employees');
+
+	// Employee
+	Route::get('employee', function () {
+		return view('employee');
 	});
 	Route::get('employee/create', function () {
 		return view('create-employee');
@@ -33,27 +35,75 @@ Route::group(['middleware'=>['beforeMiddleware']], function () {
 		return view('view-employee', compact('id'));
 	});
 	
+
+	// Task Management
 	Route::get('task-management/division', function () {
-		return view('division');
+		return view('task-management/division');
 	});
-    Route::get('task-management/division/{id}', function ($id) {
-        return view('view-division', compact('id'));
-    });
     Route::get('task-management/board/{id}', function ($id) {
-        return view('view-board', compact('id'));
+        return view('task-management/board', compact('id'));
+    });
+    Route::get('task-management/task/{id}', function ($id) {
+        return view('task-management/task', compact('id'));
     });
 
+
+    // Time Management
 	Route::get('time-management/attendance', function () {
 		return view('attendance');
 	});
 	Route::get('time-management/attendance/{id}', function ($id) {
 		return view('view-attendance', compact('id'));
 	});
-	
-	Route::get('branch', function () {
-		return view('branch');
+
+	Route::get('time-management/leave', function () {
+		return view('time-management/leave');
 	});
-	Route::get('company', function () {
-		return view('company');
+	Route::get('time-management/leave/{id}', function ($id) {
+		return view('time-management/view-leave', compact('id'));
+	});
+	
+
+	// Company
+	Route::get('company/branch', function () {
+		return view('company/branch');
+	});
+	Route::get('company/branch/{id}', function ($id) {
+		return view('view-branch', compact('id'));
+	});
+
+	Route::get('company/head-office', function () {
+		return view('company/head-office');
+	});
+	Route::get('company/head-office/{id}', function ($id) {
+		return view('view-head-office', compact('id'));
+	});
+
+	Route::get('company/organization-structure', function () {
+		return view('company/organization-structure');
+	});
+	Route::get('company/organization-structure/{id}', function ($id) {
+		return view('view-organization-structure', compact('id'));
+	});
+
+	Route::get('company/job-level', function () {
+		return view('company/job-level');
+	});
+	Route::get('company/job-level/{id}', function ($id) {
+		return view('view-job-level', compact('id'));
+	});
+
+	Route::get('company/job-position', function () {
+		return view('company/job-position');
+	});
+	Route::get('company/job-position/{id}', function ($id) {
+		return view('view-job-position', compact('id'));
+	});
+
+	Route::get('company/employee-status', function () {
+		return view('company/employee-status');
+	});
+	Route::get('company/employee-status/{id}', function ($id) {
+		return view('view-employee-status', compact('id'));
 	});
 });

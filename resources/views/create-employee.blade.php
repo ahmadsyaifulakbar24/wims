@@ -343,7 +343,7 @@
 		                    		<a href="{{url('employee/create')}}" class="btn btn-block btn-dark">Add another employee</a>
 		                    	</div>
                     			<div class="col-md-4">
-		                    		<a href="{{url('employees')}}" class="btn btn-block btn-outline-dark">Back to employees</a>
+		                    		<a href="{{url('employee')}}" class="btn btn-block btn-outline-dark">Back to employees</a>
 		                    	</div>
 	                    	</div>
                     	</div>

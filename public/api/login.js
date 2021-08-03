@@ -18,8 +18,9 @@ $('#form').submit(function(e) {
         success: function(result) {
             let value = result.data
             localStorage.setItem('token', value.access_token)
-            localStorage.setItem('user', value.user.id)
+            localStorage.setItem('user_id', value.user.id)
             localStorage.setItem('name', value.user.name)
+            localStorage.setItem('username', value.user.username)
             localStorage.setItem('role', value.user.role_id.id)
             localStorage.setItem('photo', value.user.profile_photo_url)
             $.ajax({

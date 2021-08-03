@@ -405,6 +405,10 @@ td:last-child {
     padding: 15px;
 }
 
+.mw-75 {
+	max-width: 75%;
+}
+
 @media (min-width: 34em) {
     .card-columns {
         -webkit-column-count: 2;

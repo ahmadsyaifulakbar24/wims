@@ -12,7 +12,7 @@
 						<!-- <i class="mdi mdi-24px mdi-magnify" role="button"></i>
 						<i class="mdi mdi-24px mdi-tune" data-toggle="modal" data-target="#modal-filter" role="button"></i> -->
 						<a href="{{url('branch/create')}}" class="text-dark" data-toggle="tooltip" data-placement="bottom" title="Add branch">
-							<i class="mdi mdi-24px mdi-plus-circle-outline"></i>
+							<i class="mdi mdi-24px mdi-plus-circle-outline pr-0"></i>
 						</a>
 					</div>
 				</div>
@@ -22,9 +22,8 @@
 					<thead>
 						<tr>
 							<th class="text-truncate text-center">No.</th>
-							<th class="text-truncate">Company Name</th>
-							<th class="text-truncate">Company Code</th>
-							<th class="text-truncate">Type</th>
+							<th class="text-truncate">Branch Name</th>
+							<th class="text-truncate">Branch Code</th>
 							<th class="text-truncate">Number of Employee</th>
 							<th class="text-truncate">Email</th>
 							<th class="text-truncate">Phone Number</th>
@@ -47,7 +46,7 @@
 @endsection
 
 @section('script')
-	<script src="{{asset('api/branch.js')}}"></script>
+	<script src="{{asset('api/company/branch.js')}}"></script>
 	<script>
 		$(function () {
 			$('[data-toggle="tooltip"]').tooltip()

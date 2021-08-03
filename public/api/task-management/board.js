@@ -25,7 +25,7 @@ function get_data() {
 								<i class="mdi mdi-18px mdi-trash-can-outline pr-0 delete" role="button"></i>
 							</div>
 						</div>
-						<a href="${root}/task-management/board/${value.id}" class="card-body text-dark">
+						<a href="${root}/task-management/task/${value.id}" class="card-body text-dark">
 							<p class="text-secondary text-truncate mb-0">${value.description}</p>
 						</a>
 					</div>
@@ -54,7 +54,7 @@ $.ajax({
     url: `${api_url}/employee/fetch`,
     type: 'GET',
     data: {
-        pic_id: user
+        pic_id: user_id
     },
     beforeSend: function(xhr) {
         xhr.setRequestHeader("Authorization", "Bearer " + token)

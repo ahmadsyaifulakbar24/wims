@@ -1,15 +1,19 @@
+const token = localStorage.getItem('token')
+const user_id = localStorage.getItem('user_id')
+const name = localStorage.getItem('name')
+const username = localStorage.getItem('username')
+const role = localStorage.getItem('role')
+
 if (localStorage.getItem('token') != null) {
     $.ajaxSetup({
         beforeSend: function(xhr) {
             xhr.setRequestHeader('Authorization', `Bearer ${token}`)
         }
     })
+	$('.name').html(name)
+	$('.username').append(username)
+	$('.avatar').attr('src', localStorage.getItem('photo'))
 }
-if (localStorage.getItem('name')) $('.name').html(localStorage.getItem('name'))
-if (localStorage.getItem('photo')) $('.avatar').attr('src', localStorage.getItem('photo'))
-const token = localStorage.getItem('token')
-const user = localStorage.getItem('user')
-const role = localStorage.getItem('role')
 
 $(document).on('keydown', 'input', function() {
     $(this).removeClass('is-invalid')
@@ -104,7 +108,7 @@ function customAlert(status, param) {
         case 'trash':
             icon = '<i class="mdi mdi-18px mdi-trash-can-outline"></i>'
     }
-    
+
     let timeout = setTimeout(function() {
         $('.customAlert').removeClass('active')
         $('.customAlert').animate({ bottom: "-=120px" }, 150)
@@ -115,7 +119,7 @@ function customAlert(status, param) {
         $('.customAlert').removeClass('active')
         $('.customAlert').animate({ bottom: "-=120px" }, 150)
     }
-	    timeout
+    timeout
     $('.customAlert').html(icon + param)
     $('.customAlert').addClass('active')
     $('.customAlert').animate({ bottom: "+=120px" }, 150)
@@ -125,7 +129,8 @@ function date_now() {
     let date = new Date()
     let a = date.getDay()
     let d = date.getDate()
-    let m = date.getMonth()
+    let m = date.getMonth() + 1
+    if (m.toString().length < 2) m = '0' + m
     let y = date.getFullYear()
     return `${day_format(a)}, ${d} ${month_format(m)} ${y}`
 }
@@ -134,9 +139,7 @@ function date_format(param) {
     let d = param.substr(8, 2)
     let m = param.substr(5, 2)
     let y = param.substr(0, 4)
-    if (d.toString().length < 2) d = '0' + d
-    if (m.toString().length < 2) m = '0' + m
-    return `${d}/${m}/${y}`
+    return `${d} ${month_format(m)} ${y}`
 }
 
 function day_format(param) {
@@ -168,43 +171,42 @@ function day_format(param) {
 
 function month_format(param) {
     let month
-    switch (param + 1) {
-        case 1:
-            month = "January"
+    switch (param) {
+        case "01":
+            month = "Jan"
             break;
-        case 2:
-            month = "February"
+        case "02":
+            month = "Feb"
             break;
-        case 3:
-            month = "March"
+        case "03":
+            month = "Mar"
             break;
-        case 4:
-            month = "April"
+        case "04":
+            month = "Apr"
             break;
-        case 5:
+        case "05":
             month = "May"
             break;
-        case 6:
-            month = "June"
+        case "06":
+            month = "Jun"
             break;
-        case 7:
-            month = "Jule"
+        case "07":
+            month = "Jul"
             break;
-        case 8:
-            month = "August"
+        case "08":
+            month = "Aug"
             break;
-        case 9:
-            month = "September"
+        case "09":
+            month = "Sep"
             break;
-        case 10:
-            month = "October"
+        case "10":
+            month = "Oct"
             break;
-        case 11:
-            month = "November"
+        case "11":
+            month = "Nov"
             break;
-        case 12:
-            month = "December"
-            break;
+        case "12":
+            month = "Dec"
     }
     return month
 }
@@ -340,3 +342,16 @@ function icon(param) {
     }
     return icon
 }
+
+function DataURIToBlob(dataURI) {
+    const splitDataURI = dataURI.split(',')
+    const byteString = splitDataURI[0].indexOf('base64') >= 0 ? atob(splitDataURI[1]) : decodeURI(splitDataURI[1])
+    const mimeString = splitDataURI[0].split(':')[1].split(';')[0]
+
+    const ia = new Uint8Array(byteString.length)
+    for (let i = 0; i < byteString.length; i++)
+        ia[i] = byteString.charCodeAt(i)
+
+    return new Blob([ia], { type: mimeString })
+}
+
