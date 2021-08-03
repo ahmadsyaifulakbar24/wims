@@ -30,7 +30,7 @@ class UpdateCompanyController extends Controller
             'phone_number' => ['required', 'numeric'],
             'email' => ['required', 'email'],
             'bpjs' => ['required', 'string'],
-            'jkk' => [
+            'jkk_id' => [
                 'required',
                 Rule::exists('master_params', 'id')->where( function($query) {
                     return $query->where('category', 'jkk');
@@ -56,7 +56,7 @@ class UpdateCompanyController extends Controller
             $input['phone_number'] = $request->phone_number;
             $input['email'] = $request->email;
             $input['bpjs'] = $request->bpjs;
-            $input['jkk'] = $request->jkk;
+            $input['jkk_id'] = $request->jkk_id;
             $input['npwp'] = $request->npwp;
             $input['taxable_date'] = $request->taxable_date;
             $input['tax_person_name'] = $request->tax_person_name;
