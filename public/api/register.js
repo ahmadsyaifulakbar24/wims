@@ -40,9 +40,8 @@ $('form').submit(function(e) {
         error: function(xhr) {
             removeLoading('Register')
             let err = xhr.responseJSON.errors
-            console.clear()
-            console.log(xhr)
-
+            // console.clear()
+            // console.log(err)
             if (err.name) {
             	$('#name').addClass('is-invalid')
             	$('#name').siblings('.invalid-feedback').html(err.name)
