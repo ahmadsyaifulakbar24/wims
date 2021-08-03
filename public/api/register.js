@@ -41,7 +41,7 @@ $('form').submit(function(e) {
             removeLoading('Register')
             let err = xhr.responseJSON.errors
             console.clear()
-            // console.log(err)
+            console.log(xhr)
 
             if (err.name) {
             	$('#name').addClass('is-invalid')

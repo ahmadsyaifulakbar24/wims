@@ -71,7 +71,7 @@ class User extends Authenticatable
 
     public function getProfilePhotoUrlAttribute()
     {
-        return ($this->attributes['profile_photo_path']) ? url('') . Storage::url($this->attributes['profile_photo_path']) : "https://ui-avatars.com/api/?name=" . str_replace(' ', '+', $this->attributes['name']) . "&color=7F9CF5&background=EBF4FF";
+        return (!empty($this->attributes['profile_photo_path'])) ? url('') . Storage::url($this->attributes['profile_photo_path']) : "https://ui-avatars.com/api/?name=" . str_replace(' ', '+', $this->attributes['name']) . "&color=7F9CF5&background=EBF4FF";
     }
 
     public static function boot()
