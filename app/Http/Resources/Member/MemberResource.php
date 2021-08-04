@@ -15,7 +15,8 @@ class MemberResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->pivot->board_id,
+            'id' => $this->pivot->id,
+            'board_id' => $this->pivot->board_id,
             'user_id' => $this->id,
             'name' => $this->name,
             'username' => $this->username,
