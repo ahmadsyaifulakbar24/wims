@@ -23,7 +23,7 @@ class Task extends Model
 
     public function task_members()
     {
-        return $this->belongsToMany(User::class, 'task_members', 'task_id', 'user_id');
+        return $this->belongsToMany(User::class, 'task_members', 'task_id', 'user_id')->withPivot('id');
     }
 
     public function scopeTaskJoinTaskMember()
@@ -56,5 +56,10 @@ class Task extends Model
     public function label()
     {
         return $this->hasMany(TaskLabel::class, 'task_id');
+    }
+
+    public function board()
+    {
+        return $this->belongsTo(Board::class, 'board_id');
     }
 }
