@@ -54,7 +54,7 @@
 								</div>
 								<div class="form-group col-sm-6">
 									<label for="date_of_birth" class="col-form-label">Date of birth</label>
-									<input type="date" class="form-control" id="date_of_birth">
+									<input type="date" class="form-control" id="date_of_birth" required>
 									<div class="invalid-feedback"></div>
 								</div>
 							</div>
