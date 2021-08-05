@@ -25,7 +25,7 @@ class Board extends Model
 
     public function board_member()
     {
-        return $this->belongsToMany(User::class, 'board_members', 'board_id', 'user_id');
+        return $this->belongsToMany(User::class, 'board_members', 'board_id', 'user_id')->withPivot('id');
     }
 
     public function board_label()
