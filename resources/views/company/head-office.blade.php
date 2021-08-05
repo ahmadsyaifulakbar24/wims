@@ -85,9 +85,8 @@
 									<div class="invalid-feedback"></div>
 								</div>
 								<div class="form-group col-sm-6">
-									<label for="jkk" class="col-form-label">JKK*</label>
-									<!-- <input type="tel" class="form-control" id="jkk"> -->
-									<select class="custom-select" id="jkk" role="button">
+									<label for="jkk_id" class="col-form-label">JKK*</label>
+									<select class="custom-select" id="jkk_id" role="button">
 										<option disabled selected value="">Choose</option>
 									</select>
 									<div class="invalid-feedback"></div>
