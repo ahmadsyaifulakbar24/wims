@@ -15,7 +15,8 @@ class ChecklistItem extends Model
         'item',
         'start_due_date',
         'finish_due_date',
-        'assign_id'
+        'assign_id',
+        'done',
     ];
 
     public function checklist()

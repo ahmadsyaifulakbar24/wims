@@ -59,7 +59,8 @@ class UpdateTaskController extends Controller
                 Rule::exists('task_members', 'user_id')->where(function ($query) use ($checklist){
                     return $query->where('task_id', $checklist->task_id);
                 }),
-            ]
+            ],
+            'done' => ['required', 'boolean'],
         ]);
 
         $input = $request->all();

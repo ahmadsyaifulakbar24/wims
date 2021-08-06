@@ -24,6 +24,7 @@ class ChecklistItemResource extends JsonResource
                 'id' => (!empty($this->assign)) ? $this->assign->id : null,
                 'name' => (!empty($this->assign)) ? $this->assign->name : null,
             ],
+            'done' => $this->done
         ];
     }
 }
