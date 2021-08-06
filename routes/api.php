@@ -24,7 +24,7 @@ use App\Http\Controllers\API\Company\UpdateCompanyController;
 use App\Http\Controllers\API\Division\CreateDivisionController;
 use App\Http\Controllers\API\DIvision\DeleteDivisionController;
 use App\Http\Controllers\API\DIvision\GetDivisionController;
-use App\Http\Controllers\API\DIvision\UpdateDivisionController;
+use App\Http\Controllers\API\Division\UpdateDivisionController;
 use App\Http\Controllers\API\Employee\CreateEmployeeController;
 use App\Http\Controllers\API\Employee\DeleteEmployeController;
 use App\Http\Controllers\API\Employee\GetEmployeeController;
