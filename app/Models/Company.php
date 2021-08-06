@@ -63,4 +63,9 @@ class Company extends Model
     {
         return $this->belongsTo(Company::class, 'company_id');
     }
+
+    public function jkk()
+    {
+        return $this->belongsTo(MasterParam::class, 'jkk_id');
+    }
 }

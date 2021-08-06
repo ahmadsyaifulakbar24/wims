@@ -3,6 +3,8 @@
 namespace App\Http\Resources\Company;
 
 use App\Http\Resources\City\CityResource;
+use App\Http\Resources\MasterParam\MasterParamResource;
+use App\Http\Resources\Param\ParamResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class CompanyResource extends JsonResource
@@ -28,7 +30,7 @@ class CompanyResource extends JsonResource
             'phone_number' => $this->phone_number,
             'email' => $this->email,
             'bpjs' => $this->bpjs,
-            'jkk' => $this->jkk,
+            'jkk' => new MasterParamResource($this->jkk),
             'npwp' => $this->npwp,
             'taxable_date' => $this->taxable_date,
             'tax_person_name' => $this->tax_person_name,
