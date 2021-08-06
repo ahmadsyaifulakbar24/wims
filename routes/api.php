@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\API\Attendance\CreateAttendanceController;
-use App\Http\Controllers\API\attendance\DeleteAttendanceController;
-use App\Http\Controllers\API\attendance\GetAttendanceController;
-use App\Http\Controllers\API\attendance\UpdateAttendanceController;
+use App\Http\Controllers\API\Attendance\DeleteAttendanceController;
+use App\Http\Controllers\API\Attendance\GetAttendanceController;
+use App\Http\Controllers\API\Attendance\UpdateAttendanceController;
 use App\Http\Controllers\API\Auth\LoginController;
 use App\Http\Controllers\API\Auth\LogoutController;
 use App\Http\Controllers\API\Auth\ResetPasswordController;
