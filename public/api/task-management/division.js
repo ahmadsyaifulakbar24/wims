@@ -5,12 +5,6 @@ function get_data() {
     $.ajax({
         url: `${api_url}/division/fetch`,
         type: 'GET',
-        // data: {
-        //     user_id: user
-        // },
-        beforeSend: function(xhr) {
-            xhr.setRequestHeader("Authorization", "Bearer " + token)
-        },
         success: function(result) {
             $.each(result.data, function(index, value) {
                 // console.log(value)
@@ -39,9 +33,6 @@ $.ajax({
     type: 'GET',
     data: {
         pic_id: user_id
-    },
-    beforeSend: function(xhr) {
-        xhr.setRequestHeader("Authorization", "Bearer " + token)
     },
     success: function(result) {
         $.each(result.data, function(index, value) {
@@ -82,9 +73,6 @@ $('#form-create').submit(function(e) {
         data: formData,
         processData: false,
         contentType: false,
-        beforeSend: function(xhr) {
-            xhr.setRequestHeader("Authorization", "Bearer " + token)
-        },
         success: function(result) {
             $('#modal-create').modal('hide')
             get_data()
@@ -112,9 +100,6 @@ $(document).on('click', '.edit', function() {
     $.ajax({
         url: `${api_url}/division/fetch/${id}`,
         type: 'GET',
-        beforeSend: function(xhr) {
-            xhr.setRequestHeader("Authorization", "Bearer " + token)
-        },
         success: function(result) {
             let value = result.data
             // console.log(result)
@@ -134,9 +119,6 @@ $('#form-edit').submit(function(e) {
         data: {
             name: $('#edit_name').val(),
             pic_id: $('#edit_pic_id').val()
-        },
-        beforeSend: function(xhr) {
-            xhr.setRequestHeader("Authorization", "Bearer " + token)
         },
         success: function(result) {
             $('#modal-edit').modal('hide')
@@ -170,9 +152,6 @@ $(document).on('click', '#delete', function() {
     $.ajax({
         url: `${api_url}/division/${id}/delete`,
         type: 'DELETE',
-        beforeSend: function(xhr) {
-            xhr.setRequestHeader("Authorization", "Bearer " + token)
-        },
         success: function(result) {
             $('#modal-delete').modal('hide')
             get_data()

@@ -1,3 +1,11 @@
+// $('.modal').on('shown.bs.modal', function() {
+//     $('input:first').focus()
+// })
+
+$(document).on('click', '.dropdown .dropdown-menu .dropdown-item', function() {
+    $(this).parents('.dropdown-menu').siblings('i').dropdown('toggle')
+})
+
 $.ajax({
     url: `${api_url}/board/fetch/${board_id}`,
     type: 'GET',
@@ -9,21 +17,21 @@ $.ajax({
     }
 })
 
-let members = null
 $.ajax({
-    url: `${api_url}/employee/fetch`,
+    url: `${api_url}/board/${board_id}/get_member`,
     type: 'GET',
+    beforeSend: function(xhr) {
+        xhr.setRequestHeader("Authorization", "Bearer " + token)
+    },
     success: function(result) {
         // console.log(result)
-        members = result
-        //     $.each(result.data, function(index, value) {
-        //         // append = `<option value="${value.id}" data-photo="${value.profile_photo_url}">${value.name}</option>`
-        //         append = `<div class="dropdown-item user_id" data-id="${value.id}" role="button">
-        // 	<img src="${value.profile_photo_url}" class="rounded-circle mr-2" width="24">
-        // 	<span class="pl-0">${value.name}</span>
-        // </div>`
-        //         $('#user_id').append(append)
-        //     })
+        $.each(result.data, function(index, value) {
+            append = `<div class="dropdown-item members" data-id="${value.user_id}" data-name="${value.name}" role="button">
+				<img src="${value.profile_photo_url}" class="rounded-circle mr-2" width="24">
+				<span class="pl-0">${value.name}</span>
+			</div>`
+            $('#list-members').append(append)
+        })
     }
 })
 
@@ -53,16 +61,35 @@ function get_task() {
 }
 
 function get_member() {
-    $('#member-task').empty()
+    $('#members').empty()
+    $('#loading-member').show()
     $.ajax({
-        url: `${api_url}/task/${task_id}/get_member`,
+        url: `${api_url}/task/${task_id}/get_task_member`,
         type: 'GET',
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader("Authorization", "Bearer " + token)
+        },
         success: function(result) {
-            console.log(result)
-            // $.each(result.data, function(index, value) {
-            //     append = ``
-            //     $('#checklist-task').prepend(append)
-            // })
+            // console.log(result)
+            $.each(result.data, function(index, value) {
+                let append = `<div class="dropdown">
+					<img src="${value.profile_photo_url}" class="rounded-circle mr-1" width="24" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+					<div class="dropdown-menu py-0">
+						<div class="p-3 border-bottom">
+							<div class="d-flex">
+								<img src="${value.profile_photo_url}" class="rounded-circle pb-1" width="40">
+								<div class="ml-3 text-truncate">
+									<h6 class="mb-0 text-truncate">${value.name}</h6>
+									<small class="text-secondary">@${value.username}</small>
+								</div>
+							</div>
+						</div>
+						<div class="dropdown-item remove-member" data-id="${value.user_id}" data-name="${value.name}" role="button">Remove from board</div>
+					</div>
+				</div>`
+                $('#members').append(append)
+            })
+            $('#loading-member').hide()
         }
     })
 }
@@ -77,7 +104,7 @@ function get_attachment() {
             $.each(result.data, function(index, value) {
                 append = `<div class="card mb-1" data-id="${value.id}" data-title="${value.name}">
 					<div class="d-flex align-items-center">
-						<a href="${root}/storage/${value.file_url}" class="d-flex align-items-center text-truncate my-3 ml-3" style="width: 90%" target="_blank">
+						<a href="${value.file_url}" class="d-flex align-items-center text-truncate my-3 ml-3" style="width: 90%" target="_blank">
 							<i class="mdi mdi-24px mdi-file-outline text-dark"></i>
 							<div class="text-primary text-truncate">${value.name}</div>
 						</a>
@@ -98,13 +125,15 @@ function get_checklist() {
         success: function(result) {
             // console.log(result)
             $.each(result.data, function(index, value) {
-                append = `<div class="mb-1">
-					<div class="form-check d-flex align-items-center pt-0" data-id="${value.id}" data-title="${value.title}">
-						<input class="form-check-input" type="checkbox" value="${value.id}" id="checklist${value.id}">
-						<label class="form-check-label" for="checklist${value.id}">${value.title}</label>
-						<div class="ml-auto">
-							<i class="mdi mdi-pencil-outline modal-checklist edit-checklist pr-0" role="button"></i>
-							<i class="mdi mdi-trash-can-outline delete-checklist pr-0" role="button"></i>
+                append = `<div class="form-check d-flex align-items-center pt-0" data-id="${value.id}" data-title="${value.title}">
+					<input class="form-check-input" type="checkbox" value="${value.id}" id="checklist${value.id}">
+					<label class="form-check-label mr-3" style="padding-top: 3px" for="checklist${value.id}">${value.title}</label>
+					<div class="dropdown dropdown-sm ml-auto">
+						<i class="mdi mdi-24px mdi-dots-horizontal pr-0" id="dropdown-checklist${value.id}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button"></i>
+						<div class="dropdown-menu dropdown-menu-right py-0" aria-labelledby="dropdown-checklist${value.id}">
+							<div class="dropdown-item modal-checklist-item create-checklist-item" role="button">Add item</div>
+							<div class="dropdown-item modal-checklist edit-checklist" role="button">Edit</div>
+							<div class="dropdown-item delete-checklist" role="button">Delete</div>
 						</div>
 					</div>
 				</div>`
@@ -135,19 +164,19 @@ function get_comment() {
         url: `${api_url}/task/${task_id}/get_comment`,
         type: 'GET',
         success: function(result) {
-            console.log(result)
+            // console.log(result)
             $.each(result.data, function(index, value) {
-                append = `<div class="d-flex align-items-start mb-3" data-id="${value.id}">
-					<img src="${localStorage.getItem('photo')}" class="rounded-circle mb-1" width="30" alt="">
+                append = `<div class="d-flex align-items-start mb-3" data-id="${value.id}" data-title="${value.comment}">
+					<img src="${value.user.profile_photo_url}" class="rounded-circle mb-1" width="30" alt="">
 					<div class="ml-3">
-						<div><b>value.name</b> <small class="text-secondary">value.date</small></div>
-						<div>${value.comment}Lorem ipsum dolor sit amet consectetur, adipisicing, elit. Ratione rerum architecto facilis nisi vel perspiciatis maiores tempore dolorem voluptates non at quia natus assumenda, suscipit soluta, culpa quos labore. Ducimus.</div>
+						<div><b>${value.user.name}</b> <small class="text-secondary">${date_format(value.created_at.substr(0, 10))}</small></div>
+						<div>${value.comment}</div>
 					</div>
-					<div class="dropdown">
-						<i class="mdi mdi-dots-horizontal pr-0" data-toggle="dropdown" role="button"></i>
-						<div class="dropdown-menu dropdown-menu-right py-0" aria-labelledby="dropdown-member">
-							<div class="dropdown-item" data-toggle="modal" data-target="#modal-task" role="button">Edit Task</div>
-							<div class="dropdown-item delete delete-task" role="button">Delete Task</div>
+					<div class="dropdown ml-auto">
+						<i class="mdi mdi-24px mdi-dots-horizontal pr-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button"></i>
+						<div class="dropdown-menu dropdown-menu-right py-0">
+							<div class="dropdown-item edit-comment" role="button">Edit</div>
+							<div class="dropdown-item delete-comment" role="button">Delete</div>
 						</div>
 					</div>
 				</div>`
@@ -187,8 +216,8 @@ $(document).on('click', '.task', function() {
             }
             $.each(value.member, function(index, value) {
                 append = `<div class="dropdown">
-					<img class="avatar rounded-circle mr-1" width="24" data-toggle="dropdown" role="button" data-display="static" aria-haspopup="true" aria-expanded="false">
-					<div class="dropdown-menu py-0" aria-labelledby="dropdown-member">
+					<img class="avatar rounded-circle mr-1" width="24" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
+					<div class="dropdown-menu py-0">
 						<div class="p-3 border-bottom">
 							<div class="d-flex">
 								<img class="avatar rounded-circle pb-1" width="40">
@@ -203,80 +232,156 @@ $(document).on('click', '.task', function() {
 				</div>`
                 $('#members').prepend(append)
             })
+	        $('#detail-task').show()
+	        $('#loading-task').hide()
         }
     })
+    get_member()
     get_attachment()
     get_checklist()
     get_comment()
-
-    $(document).ajaxStop(function() {
-        $('#detail-task').show()
-        $('#loading-task').hide()
-    })
 })
 
 $('#form-task').submit(function(e) {
     e.preventDefault()
-    $('#submit').attr('disabled', true)
-    $('.is-invalid').removeClass('is-invalid')
-    let formData = new FormData()
-    formData.append('board_id', board_id)
-    formData.append('title', $('#title').val())
-    formData.append('description', $('#description').val())
-    formData.append('start_due_date', $('#start_due_date').val())
-    formData.append('finish_due_date', $('#finish_due_date').val())
-    $.ajax({
-        url: `${api_url}/task/create`,
-        type: 'POST',
-        data: formData,
-        processData: false,
-        contentType: false,
-        success: function(result) {
-            $('#modal-task').modal('hide')
-            get_task()
-        },
-        error: function(xhr) {
-            $('#submit').attr('disabled', false)
-            let err = xhr.responseJSON.errors
-            // console.log(err)
-            if (err.title) {
-                $('#title').addClass('is-invalid')
-                $('#title').siblings('.invalid-feedback').html(err.title)
-            }
-        }
-    })
+    let type = $(this).attr('data-type')
+    if (type == 'create') {
+	    $('#task-submit').attr('disabled', true)
+	    $('.is-invalid').removeClass('is-invalid')
+	    let formData = new FormData()
+	    formData.append('board_id', board_id)
+	    formData.append('title', $('#title').val())
+	    formData.append('description', $('#description').val())
+	    formData.append('start_due_date', $('#start_due_date').val())
+	    formData.append('finish_due_date', $('#finish_due_date').val())
+	    $.ajax({
+	        url: `${api_url}/task/create`,
+	        type: 'POST',
+	        data: formData,
+	        processData: false,
+	        contentType: false,
+	        success: function(result) {
+	            $('#modal-task').modal('hide')
+	            get_task()
+	        },
+	        error: function(xhr) {
+	            $('#submit').attr('disabled', false)
+	            let err = xhr.responseJSON.errors
+	            // console.log(err)
+	            if (err.title) {
+	                $('#title').addClass('is-invalid')
+	                $('#title').siblings('.invalid-feedback').html(err.title)
+	            }
+	        }
+	    })
+	} else {
+	    $('#task-submit').attr('disabled', true)
+	    $('.is-invalid').removeClass('is-invalid')
+	    let formData = new FormData()
+	    $.ajax({
+	        url: `${api_url}/task/${board_id}/update`,
+	        type: 'PATCH',
+	        data: {
+			    title: $('#title').val(),
+			    description: $('#description').val(),
+			    start_due_date: $('#start_due_date').val(),
+			    finish_due_date: $('#finish_due_date').val()
+			},
+	        success: function(result) {
+	        	console.log(result)
+	            let value = result.data
+	            $('#modal-task').modal('hide')
+	            $('#detail-task').attr('data-title', value.title)
+	            $('#task-title').html(value.title)
+	            $('#duedate-task').html(value.finish_due_date != null ? date_format(value.finish_due_date) : '-')
+	            if (value.description != null) {
+	                $('#description-task').html(value.description)
+	            } else {
+	                $('#description-task').hide()
+	            }
+	            customAlert('success', `${value.title} updated`)
+	        },
+	        error: function(xhr) {
+	            $('#submit').attr('disabled', false)
+	            let err = xhr.responseJSON.errors
+	            // console.log(err)
+	            if (err.title) {
+	                $('#title').addClass('is-invalid')
+	                $('#title').siblings('.invalid-feedback').html(err.title)
+	            }
+	        }
+	    })
+	}
 })
 
 
-
-
-
-$('.modal').on('shown.bs.modal', function() {
-    $('input:first').focus()
-})
-
-$('#setting .dropdown-menu .dropdown-item').click(function() {
-    $('#setting i').dropdown('toggle')
-})
-
+// Attachment
 $('#attachment').click(function() {
     $('#file').click()
 })
 $(document).on('change', 'input[type="file"]', function(e) {
     let value = $(this).get(0).files[0]
+    if (value['size'] < 8388608) {
+        let formData = new FormData()
+        formData.append('attachment', value)
+        // formData.append('title', $('#title').val())
+        $.ajax({
+            url: `${api_url}/task/${task_id}/attachment`,
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(result) {
+                customAlert('success', 'Attachment uploaded')
+                get_attachment()
+            },
+            error: function(xhr) {
+                // let err = xhr.responseJSON.errors
+                console.log(xhr)
+            }
+        })
+    } else {
+        customAlert('warning', 'Maximal size 8 MB')
+    }
+    $('#file').val('')
+})
+
+
+// Member
+$(document).on('click', '.members', function() {
+    let name = $(this).attr('data-name')
     let formData = new FormData()
-    formData.append('attachment', value)
-    // formData.append('title', $('#title').val())
+    formData.append('user_id', $(this).attr('data-id'))
     $.ajax({
-        url: `${api_url}/task/${task_id}/attachment`,
+        url: `${api_url}/task/${task_id}/create_task_member`,
         type: 'POST',
         data: formData,
         processData: false,
         contentType: false,
         success: function(result) {
-            $('#file').val('')
-            customAlert('success', 'Attachment uploaded')
-            get_attachment()
+            // console.log(result)
+            customAlert('success', `${name} added to task`)
+            get_member()
+        },
+        error: function(xhr) {
+            let err = xhr.responseJSON.errors
+            let msg = xhr.responseJSON.data
+            // console.log(msg)
+            if (msg == "member already exists") {
+                customAlert('warning', `${name} has been added in this task`)
+            }
+        }
+    })
+})
+$(document).on('click', '.remove-member', function() {
+    let member_id = $(this).attr('data-id')
+    let member_name = $(this).attr('data-name')
+    $.ajax({
+        url: `${api_url}/task/${task_id}/${member_id}/delete_task_member`,
+        type: 'DELETE',
+        success: function(result) {
+            customAlert('success', `${member_name} removed from task`)
+            get_member()
         },
         error: function(xhr) {
             let err = xhr.responseJSON.errors
@@ -367,7 +472,130 @@ $('#checklist-form').submit(function(e) {
     }
 })
 
+
+// Checklist Item
+// $(document).on('click', '.modal-checklist-item', function() {
+//     $('#modal-checklist-item').modal('show')
+//     $('#checklist-item-title').val('')
+// })
+// $(document).on('click', '.create-checklist-item', function() {
+//     $('#modal-checklist-item-title').html('Add Checklist Item')
+//     $('#checklist-item-form').attr('data-type', 'create')
+//     $('#checklist-item-submit').html('Create')
+// })
+// $(document).on('click', '.edit-checklist', function() {
+//     let id = $(this).parents('.form-check').attr('data-id')
+//     let title = $(this).parents('.form-check').attr('data-title')
+//     $('#checklist-title').val(title)
+//     $('#modal-checklist-title').html('Edit Checklist')
+//     $('#checklist-form').attr('data-id', id)
+//     $('#checklist-form').attr('data-type', 'edit')
+//     $('#checklist-submit').html('Save Changes')
+// })
+// $('#checklist-form').submit(function(e) {
+//     e.preventDefault()
+//     let type = $(this).attr('data-type')
+//     if (type == 'create') {
+//         $('#checklist-submit').attr('disabled', true)
+//         $('.is-invalid').removeClass('is-invalid')
+//         let formData = new FormData()
+//         formData.append('title', $('#checklist-title').val())
+//         $.ajax({
+//             url: `${api_url}/task/${board_id}/create_checklist`,
+//             type: 'POST',
+//             data: formData,
+//             processData: false,
+//             contentType: false,
+//             success: function(result) {
+//                 $('#modal-checklist').modal('hide')
+//                 customAlert('success', `Checklist added`)
+//                 get_checklist()
+//             },
+//             error: function(xhr) {
+//                 let err = xhr.responseJSON.errors
+//                 // console.log(err)
+//                 if (err.title) {
+//                     $('#title').addClass('is-invalid')
+//                     $('#title').siblings('.invalid-feedback').html(err.title)
+//                 }
+//             },
+//             complete: function() {
+//                 $('#checklist-submit').attr('disabled', false)
+//             }
+//         })
+//     } else {
+//         $('#checklist-submit').attr('disabled', true)
+//         $('.is-invalid').removeClass('is-invalid')
+//         let id = $(this).attr('data-id')
+//         // console.log(id)
+//         $.ajax({
+//             url: `${api_url}/task/${id}/update_checklist`,
+//             type: 'PATCH',
+//             data: {
+//                 title: $('#checklist-title').val()
+//             },
+//             success: function(result) {
+//                 $('#modal-checklist').modal('hide')
+//                 customAlert('success', `Checklist updated`)
+//                 get_checklist()
+//             },
+//             error: function(xhr) {
+//                 let err = xhr.responseJSON.errors
+//                 // console.log(err)
+//                 if (err.title) {
+//                     $('#title').addClass('is-invalid')
+//                     $('#title').siblings('.invalid-feedback').html(err.title)
+//                 }
+//             },
+//             complete: function() {
+//                 $('#checklist-submit').attr('disabled', false)
+//             }
+//         })
+//     }
+// })
+
+
 // Comment
+$(document).on('click', '.edit-comment', function() {
+    $('#modal-comment').modal('show')
+    $('#comment-title').val('')
+    let id = $(this).parents('.d-flex').attr('data-id')
+    let title = $(this).parents('.d-flex').attr('data-title')
+    $('#comment-title').val(title)
+    $('#modal-comment-title').html('Edit comment')
+    $('#comment-form').attr('data-id', id)
+    $('#comment-submit').html('Save Changes')
+})
+$('#comment-form').submit(function(e) {
+    e.preventDefault()
+    $('#comment-submit').attr('disabled', true)
+    $('.is-invalid').removeClass('is-invalid')
+    let id = $(this).attr('data-id')
+    // console.log(id)
+    $.ajax({
+        url: `${api_url}/task/${id}/update_comment`,
+        type: 'PATCH',
+        data: {
+            comment: $('#comment-title').val()
+        },
+        success: function(result) {
+            $('#modal-comment').modal('hide')
+            customAlert('success', `Comment updated`)
+            get_comment()
+        },
+        error: function(xhr) {
+            let err = xhr.responseJSON.errors
+            // console.log(err)
+            if (err.title) {
+                $('#comment-title').addClass('is-invalid')
+                $('#comment-title').siblings('.invalid-feedback').html(err.title)
+            }
+        },
+        complete: function() {
+            $('#comment-submit').attr('disabled', false)
+        }
+    })
+})
 $('#form-comment').submit(function(e) {
     e.preventDefault()
     $('#submit-comment').attr('disabled', true)
@@ -381,6 +609,7 @@ $('#form-comment').submit(function(e) {
         processData: false,
         contentType: false,
         success: function(result) {
+            $('#comment').val('')
             customAlert('success', `Comment submited`)
             get_comment()
         },
@@ -397,6 +626,47 @@ $('#form-comment').submit(function(e) {
         }
     })
 })
+
+
+// Edit
+$(document).on('click', '.create-task', function() {
+    $('#modal-task').modal('show')
+    $('#title-task').html('Create Task')
+    $('#task-submit').html('Create')
+    $('#task-submit').attr('disabled', false)
+    $('#form-task').attr('data-type', 'create')
+})
+$(document).on('click', '.edit-task', function() {
+    $('#modal-task').modal('show')
+    $('#title-task').html('Edit Task')
+    $('#task-submit').html('Save Changes')
+    $('#task-submit').attr('disabled', true)
+    $('#form-task').attr('data-type', 'edit')
+    $.ajax({
+        url: `${api_url}/task/fetch/${task_id}`,
+        type: 'GET',
+        data: {
+            board_id: board_id
+        },
+        success: function(result) {
+            // console.log(result)
+            let value = result.data
+            $('#title').val(value.title)
+            $('#start_due_date').val(value.start_due_date)
+            $('#finish_due_date').val(value.finish_due_date)
+            $('#description').val(value.description)
+            $('#task-submit').attr('disabled', false)
+        }
+    })
+})
+$('#modal-task').on('hidden.bs.modal', function() {
+	$('#title').val('')
+	$('#start_due_date').val('')
+	$('#finish_due_date').val('')
+	$('#description').val('')
+	$('.is-invalid').removeClass('.is-invalid')
+})
+
 
 // Delete
 $(document).on('click', '.delete', function() {
@@ -425,29 +695,33 @@ $(document).on('click', '.delete-checklist', function() {
     $('#delete').attr('data-id', id)
     $('#delete-body').html(title)
 })
+$(document).on('click', '.delete-comment', function() {
+	let div = $(this)
+    let id = $(this).parents('.d-flex').attr('data-id')
+    $.ajax({
+        url: `${api_url}/task/${id}/delete_comment`,
+        type: 'DELETE',
+        success: function(result) {
+            customAlert('success', `Comment deleted`)
+            div.parents('.d-flex').remove()
+        }
+    })
+})
+
 $(document).on('click', '#delete', function() {
     let id = $(this).attr('data-id')
     let type = $(this).attr('data-type')
-    // console.log(id)
     if (type == 'task') {
         $.ajax({
             url: `${api_url}/task/${task_id}/archive`,
             type: 'DELETE',
             success: function(result) {
-                customAlert('success', `Task deleted`)
-                $('#modal-delete').modal('hide')
                 $('#detail-task').hide()
                 $('#empty-task').show()
-                get_task()
-            }
-        })
-    } else if (type == 'member') {
-        $.ajax({
-            url: `${api_url}/task/${task_id}/${id}/delete_task_member`,
-            type: 'DELETE',
-            success: function(result) {
-                customAlert('success', `Member deleted`)
+                $('#loading-task').hide()
                 $('#modal-delete').modal('hide')
+                customAlert('success', `Task deleted`)
+                get_task()
             }
         })
     } else if (type == 'attachment') {
@@ -476,15 +750,6 @@ $(document).on('click', '#delete', function() {
             type: 'DELETE',
             success: function(result) {
                 customAlert('success', `Checklist item deleted`)
-                $('#modal-delete').modal('hide')
-            }
-        })
-    } else if (type == 'comment') {
-        $.ajax({
-            url: `${api_url}/task/${id}/delete_attachment`,
-            type: 'DELETE',
-            success: function(result) {
-                customAlert('success', `Comment deleted`)
                 $('#modal-delete').modal('hide')
             }
         })

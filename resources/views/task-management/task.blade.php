@@ -3,11 +3,10 @@
 @section('content')
 	<div class="container">
 		<h4 class="d-none d-md-block mb-3" id="board"></h4>
-		
 		<div class="row">
 			<div class="col-lg-4">
 				<div class="mb-4" id="card">
-					<div class="card card-height" data-toggle="modal" data-target="#modal-task" role="button">
+					<div class="card card-height create-task" data-toggle="modal" data-target="#modal-task" role="button">
 						<div class="card-body text-center">
 							<i class="mdi mdi-48px mdi-plus"></i>
 							<h6>Create Task</h6>
@@ -18,15 +17,17 @@
 			</div>
 			<div class="col-lg-8">
 				<div class="card none mb-5" id="detail-task">
-					<div class="card-header d-flex justify-content-between align-items-center">
-						<div class="text-truncate">
-							<h5 class="mb-0 text-truncate" id="task-title"></h5>
-						</div>
-						<div class="dropdown ml-5" id="setting">
-							<i class="mdi mdi-24px mdi-dots-horizontal pr-0" data-toggle="dropdown" role="button"></i>
-							<div class="dropdown-menu dropdown-menu-right py-0" aria-labelledby="dropdown-member">
-								<div class="dropdown-item" data-toggle="modal" data-target="#modal-task" role="button">Edit Task</div>
-								<div class="dropdown-item delete delete-task" role="button">Delete Task</div>
+					<div class="card-header">
+						<div class="d-flex justify-content-between align-items-center flex-wrap">
+							<div class="text-truncate">
+								<h5 class="mb-0 text-truncate" id="task-title"></h5>
+							</div>
+							<div class="dropdown">
+								<i class="mdi mdi-24px mdi-dots-horizontal pr-0" id="dropdown-setting" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button"></i>
+								<div class="dropdown-menu dropdown-menu-right py-0" aria-labelledby="dropdown-setting">
+									<div class="dropdown-item edit edit-task" role="button">Edit</div>
+									<div class="dropdown-item delete delete-task" role="button">Delete</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -35,15 +36,22 @@
 							<div class="col-sm-6 mb-4">
 								<h6>Members</h6>
 								<div class="d-flex align-items-center flex-wrap">
-									<div class="d-flex flex-wrap align-items-center" id="members">
-										<div class="dropdown" id="dropdown-member">
-											<!-- <i class="mdi mdi-24px mdi-plus-circle-outline pr-0" id="add-member" data-toggle="dropdown" role="button"></i> -->
-											<i class="mdi mdi-24px mdi-plus-circle-outline pr-0" id="add-member" data-toggle="modal" data-target="#modal-member" role="button"></i>
-											<!-- <div class="dropdown-menu py-0" aria-labelledby="dropdown-member">
-												<h6 class="dropdown-header text-center">Add members</h6>
-												<hr class="mt-0">
-												<div id="user_id" class="mb-2"></div>
-											</div> -->
+									<div class="d-flex flex-wrap" id="members"></div>
+									<div id="loading-member">
+										<div class="d-flex flex-wrap">
+											<div class="loader loader-sm mr-2">
+												<svg class="circular" viewBox="25 25 50 50">
+													<circle class="path-dark" cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-miterlimit="10"/>
+												</svg>
+											</div>
+										</div>
+									</div>
+									<div class="dropdown">
+										<i class="mdi mdi-24px mdi-plus-circle-outline pr-0" id="dropdown-member" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button"></i>
+										<div class="dropdown-menu py-0" aria-labelledby="dropdown-member">
+											<h6 class="dropdown-header text-center">Add members</h6>
+											<hr class="mt-0 mb-2">
+											<div id="list-members" class="mb-2"></div>
 										</div>
 									</div>
 								</div>
@@ -137,12 +145,11 @@
 			</div>
 		</div> -->
 	</div>
-
-	<div class="modal fade" id="modal-task" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="modal-task" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
 	        <div class="modal-content">
 	            <div class="modal-header border-bottom-0">
-	                <h5 class="modal-title" id="exampleModalLabel">Create Task</h5>
+	                <h5 class="modal-title" id="title-task">Create Task</h5>
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	                    <i class="mdi mdi-close pr-0"></i>
 	                </button>
@@ -174,8 +181,7 @@
 					</div>
 		            <div class="modal-footer border-top-0">
 		                <button class="btn btn-outline-dark" data-dismiss="modal">Close</button>
-		                <button class="btn btn-dark" id="create">Create</button>
-		                <button class="btn btn-dark none" id="save">Save Changes</button>
+		                <button class="btn btn-dark" id="task-submit">Create</button>
 		            </div>
 		        </form>
 	        </div>
@@ -237,6 +243,56 @@
 		            <div class="modal-footer border-top-0">
 		                <button class="btn btn-outline-dark" data-dismiss="modal">Close</button>
 		                <button class="btn btn-dark" id="checklist-submit">Create</button>
+		            </div>
+		        </form>
+	        </div>
+	    </div>
+	</div>
+	<div class="modal fade" id="modal-checklist-item" tabindex="-1" aria-hidden="true">
+	    <div class="modal-dialog modal-dialog-centered">
+	        <div class="modal-content">
+	            <div class="modal-header border-bottom-0">
+	                <h5 class="modal-title" id="modal-checklist-item-title"></h5>
+	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	                    <i class="mdi mdi-close pr-0"></i>
+	                </button>
+	            </div>
+	            <form id="checklist-item-form">
+		            <div class="modal-body">
+	        			<div class="form-group">
+							<label for="title">Title</label>
+							<input class="form-control" id="checklist-item-title">
+							<div class="invalid-feedback"></div>
+						</div>
+					</div>
+		            <div class="modal-footer border-top-0">
+		                <button class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+		                <button class="btn btn-dark" id="checklist-item-submit">Create</button>
+		            </div>
+		        </form>
+	        </div>
+	    </div>
+	</div>
+	<div class="modal fade" id="modal-comment" tabindex="-1" aria-hidden="true">
+	    <div class="modal-dialog modal-dialog-centered">
+	        <div class="modal-content">
+	            <div class="modal-header border-bottom-0">
+	                <h5 class="modal-title" id="modal-comment-title"></h5>
+	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	                    <i class="mdi mdi-close pr-0"></i>
+	                </button>
+	            </div>
+	            <form id="comment-form">
+		            <div class="modal-body">
+	        			<div class="form-group">
+							<label for="title">Title</label>
+							<input class="form-control" id="comment-title">
+							<div class="invalid-feedback"></div>
+						</div>
+					</div>
+		            <div class="modal-footer border-top-0">
+		                <button class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+		                <button class="btn btn-dark" id="comment-submit">Save Changes</button>
 		            </div>
 		        </form>
 	        </div>

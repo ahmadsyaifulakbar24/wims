@@ -16,7 +16,7 @@
 
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark {{Request::is('logout')?'none':''}}">
-        <a class="d-none d-md-block navbar-brand" href="{{url('dashboard')}}">
+        <a class="navbar-brand" href="{{url('dashboard')}}">
             <!-- <img src="{{asset('assets/images/eoffice.png')}}" width="30" class="d-inline-block align-top mr-2" alt="" loading="lazy"> -->
             WIMS
         </a>
@@ -119,7 +119,7 @@
                 <img src="{{asset('assets/images/user.jpg')}}" class="avatar rounded-circle" width="30">
             </a>
             <div class="dropdown-menu dropdown-menu-right rounded border-0 mt-3" aria-labelledby="dropdownMenu">
-                <a href="{{url('account')}}" class="dropdown-item d-flex align-items-center">
+                <a href="{{url('account/detail')}}" class="dropdown-item d-flex align-items-center">
                     <img src="{{asset('assets/images/user.jpg')}}" class="avatar rounded-circle border" width="40">
                     <div class="ml-3 text-truncate">
                         <h6 class="name text-truncate mb-0">lorem</h6>
@@ -127,7 +127,7 @@
                     </div>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{{url('password')}}">
+                <a class="dropdown-item" href="{{url('account/password')}}">
                     <i class="mdi mdi-18px mdi-lock-outline"></i>
                     <span>Change Password</span>
                 </a>
@@ -141,7 +141,7 @@
     <div class="overlay"></div>
     <div class="main">
     	@yield('content')
-    	<div class="d-block d-md-none fixed-bottom bg-white border-top w-100" style="bottom: 0">
+    	<!-- <div class="d-block d-md-none fixed-bottom bg-white border-top w-100" style="bottom: 0">
     		<div class="container text-center">
 	    		<div class="row">
 	    			<a href="{{url('dashboard')}}" class="col px-1 py-2 {{Request::is('dashboard')?'text-dark':'text-black-50'}}">
@@ -160,21 +160,21 @@
 	    				<i class="mdi mdi-18px mdi-timer pr-0"></i>
 	    				<small class="d-block">Attendance</small>
 	    			</a>
-	    			<!-- <a href="{{url('finance')}}" class="col px-1 py-2 {{Request::is('finance')?'text-dark':'text-black-50'}}">
+	    			<a href="{{url('finance')}}" class="col px-1 py-2 {{Request::is('finance')?'text-dark':'text-black-50'}}">
 	    				<i class="mdi mdi-18px mdi-square-inc-cash pr-0"></i>
 	    				<small class="d-block">Finance</small>
-	    			</a> -->
-	    			<!-- <a href="{{url('payroll')}}" class="col px-1 py-2 {{Request::is('payroll')?'text-dark':'text-black-50'}}">
+	    			</a>
+	    			<a href="{{url('payroll')}}" class="col px-1 py-2 {{Request::is('payroll')?'text-dark':'text-black-50'}}">
 	    				<i class="mdi mdi-18px mdi-cash-register pr-0"></i>
 	    				<small class="d-block">Payroll</small>
-	    			</a> -->
+	    			</a>
 	    			<a href="{{url('company')}}" class="col px-1 py-2 {{Request::is('company')?'text-dark':'text-black-50'}}">
 	    				<i class="mdi mdi-18px mdi-office-building pr-0"></i>
 	    				<small class="d-block">Company</small>
 	    			</a>
 	    		</div>
 	    	</div>
-    	</div>
+    	</div> -->
     </div>
     <div class="modal" id="modal-logout" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
         <div class="modal-dialog modal-dialog-centered">

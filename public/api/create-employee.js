@@ -128,6 +128,19 @@ $.ajax({
     }
 })
 
+// PTKP
+$.ajax({
+    url: `${api_url}/ptkp`,
+    type: 'GET',
+    success: function(result) {
+        // console.log(result)
+        $.each(result.data, function(index, value) {
+            append = `<option value="${value.id}">${value.ptkp}</option>`
+            $('#ptkp_id').append(append)
+        })
+    }
+})
+
 $(document).ajaxStop(function() {
     $('#card').show()
     $('#loading').remove()

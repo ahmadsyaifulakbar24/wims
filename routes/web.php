@@ -22,6 +22,12 @@ Route::group(['middleware'=>['beforeMiddleware']], function () {
 	Route::get('dashboard', function () {
 		return view('dashboard');
 	});
+	Route::get('account/detail', function () {
+		return view('account/detail');
+	});
+	Route::get('account/password', function () {
+		return view('account/password');
+	});
 
 
 	// Employee
