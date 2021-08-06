@@ -12,6 +12,7 @@ class BoardMember extends Model
     protected $table = 'board_members';
     protected $fillable = [
         'board_id',
-        'user_id'
+        'user_id',
+        'role'
     ];
 }

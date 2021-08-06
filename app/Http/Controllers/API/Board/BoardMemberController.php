@@ -36,7 +36,7 @@ class BoardMemberController extends Controller
                 'message' => 'user already exists in this board'
             ], 'error add member', 422);
         }
-        $board->board_member()->attach([$request->user_id]);
+        $board->board_member()->attach($request->user_id, [ 'role' => 'normal' ]);
         return ResponseFormatter::success(
             'true',
             'success add member'
