@@ -419,7 +419,7 @@ $('#checklist-form').submit(function(e) {
         let formData = new FormData()
         formData.append('title', $('#checklist-title').val())
         $.ajax({
-            url: `${api_url}/task/${board_id}/create_checklist`,
+            url: `${api_url}/task/${task_id}/create_checklist`,
             type: 'POST',
             data: formData,
             processData: false,
@@ -501,7 +501,7 @@ $('#checklist-form').submit(function(e) {
 //         let formData = new FormData()
 //         formData.append('title', $('#checklist-title').val())
 //         $.ajax({
-//             url: `${api_url}/task/${board_id}/create_checklist`,
+//             url: `${api_url}/task/${task_id}/create_checklist`,
 //             type: 'POST',
 //             data: formData,
 //             processData: false,
@@ -603,7 +603,7 @@ $('#form-comment').submit(function(e) {
     let formData = new FormData()
     formData.append('comment', $('#comment').val())
     $.ajax({
-        url: `${api_url}/task/${board_id}/create_comment`,
+        url: `${api_url}/task/${task_id}/create_comment`,
         type: 'POST',
         data: formData,
         processData: false,
