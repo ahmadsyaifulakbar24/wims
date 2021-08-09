@@ -17,7 +17,7 @@ function get_data() {
 								<i class="mdi mdi-18px mdi-trash-can-outline pr-0 delete" data-id="${value.id}" data-name="${value.name}" role="button"></i>
 							</div>
 						</div>
-						<a href="${root}/task-management/board/${value.id}" class="card-body text-dark">
+						<a href="${root}/task-management/project/${value.id}" class="card-body text-dark">
 							<p class="text-secondary">${value.pic.name}</p>
 						</a>
 					</div>
@@ -75,6 +75,7 @@ $('#form-create').submit(function(e) {
         contentType: false,
         success: function(result) {
             $('#modal-create').modal('hide')
+            customAlert('success', 'Division created')
             get_data()
         },
         error: function(xhr) {
@@ -122,6 +123,7 @@ $('#form-edit').submit(function(e) {
         },
         success: function(result) {
             $('#modal-edit').modal('hide')
+            customAlert('success', 'Division edited')
             get_data()
         },
         error: function(xhr) {
@@ -154,6 +156,7 @@ $(document).on('click', '#delete', function() {
         type: 'DELETE',
         success: function(result) {
             $('#modal-delete').modal('hide')
+            customAlert('success', 'Division deleted')
             get_data()
         }
     })

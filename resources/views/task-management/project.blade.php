@@ -2,14 +2,14 @@
 
 @section('content')
 	<div class="container">
-		<h2 class="d-none d-md-block mb-3" id="division"></h2>
+		<h2 class="d-none d-md-block mb-3" id="project"></h2>
 		<div class="none" id="card">
 			<div class="row" id="data">
 				<div class="col-xl-3 col-lg-4 col-md-6 mb-3" id="modal">
 					<div class="card card-height" data-toggle="modal" data-target="#modal-create" role="button">
 						<div class="card-body text-center">
 							<i class="mdi mdi-48px mdi-plus"></i>
-							<h6>Create Board</h6>
+							<h6>Create Project</h6>
 						</div>
 					</div>
 				</div>
@@ -29,7 +29,7 @@
 	    <div class="modal-dialog modal-dialog-centered">
 	        <div class="modal-content">
 	            <div class="modal-header border-bottom-0">
-	                <h5 class="modal-title" id="exampleModalLabel">Create Board</h5>
+	                <h5 class="modal-title" id="exampleModalLabel">Create Project</h5>
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	                    <i class="mdi mdi-close pr-0"></i>
 	                </button>
@@ -59,7 +59,7 @@
 	    <div class="modal-dialog modal-dialog-centered">
 	        <div class="modal-content">
 	            <div class="modal-header border-bottom-0">
-	                <h5 class="modal-title" id="exampleModalLabel">Edit Board</h5>
+	                <h5 class="modal-title" id="exampleModalLabel">Edit Project</h5>
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	                    <i class="mdi mdi-close pr-0"></i>
 	                </button>
@@ -120,12 +120,12 @@
 	    <div class="modal-sm modal-dialog modal-dialog-centered">
 	        <div class="modal-content">
 	            <div class="modal-header border-bottom-0">
-	                <h5 class="modal-title" id="exampleModalLabel">Delete Division</h5>
+	                <h5 class="modal-title" id="exampleModalLabel">Delete Project</h5>
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	                    <i class="mdi mdi-close pr-0"></i>
 	                </button>
 	            </div>
-	            <div class="modal-body">Are you sure want to delete <b></b> division?</div>
+	            <div class="modal-body">Are you sure want to delete <b></b>?</div>
 	            <div class="modal-footer border-top-0">
 	                <button class="btn btn-outline-dark" data-dismiss="modal">Close</button>
 	                <button class="btn btn-dark" id="delete">Delete</button>
@@ -137,5 +137,5 @@
 
 @section('script')
 	<script>const division_id = {{$id}}</script>
-	<script src="{{asset('api/task-management/board.js')}}"></script>
+	<script src="{{asset('api/task-management/project.js')}}"></script>
 @endsection

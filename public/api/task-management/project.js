@@ -10,9 +10,6 @@ function get_data() {
         data: {
             division_id: division_id
         },
-        beforeSend: function(xhr) {
-            xhr.setRequestHeader("Authorization", "Bearer " + token)
-        },
         success: function(result) {
             $.each(result.data, function(index, value) {
                 // console.log(value)
@@ -26,7 +23,7 @@ function get_data() {
 							</div>
 						</div>
 						<a href="${root}/task-management/task/${value.id}" class="card-body text-dark">
-							<p class="text-secondary text-truncate mb-0">${value.description}</p>
+							<p class="text-secondary text-truncate mb-0">${value.description != null ? value.description : '-'}</p>
 						</a>
 					</div>
 				</div>`
@@ -46,7 +43,7 @@ $.ajax({
         let value = result.data
         // console.log(result)
         $('title').prepend(value.name)
-        $('#division').html(value.name)
+        $('#project').html(value.name)
     }
 })
 
@@ -100,13 +97,10 @@ $('#form-create').submit(function(e) {
         data: formData,
         processData: false,
         contentType: false,
-        beforeSend: function(xhr) {
-            xhr.setRequestHeader("Authorization", "Bearer " + token)
-        },
         success: function(result) {
             // console.log(result)
             $('#modal-create').modal('hide')
-            customAlert('success', `${result.data.title} successfully created`)
+            customAlert('success', 'Project created')
             get_data()
         },
         error: function(xhr) {
@@ -128,9 +122,6 @@ $(document).on('click', '.edit', function() {
     $.ajax({
         url: `${api_url}/board/fetch/${id}`,
         type: 'GET',
-        beforeSend: function(xhr) {
-            xhr.setRequestHeader("Authorization", "Bearer " + token)
-        },
         success: function(result) {
             // console.log(result)
             let value = result.data
@@ -149,9 +140,6 @@ function get_member(id_member) {
     $.ajax({
         url: `${api_url}/board/${id_member}/get_member`,
         type: 'GET',
-        beforeSend: function(xhr) {
-            xhr.setRequestHeader("Authorization", "Bearer " + token)
-        },
         success: function(result) {
             // console.log(result)
             $.each(result.data, function(index, value) {
@@ -167,7 +155,7 @@ function get_member(id_member) {
 								</div>
 							</div>
 						</div>
-						<div class="dropdown-item remove-member" data-id="${value.id}" data-name="${value.name}" role="button">Remove from board</div>
+						<div class="dropdown-item remove-member" data-id="${value.id}" data-name="${value.name}" role="button">Remove from project</div>
 					</div>
 				</div>`
                 $('#members').append(append)
@@ -189,7 +177,7 @@ $(document).on('click', '.members', function() {
         contentType: false,
         success: function(result) {
             // console.log(result)
-            customAlert('success', `${name} added to board`)
+            customAlert('success', `${name} added to project`)
             get_member(board_id)
         },
         error: function(xhr) {
@@ -197,7 +185,7 @@ $(document).on('click', '.members', function() {
             let msg = xhr.responseJSON.data.message
             // console.log(xhr)
             if (msg == "user already exists in this board") {
-	            customAlert('danger', `${name} has been added in this board`)
+	            customAlert('danger', `${name} has been added in this project`)
             }
         }
     })
@@ -210,7 +198,7 @@ $(document).on('click', '.remove-member', function() {
         url: `${api_url}/board/${member_id}/delete_member`,
         type: 'DELETE',
         success: function(result) {
-            customAlert('success', `${member_name} removed from board`)
+            customAlert('success', `${member_name} removed from project`)
             get_member(board_id)
         },
         error: function(xhr) {
@@ -231,12 +219,9 @@ $('#form-edit').submit(function(e) {
             title: $('#edit_title').val(),
             description: $('#edit_description').val()
         },
-        beforeSend: function(xhr) {
-            xhr.setRequestHeader("Authorization", "Bearer " + token)
-        },
         success: function(result) {
             // console.log(result)
-            customAlert('success', `${result.data.title} updated successfully`)
+            customAlert('success', 'Project updated')
             $('#modal-edit').modal('hide')
             get_data()
         },
@@ -267,12 +252,9 @@ $(document).on('click', '#delete', function() {
     $.ajax({
         url: `${api_url}/board/${id}/soft_delete`,
         type: 'DELETE',
-        beforeSend: function(xhr) {
-            xhr.setRequestHeader("Authorization", "Bearer " + token)
-        },
         success: function(result) {
         	// console.log(result)
-            customAlert('success', `${title} removed from division`)
+            customAlert('success', 'Project deleted')
             $('#modal-delete').modal('hide')
             get_data()
         }

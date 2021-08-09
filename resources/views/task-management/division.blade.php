@@ -100,7 +100,7 @@
 	                    <i class="mdi mdi-close pr-0"></i>
 	                </button>
 	            </div>
-	            <div class="modal-body">Are you sure want to delete <b></b> division?</div>
+	            <div class="modal-body">Are you sure want to delete <b></b>?</div>
 	            <div class="modal-footer border-top-0">
 	                <button class="btn btn-outline-dark" data-dismiss="modal">Close</button>
 	                <button class="btn btn-dark" id="delete">Delete</button>

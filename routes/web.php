@@ -46,8 +46,8 @@ Route::group(['middleware'=>['beforeMiddleware']], function () {
 	Route::get('task-management/division', function () {
 		return view('task-management/division');
 	});
-    Route::get('task-management/board/{id}', function ($id) {
-        return view('task-management/board', compact('id'));
+    Route::get('task-management/project/{id}', function ($id) {
+        return view('task-management/project', compact('id'));
     });
     Route::get('task-management/task/{id}', function ($id) {
         return view('task-management/task', compact('id'));

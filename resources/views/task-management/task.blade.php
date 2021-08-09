@@ -26,7 +26,7 @@
 								<i class="mdi mdi-24px mdi-dots-horizontal pr-0" id="dropdown-setting" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button"></i>
 								<div class="dropdown-menu dropdown-menu-right py-0" aria-labelledby="dropdown-setting">
 									<div class="dropdown-item edit edit-task" role="button">Edit</div>
-									<div class="dropdown-item delete delete-task" role="button">Delete</div>
+									<div class="dropdown-item delete delete-task" role="button">Archive</div>
 								</div>
 							</div>
 						</div>
@@ -65,31 +65,18 @@
 						<div class="mb-4">
 							<h6>Attachment</h6>
 							<div id="attachment-task"></div>
-							<div class="card p-1" role="button">
-								<input type="file" class="none" id="file">
-								<div class="d-flex align-items-center justify-content-center" id="attachment">
+							<label class="card p-1" for="file" role="button">
+								<div class="d-flex align-items-center justify-content-center mb-0" role="button">
 									<i class="mdi mdi-18px mdi-plus"></i>
 									<span>Add attachment</span>
 								</div>
-							</div>
+							</label>
+							<input type="file" class="none" id="file">
 						</div>
 						<div class="mb-4">
 							<h6>Checklist</h6>
 							<div id="checklist-task"></div>
-							<!-- <div class="mb-1">
-								<div class="form-check pt-0">
-									<input class="form-check-input" type="checkbox" value="" id="defaultCheck">
-									<label class="form-check-label" for="defaultCheck">Default checkbox</label>
-								</div>
-								<div class="d-flex">
-									<i class="mdi mdi-subdirectory-arrow-right px-1"></i>
-									<div class="form-check pt-0">
-										<input class="form-check-input" type="checkbox" value="" id="defaultCheck">
-										<label class="form-check-label" for="defaultCheck">Default checkbox</label>
-									</div>
-								</div>
-							</div> -->
-							<div class="card p-1 mt-2 modal-checklist create-checklist" role="button">
+							<div class="card p-1 mt-1 modal-checklist create-checklist" role="button">
 								<div class="d-flex align-items-center justify-content-center">
 									<i class="mdi mdi-18px mdi-plus"></i>
 									<span>Add checklist</span>
@@ -110,13 +97,6 @@
 							</div>
 						</form>
 						<div id="comment-task"></div>
-						<!-- <div class="d-flex align-items-start mb-3">
-							<img class="avatar rounded-circle mb-1" width="30" alt="">
-							<div class="ml-3">
-								<div><b>Nur Hilmi</b> <small class="text-secondary">11:55 am</small></div>
-								<div>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
-							</div>
-						</div> -->
 					</div>
 				</div>
 				<div class="nonee" id="empty-task">
@@ -264,6 +244,23 @@
 							<input class="form-control" id="checklist-item-title">
 							<div class="invalid-feedback"></div>
 						</div>
+	        			<div class="form-row">
+	        				<div class="col form-group">
+								<label for="checklist-item-start_due_date">Start Date</label>
+								<input type="date" class="form-control" id="checklist-item-start_due_date">
+								<div class="invalid-feedback"></div>
+							</div>
+	        				<div class="col form-group">
+								<label for="checklist-item-finish_due_date">Due Date</label>
+								<input type="date" class="form-control" id="checklist-item-finish_due_date">
+								<div class="invalid-feedback"></div>
+							</div>
+						</div>
+						<!-- <div class="form-group">
+							<label for="checklist-item-assign_id">Assignee</label>
+							<select class="custom-select" id="checklist-item-assign_id"></select>
+							<div class="invalid-feedback"></div>
+						</div> -->
 					</div>
 		            <div class="modal-footer border-top-0">
 		                <button class="btn btn-outline-dark" data-dismiss="modal">Close</button>
