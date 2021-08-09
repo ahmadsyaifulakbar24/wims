@@ -95,9 +95,6 @@ Route::group(['middleware'=>['beforeMiddleware']], function () {
 	Route::get('company/job-level', function () {
 		return view('company/job-level');
 	});
-	Route::get('company/job-level/{id}', function ($id) {
-		return view('view-job-level', compact('id'));
-	});
 
 	Route::get('company/job-position', function () {
 		return view('company/job-position');
