@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\API\attendance;
+namespace App\Http\Controllers\API\Attendance;
 
 use App\Helpers\ResponseFormatter;
 use App\Http\Controllers\Controller;

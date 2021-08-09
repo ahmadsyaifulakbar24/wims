@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\API\Attendance\CreateAttendanceController;
-use App\Http\Controllers\API\attendance\DeleteAttendanceController;
-use App\Http\Controllers\API\attendance\GetAttendanceController;
-use App\Http\Controllers\API\attendance\UpdateAttendanceController;
+use App\Http\Controllers\API\Attendance\DeleteAttendanceController;
+use App\Http\Controllers\API\Attendance\GetAttendanceController;
+use App\Http\Controllers\API\Attendance\UpdateAttendanceController;
 use App\Http\Controllers\API\Auth\LoginController;
 use App\Http\Controllers\API\Auth\LogoutController;
 use App\Http\Controllers\API\Auth\ResetPasswordController;
@@ -22,9 +22,9 @@ use App\Http\Controllers\API\Company\DeleteCompanyController;
 use App\Http\Controllers\API\Company\GetCompanyController;
 use App\Http\Controllers\API\Company\UpdateCompanyController;
 use App\Http\Controllers\API\Division\CreateDivisionController;
-use App\Http\Controllers\API\DIvision\DeleteDivisionController;
-use App\Http\Controllers\API\DIvision\GetDivisionController;
-use App\Http\Controllers\API\DIvision\UpdateDivisionController;
+use App\Http\Controllers\API\Division\DeleteDivisionController;
+use App\Http\Controllers\API\Division\GetDivisionController;
+use App\Http\Controllers\API\Division\UpdateDivisionController;
 use App\Http\Controllers\API\Employee\CreateEmployeeController;
 use App\Http\Controllers\API\Employee\DeleteEmployeController;
 use App\Http\Controllers\API\Employee\GetEmployeeController;
