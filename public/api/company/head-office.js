@@ -83,7 +83,7 @@ function get_data() {
 	        $('#phone_number').val(value.phone_number)
 	        $('#email').val(value.email)
 	        $('#bpjs').val(value.bpjs)
-	        $('#jkk_id').val(value.jkk.id)
+	        value.jkk != null ? $('#jkk_id').val(value.jkk.id) : ''
 	        $('#npwp').val(value.npwp)
 	        $('#taxable_date').val(value.taxable_date)
 	        $('#tax_person_name').val(value.tax_person_name)
