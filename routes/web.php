@@ -71,6 +71,13 @@ Route::group(['middleware'=>['beforeMiddleware']], function () {
 	
 
 	// Company
+	Route::get('company/head-office', function () {
+		return view('company/head-office');
+	});
+	Route::get('company/head-office/{id}', function ($id) {
+		return view('view-head-office', compact('id'));
+	});
+
 	Route::get('company/branch', function () {
 		return view('company/branch');
 	});
@@ -81,18 +88,8 @@ Route::group(['middleware'=>['beforeMiddleware']], function () {
 		return view('company/edit-branch', compact('id'));
 	});
 
-	Route::get('company/head-office', function () {
-		return view('company/head-office');
-	});
-	Route::get('company/head-office/{id}', function ($id) {
-		return view('view-head-office', compact('id'));
-	});
-
 	Route::get('company/organization-structure', function () {
 		return view('company/organization-structure');
-	});
-	Route::get('company/organization-structure/{id}', function ($id) {
-		return view('view-organization-structure', compact('id'));
 	});
 
 	Route::get('company/job-level', function () {
