@@ -74,9 +74,9 @@
 				</div>
 			</form>
 		</div>
-		<div class="d-none d-sm-block text-center mb-5">
+		<!-- <div class="d-none d-sm-block text-center mb-5">
 			<span class="text-secondary">&copy; 2021 PT. Karl Wig Abadi. All right reserved.</span>
-		</div>
+		</div> -->
 	</div>
 	@include('layouts.partials.script')
 	<script src="{{asset('api/register.js')}}"></script>
