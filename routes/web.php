@@ -102,9 +102,6 @@ Route::group(['middleware'=>['beforeMiddleware']], function () {
 	Route::get('company/job-position', function () {
 		return view('company/job-position');
 	});
-	Route::get('company/job-position/{id}', function ($id) {
-		return view('view-job-position', compact('id'));
-	});
 
 	Route::get('company/employee-status', function () {
 		return view('company/employee-status');
