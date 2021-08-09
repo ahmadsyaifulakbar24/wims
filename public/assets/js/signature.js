@@ -18,6 +18,7 @@ $('#signature').change(function(e) {
 	                $('#signature-image').attr('src', reader.result)
 	            }
 	            reader.readAsDataURL(input.files[0])
+	            $('#signature-image').removeClass('is-invalid')
 	        }
 	    } else {
 	        $('#signature').addClass('is-invalid')

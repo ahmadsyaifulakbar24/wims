@@ -18,6 +18,9 @@ if (localStorage.getItem('token') != null) {
 $(document).on('keydown', 'input', function() {
     $(this).removeClass('is-invalid')
 })
+$(document).on('keydown', 'textarea', function() {
+    $(this).removeClass('is-invalid')
+})
 $(document).on('change', 'select', function() {
     $(this).removeClass('is-invalid')
 })

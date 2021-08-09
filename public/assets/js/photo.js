@@ -41,6 +41,7 @@ $('#photo').change(function() {
                 }).then(function() {})
             }
             reader.readAsDataURL(this.files[0])
+            $('#photo').removeClass('is-invalid')
         }
     } else {
         $('#photo').addClass('is-invalid')
