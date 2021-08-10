@@ -1,6 +1,6 @@
 @extends('layouts/app')
 
-@section('title','Create Employee')
+@section('title','Edit Employee')
 
 @section('style')
 	<link rel="stylesheet" href="{{asset('assets/vendors/croppie/croppie.css')}}">
@@ -11,7 +11,7 @@
 		<div class="card none" id="card">
 			<div class="card-header border-bottom-0">
 				<div class="d-flex align-items-center justify-content-between">
-					<h4 class="mb-4 mt-1">Create Employee</h4>
+					<h4 class="mb-4 mt-1">Edit Employee</h4>
 				</div>
 			</div>
 			<div class="row">
@@ -132,7 +132,7 @@
 								</div>
 								<div class="form-group col-sm-6">
 									<label for="no_identity" class="col-form-label">Identity Number</label>
-									<input class="form-control" id="no_identity">
+									<input class="form-control" id="no_identity" maxlength="16">
 									<div class="invalid-feedback"></div>
 								</div>
 								<div class="form-group col-sm-6">
@@ -275,7 +275,7 @@
 								<div class="form-group col-sm-6">
 									<label for="ptkp_id" class="col-form-label">PTKP Status</label>
 									<select class="custom-select" id="ptkp_id" role="button">
-										<option selected value="">Select</option>
+										<option disabled selected>Select</option>
 									</select>
 									<div class="invalid-feedback"></div>
 								</div>
@@ -304,7 +304,7 @@
 
 							<hr class="mt-5">
 							<h5>Login Account</h5>
-							<p class="text-secondary">Create the username and password for login.</p>
+							<p class="text-secondary">Edit the username for login.</p>
 							<div class="row">
 								<div class="form-group col-sm-6">
 									<label for="username" class="col-form-label">Username*</label>
@@ -312,53 +312,19 @@
 									<div class="invalid-feedback"></div>
 								</div>
 							</div>
-							<div class="row">
-								<div class="col-sm-6">
-									<div class="form-group position-relative">
-										<label for="password">Password*</label>
-										<input type="password" class="form-control" id="password">
-										<i class="password mdi mdi-eye-off mdi-18px" data-id="password"></i>
-										<div class="invalid-feedback"></div>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-6">
-									<div class="form-group position-relative">
-										<label for="cpassword">Password Confirmation*</label>
-										<input type="password" class="form-control" id="cpassword">
-										<i class="password mdi mdi-eye-off mdi-18px" data-id="cpassword"></i>
-										<div class="invalid-feedback"></div>
-									</div>
-								</div>
-							</div>
-							<!-- <div class="form-group">
-								<label for="profile_photo" class="col-form-label">Profile Photo</label>
-								<div class="custom-file">
-									<label class="custom-file-label" for="profile_photo">Select Foto</label>
-									<input type="file" class="custom-file-input" id="profile_photo" accept="image/*" role="button">
+							<div class="row none">
+								<div class="form-group col-sm-6">
+									<label for="active" class="col-form-label">Active*</label>
+									<input type="text" class="form-control" id="active">
 									<div class="invalid-feedback"></div>
 								</div>
-							</div> -->
+							</div>
 							<div class="form-group">
 								<div class="text-right mt-4">
-									<button class="btn btn-dark" id="submit">Submit</button>
+									<button class="btn btn-dark" id="submit">Save Changes</button>
 								</div>
 							</div>
                         </form>
-                    	<div class="state text-center none" id="success">
-                    		<i class="mdi mdi-48px mdi-check-circle-outline"></i>
-                    		<h5>Employee added</h5>
-                    		<p class="text-secondary">You have successfully added employee data.</p>
-                    		<div class="row">
-                    			<div class="col-md-4 offset-md-2 mb-2">
-		                    		<a href="{{url('employee/create')}}" class="btn btn-block btn-dark">Add another employee</a>
-		                    	</div>
-                    			<div class="col-md-4">
-		                    		<a href="{{url('employee')}}" class="btn btn-block btn-outline-dark">Back to employees</a>
-		                    	</div>
-	                    	</div>
-                    	</div>
 					</div>
 				</div>
 			</div>
@@ -393,8 +359,9 @@
 @endsection
 
 @section('script')
+	<script>const employee_id = {{$id}}</script>
 	<script src="{{asset('assets/js/photo.js')}}"></script>
 	<script src="{{asset('assets/js/format.js')}}"></script>
     <script src="{{asset('assets/vendors/croppie/croppie.min.js')}}"></script>
-	<script src="{{asset('api/create-employee.js')}}"></script>
+	<script src="{{asset('api/edit-employee.js')}}"></script>
 @endsection

@@ -84,8 +84,8 @@
                         <a class="dropdown-item" href="{{url('company/head-office')}}">Head Office</a>
                         <a class="dropdown-item" href="{{url('company/branch')}}">Branch</a>
                         <a class="dropdown-item" href="{{url('company/organization-structure')}}">Organization Structure</a>
-                        <a class="dropdown-item" href="{{url('company/job-level')}}">Job Level</a>
                         <a class="dropdown-item" href="{{url('company/job-position')}}">Job Position</a>
+                        <a class="dropdown-item" href="{{url('company/job-level')}}">Job Level</a>
                         <a class="dropdown-item" href="{{url('company/employee-status')}}">Employee Status</a>
                     </div>
                 </li>

@@ -38,7 +38,7 @@ Route::group(['middleware'=>['beforeMiddleware']], function () {
 		return view('create-employee');
 	});
 	Route::get('employee/{id}', function ($id) {
-		return view('view-employee', compact('id'));
+		return view('edit-employee', compact('id'));
 	});
 	
 
@@ -91,11 +91,11 @@ Route::group(['middleware'=>['beforeMiddleware']], function () {
 	Route::get('company/organization-structure', function () {
 		return view('company/organization-structure');
 	});
-	Route::get('company/job-level', function () {
-		return view('company/job-level');
-	});
 	Route::get('company/job-position', function () {
 		return view('company/job-position');
+	});
+	Route::get('company/job-level', function () {
+		return view('company/job-level');
 	});
 	Route::get('company/employee-status', function () {
 		return view('company/employee-status');

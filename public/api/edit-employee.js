@@ -141,10 +141,81 @@ $.ajax({
     }
 })
 
+let stop = false
 $(document).ajaxStop(function() {
-    $('#card').show()
-    $('#loading').remove()
+    if (stop == false) {
+		get_data()
+        $('#card').show()
+        $('#loading').remove()
+    }
 })
+
+function get_data() {
+    $.ajax({
+        url: `${api_url}/employee/fetch/${employee_id}`,
+        type: 'GET',
+        success: function(result) {
+            console.log(result)
+            let value = result.data
+            // Personal Data
+            $('#image').attr('src', value.profile_photo_url)
+            $('#first_name').val(value.first_name)
+            $('#last_name').val(value.last_name)
+            $('#email').val(value.email)
+            $('#mobile_phone').val(value.mobile_phone)
+            $('#phone').val(value.phone)
+            $('#place_of_birth').val(value.place_of_birth)
+            $('#date_of_birth').val(value.date_of_birth)
+            $(`#${value.gender}`).prop('checked', true)
+            $('#religion_id').val(value.religion_id.id)
+            $('#marital_status_id').val(value.marital_status_id.id)
+            value.education_id != null ? $('#education_id').val(value.education_id.id) : ''
+            value.blood_type_id != null ? $('#blood_type_id').val(value.blood_type_id.id) : ''
+
+            // Identity & Address
+            $('#identity_type').val(value.identity_type)
+            $('#no_identity').val(value.no_identity)
+            $('#expired_date_identity').val(value.expired_date_identity)
+            $('#postal_code').val(value.postal_code)
+            $('#identity_address').val(value.identity_address)
+            $('#residential_address').val(value.residential_address)
+
+		    // Employment Data
+		    $('#employee_id').val(value.employee_id)
+		    value.employee_status_id != null ? $('#employee_status_id').val(value.employee_status_id.id) : ''
+		    $('#join_date').val(value.join_date)
+		    $('#end_date').val(value.end_date)
+		    value.company_id != null ? $('#company_id').val(value.company_id.id) : ''
+		    value.organization_id != null ? $('#organization_id').val(value.organization_id.id) : ''
+		    value.job_position_id != null ? $('#job_position_id').val(value.job_position_id.id) : ''
+		    value.job_level_id != null ? $('#job_level_id').val(value.job_level_id.id) : ''
+
+		    // Salary
+		    $('#basic_salary').val(fnumber(value.basic_salary))
+		    $('#type_salary').val(value.type_salary)
+
+		    // Bank Account
+		    value.bank_id != null ? $('#bank_id').val(value.bank_id.id) : ''
+		    $('#bank_account').val(value.bank_account)
+		    $('#bank_account_holder').val(value.bank_account_holder)
+
+		    // Tax Configuration
+		    $('#npwp').val(value.npwp)
+		    value.ptkp_id != null ? $('#ptkp_id').val(value.ptkp_id.id) : ''
+
+		    // BPJS Configuration
+		    $('#bpjs_ketenagakerjaan').val(value.bpjs_ketenagakerjaan)
+		    $('#bpjs_kesehatan').val(value.bpjs_kesehatan)
+		    $('#bpjs_kesehatan_family').val(value.bpjs_kesehatan_family)
+
+		    // Login Account
+		    $('#username').val(value.username)
+		    $('#active').val(value.active)
+
+		    stop = true
+        }
+    })
+}
 
 $('form').submit(function(e) {
     addLoading()
@@ -162,9 +233,9 @@ $('form').submit(function(e) {
     formData.append('place_of_birth', $('#place_of_birth').val())
     formData.append('date_of_birth', $('#date_of_birth').val())
     formData.append('gender', $('input[name="gender"]:checked').val())
+    $('#education_id').val() != null ? formData.append('education_id', $('#education_id').val()) : ''
     formData.append('religion_id', $('#religion_id').val())
     formData.append('marital_status_id', $('#marital_status_id').val())
-    $('#education_id').val() != null ? formData.append('education_id', $('#education_id').val()) : ''
     $('#blood_type_id').val() != null ? formData.append('blood_type_id', $('#blood_type_id').val()) : ''
 
     // Identity & Address
@@ -205,11 +276,10 @@ $('form').submit(function(e) {
 
     // Login Account
     formData.append('username', $('#username').val())
-    formData.append('password', $('#password').val())
-    formData.append('password_confirmation', $('#cpassword').val())
+    formData.append('active', $('#active').val())
 
     $.ajax({
-        url: `${api_url}/employee/create`,
+        url: `${api_url}/employee/${employee_id}/update`,
         type: 'POST',
         data: formData,
         processData: false,
@@ -282,20 +352,7 @@ $('form').submit(function(e) {
                 $('#username').addClass('is-invalid')
                 $('#username').siblings('.invalid-feedback').html(err.username)
             }
-            if (err.password) {
-                if (err.password != "The password confirmation does not match.") {
-                    $('#password').addClass('is-invalid')
-                    $('#password').siblings('.invalid-feedback').html(err.password)
-                } else {
-                    $('#cpassword').addClass('is-invalid')
-                    $('#cpassword').siblings('.invalid-feedback').html(err.password)
-                }
-            }
-            if (err.password_confirmation) {
-                $('#cpassword').addClass('is-invalid')
-                $('#cpassword').siblings('.invalid-feedback').html(err.password_confirmation)
-            }
-            removeLoading('Submit')
+            removeLoading('Save Changes')
         }
     })
 })
