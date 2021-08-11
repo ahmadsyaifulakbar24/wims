@@ -89,12 +89,7 @@ class CreateEmployeeController extends Controller
             'end_date' => ['nullable', 'date'],
             'basic_salary' => ['required', 'numeric'],
             'npwp' => ['nullable', 'string'],
-            'ptkp_id' => [
-                'nullable', 
-                Rule::exists('master_params', 'id')->where(function ($query) {
-                    return $query->where('category', 'ptkp');
-                })
-            ],
+            'ptkp_id' => [ 'nullable', 'exists:ptkp,id'],
             'bank_id' => ['nullable', 'exists:banks,id'],
             'bank_account' => ['nullable', 'numeric'],
             'bank_account_holder' => ['nullable', 'string'],

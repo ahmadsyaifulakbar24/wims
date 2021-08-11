@@ -29,7 +29,7 @@ class CreateEmployesTable extends Migration
             $table->text('identity_address')->nullable();
             $table->text('residential_address')->nullable();
             $table->string('place_of_birth')->nullable();
-            $table->date('date_of_birth');
+            $table->date('date_of_birth')->nullable();
             $table->string('mobile_phone')->nullable();
             $table->string('phone')->nullable();
             $table->enum('gender', ['male', 'female']);

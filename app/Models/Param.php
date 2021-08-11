@@ -39,4 +39,9 @@ class Param extends Model
     {
         return $this->hasMany(Employe::class, 'employe_status_id');
     }
+
+    public function parent()
+    {
+        return $this->belongsTo(Param::class, 'parent_id');
+    }
 }

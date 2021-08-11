@@ -87,12 +87,7 @@ class UpdateEmployeeController extends Controller
             'end_date' => ['nullable', 'date'],
             'basic_salary' => ['required', 'numeric'],
             'npwp' => ['nullable', 'string'],
-            'ptkp_id' => [
-                'nullable', 
-                Rule::exists('master_params', 'id')->where(function ($query) {
-                    return $query->where('category', 'ptkp');
-                })
-            ],
+            'ptkp_id' => [ 'nullable', 'exists:ptkp,id'],
             'bank_id' => ['nullable', 'exists:banks,id'],
             'bank_account' => ['nullable', 'numeric'],
             'bank_account_holder' => ['nullable', 'string'],
@@ -103,7 +98,7 @@ class UpdateEmployeeController extends Controller
             'active' => ['required', 'boolean']
         ]);
 
-        $inputUser['name'] = $request->first_name.''.$request->last_name;
+        $inputUser['name'] = $request->first_name.' '.$request->last_name;
         $inputUser['username'] = $request->username;
         $inputUser['email'] = $request->email;
         $inputUser['role_id'] = 101;

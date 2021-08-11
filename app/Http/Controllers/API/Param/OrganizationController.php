@@ -13,7 +13,7 @@ class OrganizationController extends Controller
 {
     public function fetch()
     {
-        $organization = Param::where('category', 'organization_structure')->orderBy('param', 'ASC')->get();
+        $organization = Param::where('category', 'organization_structure')->orderBy('id', 'desc')->get();
         return ResponseFormatter::success(
             ParamResource::collection($organization),
             'success get organization structure data'

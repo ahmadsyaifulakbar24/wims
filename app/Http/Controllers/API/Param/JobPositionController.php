@@ -13,7 +13,7 @@ class JobPositionController extends Controller
 {
     public function fetch()
     {
-        $job_position = Param::where('category', 'job_position')->orderBy('param', 'ASC')->get();
+        $job_position = Param::where('category', 'job_position')->orderBy('id', 'desc')->get();
         return ResponseFormatter::success(
             ParamResource::collection($job_position),
             'success get job position data'

@@ -23,6 +23,8 @@ class EmployeeUserResource extends JsonResource
             'profile_photo_url' => $this->user->profile_photo_url,
             'active' => $this->user->active,
             'employee_id' => $this->employee_id,
+            'first_name' => $this->first_name,
+            'last_name' => $this->last_name,
             'identity_type' => $this->identity_type,
             'expired_date_identity' => $this->expired_date_identity,
             'no_identity' => $this->no_identity,

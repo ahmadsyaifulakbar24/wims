@@ -12,7 +12,7 @@ class JobLevelController extends Controller
 {
     public function fetch()
     {
-        $job_level = Param::where('category', 'job_level')->orderBy('param', 'ASC')->get();
+        $job_level = Param::where('category', 'job_level')->orderBy('id', 'desc')->get();
         return ResponseFormatter::success(
             ParamResource::collection($job_level),
             'success get job level data'

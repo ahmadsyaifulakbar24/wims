@@ -14,9 +14,10 @@ class ParamResource extends JsonResource
      */
     public function toArray($request)
     {
+        $parent = ($this->parent_id) ? [ 'id' => $this->parent->id, 'param' => $this->parent->param ] : null;
         return [
             'id' => $this->id,
-            'parent_id' => $this->parent_id,
+            'parent' => $parent,
             'param' => $this->param,
             'option' => $this->option
         ];
