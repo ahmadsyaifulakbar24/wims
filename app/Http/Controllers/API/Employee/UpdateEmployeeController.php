@@ -117,7 +117,7 @@ class UpdateEmployeeController extends Controller
 
         $result = DB::transaction(function () use ($request, $user, $inputUser) {
             $user->update($inputUser);
-            $inputEmployee = $request->except(['username', 'email', 'active']);
+            $inputEmployee = $request->except(['username', 'email', 'profile_photo', 'active']);
             $user->employee()->update($inputEmployee);
             return ResponseFormatter::success(
                 new EmployeeResource($user),
