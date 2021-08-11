@@ -1,6 +1,6 @@
 @extends('layouts/app')
 
-@section('title','Create Employee')
+@section('title','Add Employee')
 
 @section('style')
 	<link rel="stylesheet" href="{{asset('assets/vendors/croppie/croppie.css')}}">
@@ -11,7 +11,7 @@
 		<div class="card none" id="card">
 			<div class="card-header border-bottom-0">
 				<div class="d-flex align-items-center justify-content-between">
-					<h4 class="mb-4 mt-1">Create Employee</h4>
+					<h4 class="mb-4 mt-1">Add Employee</h4>
 				</div>
 			</div>
 			<div class="row">
@@ -396,5 +396,5 @@
 	<script src="{{asset('assets/js/photo.js')}}"></script>
 	<script src="{{asset('assets/js/format.js')}}"></script>
     <script src="{{asset('assets/vendors/croppie/croppie.min.js')}}"></script>
-	<script src="{{asset('api/create-employee.js')}}"></script>
+	<script src="{{asset('api/add-employee.js')}}"></script>
 @endsection

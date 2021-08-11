@@ -11,7 +11,7 @@
 					<div>
 						<!-- <i class="mdi mdi-24px mdi-magnify" role="button"></i>
 						<i class="mdi mdi-24px mdi-tune" data-toggle="modal" data-target="#modal-filter" role="button"></i> -->
-						<a href="{{url('employee/create')}}" class="text-dark" data-toggle="tooltip" data-placement="bottom" title="Create Employee">
+						<a href="{{url('employee/add')}}" class="text-dark" data-toggle="tooltip" data-placement="bottom" title="Add Employee">
 							<i class="mdi mdi-24px mdi-plus-circle-outline pr-0"></i>
 						</a>
 					</div>
@@ -21,7 +21,7 @@
 				<table class="table table-middle">
 					<thead>
 						<tr>
-							<th class="text-truncate text-center">No.</th>
+							<!-- <th class="text-truncate text-center">No.</th> -->
 							<th class="text-truncate">Employee Name</th>
 							<th class="text-truncate">Branch</th>
 							<th class="text-truncate">Organization</th>

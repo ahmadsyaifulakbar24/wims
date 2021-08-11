@@ -155,7 +155,7 @@ function get_data() {
         url: `${api_url}/employee/fetch/${employee_id}`,
         type: 'GET',
         success: function(result) {
-            console.log(result)
+            // console.log(result)
             let value = result.data
             // Personal Data
             $('#image').attr('src', value.profile_photo_url)
@@ -201,7 +201,7 @@ function get_data() {
 
 		    // Tax Configuration
 		    $('#npwp').val(value.npwp)
-		    value.ptkp_id != null ? $('#ptkp_id').val(value.ptkp_id.id) : ''
+		    value.ptkp_id != null ? $('#ptkp_id').val(value.ptkp_id) : ''
 
 		    // BPJS Configuration
 		    $('#bpjs_ketenagakerjaan').val(value.bpjs_ketenagakerjaan)

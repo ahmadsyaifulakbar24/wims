@@ -34,8 +34,8 @@ Route::group(['middleware'=>['beforeMiddleware']], function () {
 	Route::get('employee', function () {
 		return view('employee');
 	});
-	Route::get('employee/create', function () {
-		return view('create-employee');
+	Route::get('employee/add', function () {
+		return view('add-employee');
 	});
 	Route::get('employee/{id}', function ($id) {
 		return view('edit-employee', compact('id'));

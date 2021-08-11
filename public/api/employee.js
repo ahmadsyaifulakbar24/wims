@@ -6,11 +6,11 @@ function get_data() {
 	    url: `${api_url}/employee/fetch`,
 	    type: 'GET',
 	    success: function(result) {
-	        console.log(result)
+	        // console.log(result)
 	        if (result.data != '') {
 	            $.each(result.data, function(index, value) {
 	                append = `<tr data-id="${value.id}" data-title="${value.name}">
-						<td class="text-center">${index + 1}.</td>
+						<!--<td class="text-truncate text-center">${index + 1}.</td>-->
 						<td class="text-truncate">
 							<a href="${root}/employee/${value.id}" class="d-flex align-items-center">
 								<img src="${value.profile_photo_url}" class="avatar rounded-circle mr-3" width="35">
@@ -29,9 +29,6 @@ function get_data() {
 						</td>
 					</tr>`
 	                $('#table').append(append)
-	                // for (var i = 1; i <= 10; i++) {
-		               //  $('#table').append(append)
-	                // }
 	            })
 	        } else {
 	        	append = `<td class="text-truncate" colspan="10">Data not found.</td>`
