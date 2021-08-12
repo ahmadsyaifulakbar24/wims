@@ -11,7 +11,7 @@
 					<div>
 						<!-- <i class="mdi mdi-24px mdi-magnify" role="button"></i>
 						<i class="mdi mdi-24px mdi-tune" data-toggle="modal" data-target="#modal-filter" role="button"></i> -->
-						<a href="{{url('company/branch/create')}}" class="text-dark" data-toggle="tooltip" data-placement="bottom" title="Create branch">
+						<a href="{{url('company/branch/add')}}" class="text-dark" data-toggle="tooltip" data-placement="bottom" title="Add Branch">
 							<i class="mdi mdi-24px mdi-plus-circle-outline pr-0"></i>
 						</a>
 					</div>
@@ -22,10 +22,11 @@
 					<thead>
 						<tr>
 							<th class="text-truncate text-center">No.</th>
-							<th class="text-truncate">Company Name</th>
-							<th class="text-truncate">Company Phone Number</th>
-							<th class="text-truncate">Company Email</th>
-							<th class="text-truncate">Company Address</th>
+							<th class="text-truncate">Branch Name</th>
+							<th class="text-truncate">Province</th>
+							<th class="text-truncate">District/City</th>
+							<th class="text-truncate">Branch Phone Number</th>
+							<th class="text-truncate">Branch Email</th>
 							<th class="text-truncate"></th>
 						</tr>
 					</thead>

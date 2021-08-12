@@ -10,7 +10,7 @@ function get_data() {
 	        if (result.data != '') {
 	            $.each(result.data, function(index, value) {
 	                append = `<tr data-id="${value.id}" data-title="${value.name}">
-						<!--<td class="text-truncate text-center">${index + 1}.</td>-->
+						<td class="text-center">${index + 1}.</td>
 						<td class="text-truncate">
 							<a href="${root}/employee/${value.id}" class="d-flex align-items-center">
 								<img src="${value.profile_photo_url}" class="avatar rounded-circle mr-3" width="35">

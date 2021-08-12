@@ -169,7 +169,7 @@ $('form').submit(function(e) {
                 $('#signature-image').addClass('is-invalid')
                 $('#signature-image').siblings('.invalid-feedback').html(err.signature)
             }
-            removeLoading('Create')
+            removeLoading('Submit')
 	    }
 	})
 })

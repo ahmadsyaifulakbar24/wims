@@ -155,7 +155,7 @@ function get_data() {
         url: `${api_url}/employee/fetch/${employee_id}`,
         type: 'GET',
         success: function(result) {
-            // console.log(result)
+            console.log(result)
             let value = result.data
             // Personal Data
             $('#image').attr('src', value.profile_photo_url)

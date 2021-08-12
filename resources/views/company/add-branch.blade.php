@@ -1,6 +1,6 @@
 @extends('layouts/app')
 
-@section('title','Create Branch')
+@section('title','Add Branch')
 
 @section('style')
 	<link rel="stylesheet" href="{{asset('assets/vendors/croppie/croppie.css')}}">
@@ -11,7 +11,7 @@
 		<div class="card none" id="card">
 			<div class="card-header border-bottom-0">
 				<div class="d-flex align-items-center justify-content-between">
-					<h4 class="d-nonee d-md-block mb-4 mt-1">Create Branch</h4>
+					<h4 class="d-nonee d-md-block mb-4 mt-1">Add Branch</h4>
 				</div>
 			</div>
 			<div class="row">
@@ -20,7 +20,7 @@
 						<form>
 							<div class="row">
 								<div class="form-group offset-3 col-6 text-center px-0">
-									<img class="avatar rounded-circle" width="140" id="image" alt="Logo">
+									<img class="avatar border rounded-circle" width="140" id="image" alt="Logo">
 									<div class="form-group mt-2">
 										<label class="text-primary mb-0" for="photo" role="button">Upload Logo</label>
 										<input type="file" class="none" id="photo" accept="image/*">
@@ -30,7 +30,7 @@
 							</div>
 							<div class="row">
 								<div class="form-group col-sm-6 order-1">
-									<label for="name" class="col-form-label">Company Name*</label>
+									<label for="name" class="col-form-label">Branch Name*</label>
 									<input class="form-control" id="name">
 									<div class="invalid-feedback"></div>
 								</div>
@@ -40,7 +40,7 @@
 									<div class="invalid-feedback"></div>
 								</div>
 								<div class="form-group col-12 order-sm-3 order-2">
-									<label for="address" class="col-form-label">Company Address*</label>
+									<label for="address" class="col-form-label">Branch Address*</label>
 									<textarea class="form-control form-control-sm" id="address" rows="3"></textarea>
 									<div class="invalid-feedback"></div>
 								</div>
@@ -71,12 +71,12 @@
 							</div>
 							<div class="row">
 								<div class="form-group col-sm-6">
-									<label for="phone_number" class="col-form-label">Company Phone Number*</label>
+									<label for="phone_number" class="col-form-label">Branch Phone Number*</label>
 									<input type="tel" class="form-control" id="phone_number">
 									<div class="invalid-feedback"></div>
 								</div>
 								<div class="form-group col-sm-6">
-									<label for="email" class="col-form-label">Company Email*</label>
+									<label for="email" class="col-form-label">Branch Email*</label>
 									<input type="email" class="form-control" id="email">
 									<div class="invalid-feedback"></div>
 								</div>
@@ -93,12 +93,12 @@
 									<div class="invalid-feedback"></div>
 								</div>
 								<div class="form-group col-sm-6">
-									<label for="npwp" class="col-form-label">Company NPWP*</label>
+									<label for="npwp" class="col-form-label">Branch NPWP*</label>
 									<input type="tel" class="form-control npwp" id="npwp" maxlength="20">
 									<div class="invalid-feedback"></div>
 								</div>
 								<div class="form-group col-sm-6">
-									<label for="taxable_date" class="col-form-label">Company Taxable Date*</label>
+									<label for="taxable_date" class="col-form-label">Branch Taxable Date*</label>
 									<input type="date" class="form-control" id="taxable_date">
 									<div class="invalid-feedback"></div>
 								</div>
@@ -129,7 +129,7 @@
 							</div>
 							<div class="form-group">
 								<div class="text-right mt-4">
-									<button class="btn btn-dark" id="submit">Create</button>
+									<button class="btn btn-dark" id="submit">Submit</button>
 								</div>
 							</div>
                         </form>
@@ -171,5 +171,5 @@
 	<script src="{{asset('assets/js/signature.js')}}"></script>
 	<script src="{{asset('assets/js/format.js')}}"></script>
     <script src="{{asset('assets/vendors/croppie/croppie.min.js')}}"></script>
-	<script src="{{asset('api/company/create-branch.js')}}"></script>
+	<script src="{{asset('api/company/add-branch.js')}}"></script>
 @endsection

@@ -21,7 +21,7 @@
 				<table class="table table-middle">
 					<thead>
 						<tr>
-							<!-- <th class="text-truncate text-center">No.</th> -->
+							<th class="text-truncate text-center">No.</th>
 							<th class="text-truncate">Employee Name</th>
 							<th class="text-truncate">Branch</th>
 							<th class="text-truncate">Organization</th>

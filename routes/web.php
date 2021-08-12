@@ -81,8 +81,8 @@ Route::group(['middleware'=>['beforeMiddleware']], function () {
 	Route::get('company/branch', function () {
 		return view('company/branch');
 	});
-	Route::get('company/branch/create', function () {
-		return view('company/create-branch');
+	Route::get('company/branch/add', function () {
+		return view('company/add-branch');
 	});
 	Route::get('company/branch/{id}', function ($id) {
 		return view('company/edit-branch', compact('id'));
