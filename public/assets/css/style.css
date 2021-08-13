@@ -37,7 +37,8 @@ label,
 .sidebar,
 .compose,
 .dropdown-item,
-.navbar-brand {
+.navbar-brand,
+.tf-nc {
     font-family: 'DM Sans', sans-serif;
 }
 
