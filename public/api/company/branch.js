@@ -20,8 +20,8 @@ function get_data() {
 								<span>${value.name}</span>
 							</a>
 						</td>
-						<td class="text-truncate">${value.province_id.province}</td>
-						<td class="text-truncate">${value.city_id.city}</td>
+						<td class="text-truncate">${value.province.province}</td>
+						<td class="text-truncate">${value.city.city}</td>
 						<td class="text-truncate">${value.phone_number}</td>
 						<td class="text-truncate">${value.email}</td>
 						<td class="text-right">
