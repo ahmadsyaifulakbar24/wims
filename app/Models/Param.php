@@ -37,7 +37,7 @@ class Param extends Model
 
     public function employee_status()
     {
-        return $this->hasMany(Employe::class, 'employe_status_id');
+        return $this->hasMany(Employe::class, 'employee_status_id');
     }
 
     public function parent()
