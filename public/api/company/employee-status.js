@@ -130,7 +130,7 @@ $(document).on('click', '#delete', function() {
         url: `${api_url}/employee_status/${id}/delete`,
         type: 'DELETE',
         success: function(result) {
-            // $('#modal-delete').modal('hide')
+            $('#modal-delete').modal('hide')
             $('#delete').attr('disabled', false)
             customAlert('success', 'Employee status deleted')
             get_data()
