@@ -2,6 +2,10 @@
 
 @section('title','Job Position')
 
+@section('style')
+	<link rel="stylesheet" href="{{asset('assets/vendors/treeflex/treeflex.css')}}">
+@endsection
+
 @section('content')
 	<div class="container">
 		<div class="card">
@@ -10,7 +14,7 @@
 					<h4 class="mb-0">Job Position</h4>
 					<div class="d-flex align-items-center">
 						<!-- <i class="mdi mdi-24px mdi-magnify" role="button"></i> -->
-						<i class="mdi mdi-24px mdi-sitemap pr-0 mr-2" id="sitemap" data-toggle="tooltip" data-placement="bottom" title="Sitemap Job Position" role="button"></i>
+						<i class="mdi mdi-24px mdi-sitemap pr-0 mr-2" id="sitemap" data-toggle="tooltip" data-placement="bottom" title="Job Position Chart" role="button"></i>
 						<i class="mdi mdi-24px mdi-plus-circle-outline pr-0" id="add" data-toggle="tooltip" data-placement="bottom" title="Add Job Position" role="button"></i>
 					</div>
 				</div>
@@ -83,6 +87,26 @@
 	            <div class="modal-footer border-top-0">
 	                <button class="btn btn-outline-dark" data-dismiss="modal">Close</button>
 	                <button class="btn btn-dark" id="delete">Delete</button>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<div class="modal fade" id="modal-sitemap" tabindex="-1" aria-hidden="true">
+	    <div class="modal-xl modal-dialog modal-dialog-centered">
+	        <div class="modal-content">
+	            <div class="modal-header border-bottom-0">
+	                <h5 class="modal-title">Job Position Chart</h5>
+	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	                    <i class="mdi mdi-close pr-0"></i>
+	                </button>
+	            </div>
+	            <div class="modal-body text-center">
+	            	<div class="tf-tree">
+					    <ul id="parent"></ul>
+					</div>
+	            </div>
+	            <div class="modal-footer border-top-0">
+	                <button class="btn btn-outline-dark" data-dismiss="modal">Close</button>
 	            </div>
 	        </div>
 	    </div>

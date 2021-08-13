@@ -71,6 +71,26 @@
 	        </div>
 	    </div>
 	</div>
+	<div class="modal fade" id="modal-delete" tabindex="-1" aria-hidden="true">
+	    <div class="modal-sm modal-dialog modal-dialog-centered">
+	        <div class="modal-content">
+	            <div class="modal-header border-bottom-0">
+	                <h5 class="modal-title">Delete Organization</h5>
+	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	                    <i class="mdi mdi-close pr-0"></i>
+	                </button>
+	            </div>
+	            <div class="modal-body">
+	            	Are you sure want to delete <b></b>?
+	            	<span class="text-danger">Organization inside the parent <b></b> will be deleted.</span>
+	            </div>
+	            <div class="modal-footer border-top-0">
+	                <button class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+	                <button class="btn btn-dark" id="delete">Delete</button>
+	            </div>
+	        </div>
+	    </div>
+	</div>
 	<div class="modal fade" id="modal-sitemap" tabindex="-1" aria-hidden="true">
 	    <div class="modal-xl modal-dialog modal-dialog-centered">
 	        <div class="modal-content">
@@ -92,27 +112,6 @@
 	            </div>
 	            <div class="modal-footer border-top-0">
 	                <button class="btn btn-outline-dark" data-dismiss="modal">Close</button>
-	                <!-- <button class="btn btn-dark" id="delete">Delete</button> -->
-	            </div>
-	        </div>
-	    </div>
-	</div>
-	<div class="modal fade" id="modal-delete" tabindex="-1" aria-hidden="true">
-	    <div class="modal-sm modal-dialog modal-dialog-centered">
-	        <div class="modal-content">
-	            <div class="modal-header border-bottom-0">
-	                <h5 class="modal-title">Delete Organization</h5>
-	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	                    <i class="mdi mdi-close pr-0"></i>
-	                </button>
-	            </div>
-	            <div class="modal-body">
-	            	Are you sure want to delete <b></b>?
-	            	<span class="text-danger">Organization inside the parent <b></b> will be deleted.</span>
-	            </div>
-	            <div class="modal-footer border-top-0">
-	                <button class="btn btn-outline-dark" data-dismiss="modal">Close</button>
-	                <button class="btn btn-dark" id="delete">Delete</button>
 	            </div>
 	        </div>
 	    </div>
