@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class DeleteEmployeController extends Controller
+class DeleteEmployeeController extends Controller
 {
     public function __invoke(User $user)
     {
