@@ -43,7 +43,7 @@ class GetCompanyController extends Controller
             } else {
                 $company->where('type', 'branch');
                 return ResponseFormatter::success(
-                    $company->get(),
+                    CompanyResource::collection($company->get()),
                     $message
                 );
             }
