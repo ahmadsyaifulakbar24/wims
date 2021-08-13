@@ -87,6 +87,7 @@
                         <a class="dropdown-item" href="{{url('company/job-position')}}">Job Position</a>
                         <a class="dropdown-item" href="{{url('company/job-level')}}">Job Level</a>
                         <a class="dropdown-item" href="{{url('company/employee-status')}}">Employee Status</a>
+                        <a class="dropdown-item" href="{{url('company/ptkp')}}">PTKP</a>
                     </div>
                 </li>
             </ul>

@@ -100,4 +100,7 @@ Route::group(['middleware'=>['beforeMiddleware']], function () {
 	Route::get('company/employee-status', function () {
 		return view('company/employee-status');
 	});
+	Route::get('company/ptkp', function () {
+		return view('company/ptkp');
+	});
 });
