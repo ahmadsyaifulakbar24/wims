@@ -36,12 +36,12 @@ class Attendance extends Model
 
     public function getLoginImageUrlAttribute()
     {
-        return url('') . Storage::url($this->attributes['login_image']);
+        return (!empty($this->attributes['login_image'])) ? url('') . Storage::url($this->attributes['login_image']) : null;
     }
 
     public function getHomeImageUrlAttribute()
     {
-        return url('') . Storage::url($this->attributes['home_image']);
+        return (!empty($this->attributes['home_image'])) ? url('') . Storage::url($this->attributes['home_image']) : null;
     }
 
     public function employee()
