@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Attendance extends Model
 {
@@ -33,14 +34,14 @@ class Attendance extends Model
         'home_image_url'
     ];
 
-    public function getLoginImageUrl()
+    public function getLoginImageUrlAttribute()
     {
-        return url('') . Storage::url($this->attributes['login_image_url']);
+        return url('') . Storage::url($this->attributes['login_image']);
     }
 
-    public function HomeLoginImageUrl()
+    public function getHomeImageUrlAttribute()
     {
-        return url('') . Storage::url($this->attributes['home_image_url']);
+        return url('') . Storage::url($this->attributes['home_image']);
     }
 
     public function employee()
