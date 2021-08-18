@@ -113,7 +113,8 @@ a:hover {
 
 .main {
     /*margin-left: 230px;*/
-    padding: 80px 15px 30px 15px;
+    padding: 80px 15px 0px 15px;
+    margin-bottom: 30px;
 }
 
 .container-compose {
@@ -457,8 +458,9 @@ td:last-child {
     .main {
         padding: 0;
         padding-top: 70px;
-        padding-bottom: 75px;
+        /*padding-bottom: 75px;*/
         margin-left: 0;
+	    margin-bottom: 75px;
     }
 
     .container-compose {
@@ -473,6 +475,9 @@ td:last-child {
 
 /* Small */
 @media screen and (max-width: 767px) {
+	body {
+		background-color: #fff;
+	}
     .customAlert {
         left: 0px;
         bottom: -120px;

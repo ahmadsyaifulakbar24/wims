@@ -1,17 +1,21 @@
 @extends('layouts/app')
 
-@section('title','Employee Status')
+@section('title','Job Position')
+
+@section('style')
+	<link rel="stylesheet" href="{{asset('assets/vendors/treeflex/treeflex.css')}}">
+@endsection
 
 @section('content')
 	<div class="container">
 		<div class="card">
 			<div class="card-header border-bottom-0">
 				<div class="d-flex align-items-center justify-content-between">
-					<h4 class="mb-0">Employee Status</h4>
+					<h4 class="mb-0">Job Position</h4>
 					<div class="d-flex align-items-center">
 						<!-- <i class="mdi mdi-24px mdi-magnify" role="button"></i> -->
-						<!-- <i class="mdi mdi-24px mdi-sitemap pr-0 mr-2" id="sitemap" data-toggle="tooltip" data-placement="bottom" title="Sitemap Employee Status" role="button"></i> -->
-						<i class="mdi mdi-24px mdi-plus-circle-outline pr-0" id="add" data-toggle="tooltip" data-placement="bottom" title="Add Employee Status" role="button"></i>
+						<i class="mdi mdi-24px mdi-sitemap pr-0 mr-2" id="sitemap" data-toggle="tooltip" data-placement="bottom" title="Job Position Chart" role="button"></i>
+						<i class="mdi mdi-24px mdi-plus-circle-outline pr-0" id="add" data-toggle="tooltip" data-placement="bottom" title="Add Job Position" role="button"></i>
 					</div>
 				</div>
 			</div>
@@ -20,8 +24,8 @@
 					<thead>
 						<tr>
 							<th class="text-truncate text-center">No.</th>
-							<th class="text-truncate">Status Name</th>
-							<th class="text-truncate">Have End Date</th>
+							<th class="text-truncate">Job Name</th>
+							<th class="text-truncate">Parent</th>
 							<th class="text-truncate"></th>
 						</tr>
 					</thead>
@@ -49,13 +53,14 @@
 	            <form>
 		            <div class="modal-body">
 						<div class="form-group">
-							<label for="employee_status_name">Status Name</label>
-							<input class="form-control" id="employee_status_name">
+							<label for="job_position_name">Job Name</label>
+							<input class="form-control" id="job_position_name">
 							<div class="invalid-feedback"></div>
 						</div>
-						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="1" id="end_date">
-							<label class="form-check-label" for="end_date" role="button">Have End Date</label>
+						<div class="form-group">
+							<label for="parent_id">Parent</label>
+							<select class="custom-select" id="parent_id" role="button"></select>
+							<div class="invalid-feedback"></div>
 						</div>
 		            </div>
 		            <div class="modal-footer border-top-0">
@@ -70,15 +75,38 @@
 	    <div class="modal-sm modal-dialog modal-dialog-centered">
 	        <div class="modal-content">
 	            <div class="modal-header border-bottom-0">
-	                <h5 class="modal-title">Delete Employee Status</h5>
+	                <h5 class="modal-title">Delete Job Position</h5>
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	                    <i class="mdi mdi-close pr-0"></i>
 	                </button>
 	            </div>
-	            <div class="modal-body">Are you sure want to delete <b></b>?</div>
+	            <div class="modal-body">
+	            	Are you sure want to delete <b></b>?
+	            	<span class="text-danger">Job position inside the parent <b></b> will be deleted.</span>
+	            </div>
 	            <div class="modal-footer border-top-0">
 	                <button class="btn btn-outline-dark" data-dismiss="modal">Close</button>
 	                <button class="btn btn-dark" id="delete">Delete</button>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<div class="modal fade" id="modal-sitemap" tabindex="-1" aria-hidden="true">
+	    <div class="modal-xl modal-dialog modal-dialog-centered">
+	        <div class="modal-content">
+	            <div class="modal-header border-bottom-0">
+	                <h5 class="modal-title">Job Position Chart</h5>
+	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	                    <i class="mdi mdi-close pr-0"></i>
+	                </button>
+	            </div>
+	            <div class="modal-body text-center">
+	            	<div class="tf-tree">
+					    <ul id="parent"></ul>
+					</div>
+	            </div>
+	            <div class="modal-footer border-top-0">
+	                <button class="btn btn-outline-dark" data-dismiss="modal">Close</button>
 	            </div>
 	        </div>
 	    </div>
@@ -87,7 +115,7 @@
 @endsection
 
 @section('script')
-	<script src="{{asset('api/company/employee-status.js')}}"></script>
+	<script src="{{asset('api/admin/company/job-position.js')}}"></script>
 	<script>
 		$(function () {
 			$('[data-toggle="tooltip"]').tooltip()

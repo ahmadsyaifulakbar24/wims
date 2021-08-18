@@ -1,17 +1,19 @@
 @extends('layouts/app')
 
-@section('title','Job Level')
+@section('title','Branch')
 
 @section('content')
 	<div class="container">
 		<div class="card">
 			<div class="card-header border-bottom-0">
 				<div class="d-flex align-items-center justify-content-between">
-					<h4 class="mb-0">Job Level</h4>
-					<div class="d-flex align-items-center">
-						<!-- <i class="mdi mdi-24px mdi-magnify" role="button"></i> -->
-						<!-- <i class="mdi mdi-24px mdi-sitemap pr-0 mr-2" id="sitemap" data-toggle="tooltip" data-placement="bottom" title="Sitemap Job Level" role="button"></i> -->
-						<i class="mdi mdi-24px mdi-plus-circle-outline pr-0" id="add" data-toggle="tooltip" data-placement="bottom" title="Add Job Level" role="button"></i>
+					<h4 class="mb-0">Branch</h4>
+					<div>
+						<!-- <i class="mdi mdi-24px mdi-magnify" role="button"></i>
+						<i class="mdi mdi-24px mdi-tune" data-toggle="modal" data-target="#modal-filter" role="button"></i> -->
+						<a href="{{url('company/branch/add')}}" class="text-dark" data-toggle="tooltip" data-placement="bottom" title="Add Branch">
+							<i class="mdi mdi-24px mdi-plus-circle-outline pr-0"></i>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -20,7 +22,11 @@
 					<thead>
 						<tr>
 							<th class="text-truncate text-center">No.</th>
-							<th class="text-truncate">Job Level</th>
+							<th class="text-truncate">Branch Name</th>
+							<th class="text-truncate">Province</th>
+							<th class="text-truncate">District/City</th>
+							<th class="text-truncate">Branch Phone Number</th>
+							<th class="text-truncate">Branch Email</th>
 							<th class="text-truncate"></th>
 						</tr>
 					</thead>
@@ -36,36 +42,11 @@
 			</div> -->
 		</div>
 	</div>
-	<div class="modal fade" id="modal" tabindex="-1" aria-hidden="true">
-	    <div class="modal-sm modal-dialog modal-dialog-centered">
-	        <div class="modal-content">
-	            <div class="modal-header border-bottom-0">
-	                <h5 class="modal-title"></h5>
-	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	                    <i class="mdi mdi-close pr-0"></i>
-	                </button>
-	            </div>
-	            <form>
-		            <div class="modal-body">
-						<div class="form-group">
-							<label for="job_level_name">Job Level</label>
-							<input class="form-control" id="job_level_name">
-							<div class="invalid-feedback"></div>
-						</div>
-		            </div>
-		            <div class="modal-footer border-top-0">
-		                <button class="btn btn-outline-dark" data-dismiss="modal">Close</button>
-		                <button class="btn btn-dark" id="submit">Create</button>
-		            </div>
-		        </form>
-	        </div>
-	    </div>
-	</div>
 	<div class="modal fade" id="modal-delete" tabindex="-1" aria-hidden="true">
 	    <div class="modal-sm modal-dialog modal-dialog-centered">
 	        <div class="modal-content">
 	            <div class="modal-header border-bottom-0">
-	                <h5 class="modal-title">Delete Job Level</h5>
+	                <h5 class="modal-title">Delete Branch</h5>
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	                    <i class="mdi mdi-close pr-0"></i>
 	                </button>
@@ -82,7 +63,7 @@
 @endsection
 
 @section('script')
-	<script src="{{asset('api/company/job-level.js')}}"></script>
+	<script src="{{asset('api/admin/company/branch.js')}}"></script>
 	<script>
 		$(function () {
 			$('[data-toggle="tooltip"]').tooltip()

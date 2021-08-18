@@ -1,17 +1,17 @@
 @extends('layouts/app')
 
-@section('title','Branch')
+@section('title','Employee')
 
 @section('content')
 	<div class="container">
 		<div class="card">
 			<div class="card-header border-bottom-0">
 				<div class="d-flex align-items-center justify-content-between">
-					<h4 class="mb-0">Branch</h4>
+					<h4 class="mb-0">Employee</h4>
 					<div>
 						<!-- <i class="mdi mdi-24px mdi-magnify" role="button"></i>
 						<i class="mdi mdi-24px mdi-tune" data-toggle="modal" data-target="#modal-filter" role="button"></i> -->
-						<a href="{{url('company/branch/add')}}" class="text-dark" data-toggle="tooltip" data-placement="bottom" title="Add Branch">
+						<a href="{{url('employee/add')}}" class="text-dark" data-toggle="tooltip" data-placement="bottom" title="Add Employee">
 							<i class="mdi mdi-24px mdi-plus-circle-outline pr-0"></i>
 						</a>
 					</div>
@@ -22,31 +22,27 @@
 					<thead>
 						<tr>
 							<th class="text-truncate text-center">No.</th>
-							<th class="text-truncate">Branch Name</th>
-							<th class="text-truncate">Province</th>
-							<th class="text-truncate">District/City</th>
-							<th class="text-truncate">Branch Phone Number</th>
-							<th class="text-truncate">Branch Email</th>
+							<th class="text-truncate">Employee Name</th>
+							<th class="text-truncate">Branch</th>
+							<th class="text-truncate">Organization</th>
+							<th class="text-truncate">Job Position</th>
+							<th class="text-truncate">Job Level</th>
+							<th class="text-truncate">Employee Status</th>
+							<th class="text-truncate">Join Date</th>
+							<th class="text-truncate">End Date</th>
 							<th class="text-truncate"></th>
 						</tr>
 					</thead>
 					<tbody id="table"></tbody>
 				</table>
 			</div>
-			<!-- <div class="d-flex flex-column justify-content-center align-items-center py-5">
-				<div class="loader loader-sm">
-					<svg class="circular" viewBox="25 25 50 50">
-						<circle class="path-dark" cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-miterlimit="10"/>
-					</svg>
-				</div>
-			</div> -->
 		</div>
 	</div>
 	<div class="modal fade" id="modal-delete" tabindex="-1" aria-hidden="true">
 	    <div class="modal-sm modal-dialog modal-dialog-centered">
 	        <div class="modal-content">
 	            <div class="modal-header border-bottom-0">
-	                <h5 class="modal-title">Delete Branch</h5>
+	                <h5 class="modal-title">Delete Employee</h5>
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	                    <i class="mdi mdi-close pr-0"></i>
 	                </button>
@@ -63,7 +59,7 @@
 @endsection
 
 @section('script')
-	<script src="{{asset('api/company/branch.js')}}"></script>
+	<script src="{{asset('api/admin/employee.js')}}"></script>
 	<script>
 		$(function () {
 			$('[data-toggle="tooltip"]').tooltip()

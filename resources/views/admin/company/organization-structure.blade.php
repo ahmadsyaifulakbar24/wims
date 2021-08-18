@@ -120,7 +120,7 @@
 @endsection
 
 @section('script')
-	<script src="{{asset('api/company/organization-structure.js')}}"></script>
+	<script src="{{asset('api/admin/company/organization-structure.js')}}"></script>
 	<script>
 		$(function () {
 			$('[data-toggle="tooltip"]').tooltip()

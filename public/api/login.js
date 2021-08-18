@@ -31,7 +31,11 @@ $('#form').submit(function(e) {
                     role: value.user.role_id.id
                 },
                 success: function(result) {
-                    location.href = `${root}/dashboard`
+                	if (value.user.role_id.id == 1) {
+	                    location.href = `${root}/dashboard`
+		            } else {
+	                    location.href = `${root}/home`
+		            }
                 }
             })
         },
