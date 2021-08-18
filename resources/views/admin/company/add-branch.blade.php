@@ -1,6 +1,6 @@
 @extends('layouts/app')
 
-@section('title','Edit Branch')
+@section('title','Add Branch')
 
 @section('style')
 	<link rel="stylesheet" href="{{asset('assets/vendors/croppie/croppie.css')}}">
@@ -11,7 +11,7 @@
 		<div class="card none" id="card">
 			<div class="card-header border-bottom-0">
 				<div class="d-flex align-items-center justify-content-between">
-					<h4 class="d-nonee d-md-block mb-4 mt-1">Edit Branch</h4>
+					<h4 class="d-nonee d-md-block mb-4 mt-1">Add Branch</h4>
 				</div>
 			</div>
 			<div class="row">
@@ -129,7 +129,7 @@
 							</div>
 							<div class="form-group">
 								<div class="text-right mt-4">
-									<button class="btn btn-dark" id="submit">Save Changes</button>
+									<button class="btn btn-dark" id="submit">Submit</button>
 								</div>
 							</div>
                         </form>
@@ -167,10 +167,9 @@
 @endsection
 
 @section('script')
-	<script>const company_id = {{$id}}</script>
 	<script src="{{asset('assets/js/photo.js')}}"></script>
 	<script src="{{asset('assets/js/signature.js')}}"></script>
 	<script src="{{asset('assets/js/format.js')}}"></script>
     <script src="{{asset('assets/vendors/croppie/croppie.min.js')}}"></script>
-	<script src="{{asset('api/company/edit-branch.js')}}"></script>
+	<script src="{{asset('api/admin/company/add-branch.js')}}"></script>
 @endsection

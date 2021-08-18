@@ -1,16 +1,17 @@
 @extends('layouts/app')
 
-@section('title','PTKP')
+@section('title','Employee Status')
 
 @section('content')
 	<div class="container">
 		<div class="card">
 			<div class="card-header border-bottom-0">
 				<div class="d-flex align-items-center justify-content-between">
-					<h4 class="mb-0">PTKP</h4>
+					<h4 class="mb-0">Employee Status</h4>
 					<div class="d-flex align-items-center">
 						<!-- <i class="mdi mdi-24px mdi-magnify" role="button"></i> -->
-						<i class="mdi mdi-24px mdi-plus-circle-outline pr-0" id="add" data-toggle="tooltip" data-placement="bottom" title="Add PTKP" role="button"></i>
+						<!-- <i class="mdi mdi-24px mdi-sitemap pr-0 mr-2" id="sitemap" data-toggle="tooltip" data-placement="bottom" title="Sitemap Employee Status" role="button"></i> -->
+						<i class="mdi mdi-24px mdi-plus-circle-outline pr-0" id="add" data-toggle="tooltip" data-placement="bottom" title="Add Employee Status" role="button"></i>
 					</div>
 				</div>
 			</div>
@@ -19,9 +20,8 @@
 					<thead>
 						<tr>
 							<th class="text-truncate text-center">No.</th>
-							<th class="text-truncate">PTKP Name</th>
-							<th class="text-truncate">Rate</th>
-							<th class="text-truncate">Description</th>
+							<th class="text-truncate">Status Name</th>
+							<th class="text-truncate">Have End Date</th>
 							<th class="text-truncate"></th>
 						</tr>
 					</thead>
@@ -49,24 +49,13 @@
 	            <form>
 		            <div class="modal-body">
 						<div class="form-group">
-							<label for="ptkp">PTKP Name</label>
-							<input class="form-control" id="ptkp">
+							<label for="employee_status_name">Status Name</label>
+							<input class="form-control" id="employee_status_name">
 							<div class="invalid-feedback"></div>
 						</div>
-						<div class="form-group">
-							<label for="rate">Rate</label>
-							<div class="input-group">
-								<div class="input-group-prepend">
-									<span class="input-group-text">Rp</span>
-								</div>
-								<input class="form-control number" id="rate">
-								<div class="invalid-feedback"></div>
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="description">Description</label>
-							<textarea class="form-control form-control-sm" rows="4" id="description"></textarea>
-							<div class="invalid-feedback"></div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="1" id="end_date">
+							<label class="form-check-label" for="end_date" role="button">Have End Date</label>
 						</div>
 		            </div>
 		            <div class="modal-footer border-top-0">
@@ -81,7 +70,7 @@
 	    <div class="modal-sm modal-dialog modal-dialog-centered">
 	        <div class="modal-content">
 	            <div class="modal-header border-bottom-0">
-	                <h5 class="modal-title">Delete PTKP</h5>
+	                <h5 class="modal-title">Delete Employee Status</h5>
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	                    <i class="mdi mdi-close pr-0"></i>
 	                </button>
@@ -98,8 +87,7 @@
 @endsection
 
 @section('script')
-	<script src="{{asset('assets/js/format.js')}}"></script>
-	<script src="{{asset('api/company/ptkp.js')}}"></script>
+	<script src="{{asset('api/admin/company/employee-status.js')}}"></script>
 	<script>
 		$(function () {
 			$('[data-toggle="tooltip"]').tooltip()

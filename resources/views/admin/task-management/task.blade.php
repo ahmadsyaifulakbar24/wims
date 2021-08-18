@@ -300,5 +300,5 @@
 @section('script')
 	<script>const board_id = {{$id}}</script>
 	<script src="{{asset('assets/js/file.js')}}"></script>
-	<script src="{{asset('api/task-management/task.js')}}"></script>
+	<script src="{{asset('api/admin/task-management/task.js')}}"></script>
 @endsection

@@ -105,5 +105,5 @@
 @endsection
 
 @section('script')
-	<script src="{{asset('api/dashboard.js')}}"></script>
+	<script src="{{asset('api/admin/dashboard.js')}}"></script>
 @endsection

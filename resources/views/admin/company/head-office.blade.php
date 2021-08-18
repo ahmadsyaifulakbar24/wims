@@ -1,6 +1,6 @@
 @extends('layouts/app')
 
-@section('title','Add Branch')
+@section('title','Head Office')
 
 @section('style')
 	<link rel="stylesheet" href="{{asset('assets/vendors/croppie/croppie.css')}}">
@@ -11,7 +11,7 @@
 		<div class="card none" id="card">
 			<div class="card-header border-bottom-0">
 				<div class="d-flex align-items-center justify-content-between">
-					<h4 class="d-nonee d-md-block mb-4 mt-1">Add Branch</h4>
+					<h4 class="d-nonee d-md-block mb-4 mt-1">Head Office</h4>
 				</div>
 			</div>
 			<div class="row">
@@ -19,18 +19,17 @@
 					<div class="card-body">
 						<form>
 							<div class="row">
-								<div class="form-group offset-3 col-6 text-center px-0">
-									<img class="avatar border rounded-circle" width="140" id="image" alt="Logo">
+								<div class="form-group offset-3 col-6 text-center">
+									<img class="avatar rounded-circle" width="140" id="image" alt="Logo">
 									<div class="form-group mt-2">
-										<label class="text-primary mb-0" for="photo" role="button">Upload Logo</label>
+										<label class="text-primary" for="photo" role="button">Upload Logo</label>
 										<input type="file" class="none" id="photo" accept="image/*">
-										<div class="invalid-feedback"></div>
 									</div>
 								</div>
 							</div>
 							<div class="row">
 								<div class="form-group col-sm-6 order-1">
-									<label for="name" class="col-form-label">Branch Name*</label>
+									<label for="name" class="col-form-label">Company Name*</label>
 									<input class="form-control" id="name">
 									<div class="invalid-feedback"></div>
 								</div>
@@ -40,7 +39,7 @@
 									<div class="invalid-feedback"></div>
 								</div>
 								<div class="form-group col-12 order-sm-3 order-2">
-									<label for="address" class="col-form-label">Branch Address*</label>
+									<label for="address" class="col-form-label">Company Address*</label>
 									<textarea class="form-control form-control-sm" id="address" rows="3"></textarea>
 									<div class="invalid-feedback"></div>
 								</div>
@@ -59,7 +58,7 @@
 									<div class="invalid-feedback"></div>
 								</div>
 								<div class="form-group col-sm-6 order-6">
-									<label for="umr" class="col-form-label">UMR*</label>
+									<label for="umr" class="col-form-label">UMR</label>
 									<div class="input-group">
 										<div class="input-group-prepend">
 											<div class="input-group-text">Rp</div>
@@ -71,12 +70,12 @@
 							</div>
 							<div class="row">
 								<div class="form-group col-sm-6">
-									<label for="phone_number" class="col-form-label">Branch Phone Number*</label>
+									<label for="phone_number" class="col-form-label">Company Phone Number*</label>
 									<input type="tel" class="form-control" id="phone_number">
 									<div class="invalid-feedback"></div>
 								</div>
 								<div class="form-group col-sm-6">
-									<label for="email" class="col-form-label">Branch Email*</label>
+									<label for="email" class="col-form-label">Company Email*</label>
 									<input type="email" class="form-control" id="email">
 									<div class="invalid-feedback"></div>
 								</div>
@@ -93,12 +92,12 @@
 									<div class="invalid-feedback"></div>
 								</div>
 								<div class="form-group col-sm-6">
-									<label for="npwp" class="col-form-label">Branch NPWP*</label>
+									<label for="npwp" class="col-form-label">Company NPWP*</label>
 									<input type="tel" class="form-control npwp" id="npwp" maxlength="20">
 									<div class="invalid-feedback"></div>
 								</div>
 								<div class="form-group col-sm-6">
-									<label for="taxable_date" class="col-form-label">Branch Taxable Date*</label>
+									<label for="taxable_date" class="col-form-label">Company Taxable Date*</label>
 									<input type="date" class="form-control" id="taxable_date">
 									<div class="invalid-feedback"></div>
 								</div>
@@ -118,18 +117,18 @@
 									<label for="signature" class="col-form-label">Signature</label>
 									<div class="text-center" id="signature-preview">
 										<img src="{{asset('assets/images/signature-example.png')}}" class="img-fluid" id="signature-image" alt="Signature">
-										<label class="text-primary mb-0" role="button" for="signature">Upload Signature</label>
-										<div class="invalid-feedback"></div>
+										<label class="text-primary" role="button" for="signature">Upload Signature</label>
 									</div>
 									<div class="custom-file none">
 										<label class="custom-file-label" for="signature">Choose File</label>
 										<input type="file" class="custom-file-input" id="signature" accept="image/*" role="button">
+										<div class="invalid-feedback"></div>
 									</div>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="text-right mt-4">
-									<button class="btn btn-dark" id="submit">Submit</button>
+									<button class="btn btn-dark" id="submit">Save Changes</button>
 								</div>
 							</div>
                         </form>
@@ -171,5 +170,5 @@
 	<script src="{{asset('assets/js/signature.js')}}"></script>
 	<script src="{{asset('assets/js/format.js')}}"></script>
     <script src="{{asset('assets/vendors/croppie/croppie.min.js')}}"></script>
-	<script src="{{asset('api/company/add-branch.js')}}"></script>
+	<script src="{{asset('api/admin/company/head-office.js')}}"></script>
 @endsection
