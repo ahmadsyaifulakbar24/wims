@@ -13,6 +13,7 @@ class Param extends Model
     protected $table = 'params';
     protected $fillable = [
         'parent_id',
+        'parent_path',
         'category',
         'param',
         'option'
