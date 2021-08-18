@@ -19,7 +19,7 @@ class CreateAttendancesTable extends Migration
 
             // login time
             $table->string('login_image');
-            $table->timestamp('login_time');
+            $table->timestamp('login_time')->nullable();
             $table->string('login_latitude');
             $table->string('login_longitude');
             $table->text('login_description')->nullable();
