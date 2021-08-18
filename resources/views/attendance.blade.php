@@ -35,7 +35,7 @@
 							</div>
 							<div class="custom-file">
 								<label class="custom-file-label text-left" for="photo">Take a photo</label>
-								<input type="file" class="custom-file-input" id="photo" accept="image/*" role="button">
+								<input type="file" class="custom-file-input" id="photo" accept="image/*" capture role="button">
 								<div class="invalid-feedback text-left"></div>
 							</div>
 						</div>
