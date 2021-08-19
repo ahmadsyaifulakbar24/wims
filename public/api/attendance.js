@@ -1,5 +1,5 @@
 // Date & Time
-let date = null
+let date = moment().format().substr(0, 10)
 let time = null
 $(document).ready(function() {
     get_attendance()
@@ -7,7 +7,6 @@ $(document).ready(function() {
         var momentNow = moment()
         $('#date-part').html(momentNow.format('dddd') + ', ' + momentNow.format('DD MMMM YYYY'))
         $('#time-part').html(momentNow.format('HH:mm'))
-        date = moment().format().substr(0, 10)
         time = `${moment().format().substr(0,10)} ${moment().format().substr(11,8)}`
     }, 500)
     setTimeout(function() {
