@@ -11,6 +11,7 @@ use App\Http\Resources\UserReport\UserReportResource;
 use App\Models\UserReport;
 use Illuminate\Http\Request;
 use App\Models\Storage as StorageModel;
+use Illuminate\Support\Facades\Auth;
 
 class CreateUserReportController extends Controller
 {
@@ -62,7 +63,9 @@ class CreateUserReportController extends Controller
             'comment' => ['required', 'string']
         ]);
 
-        $comment = $user_report->comment()->create($request->all());
+        $input = $request->all();
+        $input['user_id'] = Auth::user()->id;
+        $comment = $user_report->comment()->create($input);
         return ResponseFormatter::success(
             new CommentResource($comment),
             'success create comment'
