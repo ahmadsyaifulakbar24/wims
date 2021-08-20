@@ -110,7 +110,7 @@ $('form').submit(function(e) {
     formData.append('postal_code', $('#postal_code').val())
     formData.append('province_id', $('#province_id').val())
     formData.append('city_id', $('#city_id').val())
-    formData.append('umr', $('#umr').val() != '' ? frtn($('#umr').val()) : null)
+    $('#umr').val() != '' ? formData.append('umr', frtn($('#umr').val())) : ''
     formData.append('phone_number', $('#phone_number').val())
     formData.append('email', $('#email').val())
     formData.append('bpjs', $('#bpjs').val())
@@ -120,7 +120,7 @@ $('form').submit(function(e) {
     formData.append('tax_person_name', $('#tax_person_name').val())
     formData.append('tax_person_npwp', $('#tax_person_npwp').val())
     signature != null ? formData.append('signature', signature) : ''
-
+    
 	$.ajax({
 	    url: `${api_url}/company/${company_id}/update`,
 	    type: 'POST',
