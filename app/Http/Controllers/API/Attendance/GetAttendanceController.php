@@ -32,7 +32,7 @@ class GetAttendanceController extends Controller
         }
 
         return ResponseFormatter::success(
-            AttendanceResource::collection($attendance->paginate($limit)),
+            AttendanceResource::collection($attendance->orderBy('id', 'desc')->paginate($limit)),
             'success get attendance data'
         );
     }
