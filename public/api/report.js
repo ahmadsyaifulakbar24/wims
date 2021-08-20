@@ -1,3 +1,22 @@
+let url_string = window.location.href
+let url = new URL(url_string)
+let detail = url.searchParams.get('detail')
+if (detail != null) {
+    $.ajax({
+        url: `${api_url}/user_report/fetch/${detail}`,
+        type: 'GET',
+        success: function(result) {
+            // console.log(result.data)
+        	let value = result.data
+		    attachment_detail(detail)
+		    get_comment(detail)
+		    $('#title-detail').html(value.title)
+		    $('#form-comment').attr('data-id', detail)
+		    $('#modal-detail').modal('show')
+        }
+    })
+}
+
 get_data()
 
 function get_data() {

@@ -1,4 +1,5 @@
 let board_id = null
+if (role != 101) $('#modal').removeClass('none')
 
 get_data()
 
@@ -13,14 +14,15 @@ function get_data() {
         success: function(result) {
             $.each(result.data, function(index, value) {
                 // console.log(value)
+                option = `<div class="d-flex ml-2">
+					<i class="mdi mdi-18px mdi-pencil-outline pr-0 mr-2 edit" role="button"></i>
+					<i class="mdi mdi-18px mdi-trash-can-outline pr-0 delete" role="button"></i>
+				</div>`
                 append = `<div class="col-xl-3 col-lg-4 col-md-6 mb-3">
 		        	<div class="card card-height" data-id="${value.id}" data-title="${value.title}">
 						<div class="card-header d-flex justify-content-between align-items-center">
 							<h6 class="mb-0">${value.title}</h6>
-							<div class="d-flex ml-2">
-								<i class="mdi mdi-18px mdi-pencil-outline pr-0 mr-2 edit" role="button"></i>
-								<i class="mdi mdi-18px mdi-trash-can-outline pr-0 delete" role="button"></i>
-							</div>
+							${role != 101 ? option : ''}
 						</div>
 						<a href="${root}/task-management/task/${value.id}" class="card-body text-dark">
 							<p class="text-secondary text-truncate mb-0">${value.description != null ? value.description : '-'}</p>

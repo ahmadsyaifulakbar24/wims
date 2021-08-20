@@ -2,10 +2,10 @@
 
 @section('content')
 	<div class="container">
-		<h2 class="d-none d-md-block mb-3" id="project"></h2>
+		<h4 class="mb-3" id="project"></h4>
 		<div class="none" id="card">
 			<div class="row" id="data">
-				<div class="col-xl-3 col-lg-4 col-md-6 mb-3" id="modal">
+				<div class="col-xl-3 col-lg-4 col-md-6 mb-3 none" id="modal">
 					<div class="card card-height" data-toggle="modal" data-target="#modal-create" role="button">
 						<div class="card-body text-center">
 							<i class="mdi mdi-48px mdi-plus"></i>

@@ -73,15 +73,15 @@
                 <li class="nav-item {{Request::is('attendance')?'active':''}}">
                     <a class="nav-link" href="{{url('attendance')}}">Attendance</a>
                 </li>
-                <li class="nav-item {{Request::is('task')?'active':''}}">
-                    <a class="nav-link" href="{{url('task')}}">Task</a>
+                <li class="nav-item {{Request::is('task-management/division')?'active':''}}">
+                    <a class="nav-link" href="{{url('task-management/division')}}">Task</a>
                 </li>
                 <li class="nav-item {{Request::is('report')?'active':''}}">
                     <a class="nav-link" href="{{url('report')}}">Report</a>
                 </li>
-                <li class="nav-item {{Request::is('leave')?'active':''}}">
+                <!-- <li class="nav-item {{Request::is('leave')?'active':''}}">
                     <a class="nav-link" href="{{url('leave')}}">Leave</a>
-                </li>
+                </li> -->
             </ul>
             @endif
         </div>

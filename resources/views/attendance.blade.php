@@ -60,12 +60,11 @@
 			</div>
 		</div>
 	</div>
-		<div class="state d-flex flex-column justify-content-center align-items-center py-5" id="loading">
-			<div class="loader">
-				<svg class="circular" viewBox="25 25 50 50">
-					<circle class="path-dark" cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-miterlimit="10"/>
-				</svg>
-			</div>
+	<div class="state d-flex flex-column justify-content-center align-items-center py-5" id="loading">
+		<div class="loader">
+			<svg class="circular" viewBox="25 25 50 50">
+				<circle class="path-dark" cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-miterlimit="10"/>
+			</svg>
 		</div>
 	</div>
 	<div class="modal" id="modal-photo" tabindex="-1" role="dialog" aria-hidden="true">

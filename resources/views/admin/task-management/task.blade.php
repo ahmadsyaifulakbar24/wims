@@ -2,10 +2,10 @@
 
 @section('content')
 	<div class="container">
-		<h4 class="d-none d-md-block mb-3" id="board"></h4>
+		<h4 class="mb-3" id="board"></h4>
 		<div class="row">
 			<div class="col-lg-4">
-				<div class="mb-4" id="card">
+				<div class="mb-4 none" id="card">
 					<div class="card card-height create-task" data-toggle="modal" data-target="#modal-task" role="button">
 						<div class="card-body text-center">
 							<i class="mdi mdi-48px mdi-plus"></i>
@@ -22,7 +22,7 @@
 							<div class="text-truncate">
 								<h5 class="mb-0 text-truncate" id="task-title"></h5>
 							</div>
-							<div class="dropdown">
+							<div class="dropdown none">
 								<i class="mdi mdi-24px mdi-dots-horizontal pr-0" id="dropdown-setting" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button"></i>
 								<div class="dropdown-menu dropdown-menu-right py-0" aria-labelledby="dropdown-setting">
 									<div class="dropdown-item edit edit-task" role="button">Edit</div>
@@ -46,7 +46,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="dropdown">
+									<div class="dropdown none">
 										<i class="mdi mdi-24px mdi-plus-circle-outline pr-0" id="dropdown-member" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button"></i>
 										<div class="dropdown-menu py-0" aria-labelledby="dropdown-member">
 											<h6 class="dropdown-header text-center">Add members</h6>
@@ -65,7 +65,7 @@
 						<div class="mb-4">
 							<h6>Attachment</h6>
 							<div id="attachment-task"></div>
-							<label class="card p-1" for="file" role="button">
+							<label class="card p-1 button-add none" for="file" role="button">
 								<div class="d-flex align-items-center justify-content-center mb-0" role="button">
 									<i class="mdi mdi-18px mdi-plus"></i>
 									<span>Add attachment</span>
@@ -76,7 +76,7 @@
 						<div class="mb-4">
 							<h6>Checklist</h6>
 							<div id="checklist-task"></div>
-							<div class="card p-1 mt-1 modal-checklist create-checklist" role="button">
+							<div class="card p-1 button-add mt-1 modal-checklist create-checklist none" role="button">
 								<div class="d-flex align-items-center justify-content-center">
 									<i class="mdi mdi-18px mdi-plus"></i>
 									<span>Add checklist</span>
@@ -89,8 +89,8 @@
 								<img class="avatar rounded-circle mt-1" width="30" alt="">
 								<div class="input-group ml-3">
 									<input class="form-control" id="comment" placeholder="Write a comment...">
-									<div class="input-group-append rounded-right" id="submit-comment">
-										<button class="btn btn-sm btn-dark">Reply</button>
+									<div class="input-group-append" id="submit-comment">
+										<button class="btn btn-sm btn-dark rounded-right">Reply</button>
 									</div>
 									<div class="invalid-feedback"></div>
 								</div>

@@ -82,14 +82,14 @@ function get_attendance(date) {
                 $.each(result.data, function(index, value) {
                     append = ''
                     if (value.home_time != null) {
-                        append += `<tr onclick="return location.href='${root}/attendance/${value.id}'">
+                        append += `<tr onclick="return location.href='${root}/attendance/out/${value.home_time.substr(0,10)}'">
 				            <td>${date_format(value.home_time.substr(0,10))}</td>
 				            <td>Clock Out</td>
 				            <td>${value.home_time.substr(10,6)}</td>
 				            <td class="text-right"><i class="mdi mdi-18px mdi-chevron-right pr-0"></i></td>
 				        </tr>`
                     }
-                    append += `<tr onclick="return location.href='${root}/attendance/${value.id}'">
+                    append += `<tr onclick="return location.href='${root}/attendance/in/${value.login_time.substr(0,10)}'">
 			            <td>${date_format(value.login_time.substr(0,10))}</td>
 			            <td>Clock In</td>
 			            <td>${value.login_time.substr(10,6)}</td>

@@ -33,6 +33,9 @@ Route::group(['middleware'=>['beforeMiddleware']], function () {
 		Route::get('attendance', function () {
 			return view('attendance');
 		});
+		Route::get('attendance/{type}/{date}', function ($type, $date) {
+			return view('view-attendance', compact('type', 'date'));
+		});
 		Route::get('task', function () {
 			return view('task');
 		});
@@ -43,6 +46,17 @@ Route::group(['middleware'=>['beforeMiddleware']], function () {
 			return view('leave');
 		});
 	});
+		
+	// Task
+	Route::get('task-management/division', function () {
+		return view('admin/task-management/division');
+	});
+    Route::get('task-management/project/{id}', function ($id) {
+        return view('admin/task-management/project', compact('id'));
+    });
+    Route::get('task-management/task/{id}', function ($id) {
+        return view('admin/task-management/task', compact('id'));
+    });
 
 	Route::group(['middleware'=>['adminMiddleware']], function () {
 		Route::get('dashboard', function () {
@@ -59,18 +73,6 @@ Route::group(['middleware'=>['beforeMiddleware']], function () {
 		Route::get('employee/{id}', function ($id) {
 			return view('admin/edit-employee', compact('id'));
 		});
-		
-
-		// Task Management
-		Route::get('task-management/division', function () {
-			return view('admin/task-management/division');
-		});
-	    Route::get('task-management/project/{id}', function ($id) {
-	        return view('admin/task-management/project', compact('id'));
-	    });
-	    Route::get('task-management/task/{id}', function ($id) {
-	        return view('admin/task-management/task', compact('id'));
-	    });
 
 
 	    // Time Management
