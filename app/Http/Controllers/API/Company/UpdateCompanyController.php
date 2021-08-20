@@ -52,7 +52,7 @@ class UpdateCompanyController extends Controller
             $input['postal_code'] = $request->postal_code;
             $input['province_id'] = $request->province_id;
             $input['city_id'] = $request->city_id;
-            $input['umr'] = $request->umr;
+            $input['umr'] = ($request->umr) ? $request->umr : NULL;
             $input['phone_number'] = $request->phone_number;
             $input['email'] = $request->email;
             $input['bpjs'] = $request->bpjs;
