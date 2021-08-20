@@ -23,12 +23,13 @@
 		<div class="row">
 			<div class="col-lg-6 col-md-8 offset-lg-3 offset-md-2">
 				<div class="card text-center">
+					<iframe class="w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1057.9601599099606!2d106.84425933117684!3d-6.476613092823479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c1c3b5ee1685%3A0xacd0635f05867005!2sJl.%20Raya%20Cikaret%20No.75%2C%20Kp.%20Parung%20Jambu%2C%20Pabuaran%2C%20Cibinong%2C%20Bogor%2C%20Jawa%20Barat%2016915!5e0!3m2!1sen!2sid!4v1629443069060!5m2!1sen!2sid" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 					<div class="py-3">
 						<h1 id="time-part"></h1>
 						<div class="text-secondary" id="date-part"></div>
 					</div>
 					<div class="card-body border-top">
-						<div class="form-group">
+						<div class="form-group none">
 							<div class="none">
 								<img class="img-fluid border" id="image">
 								<label class="d-block" for="photo">Change photo</label>
@@ -39,15 +40,12 @@
 								<div class="invalid-feedback text-left"></div>
 							</div>
 						</div>
-						<div class="form-group">
-							<textarea class="form-control form-control-sm" rows="3" id="description" placeholder="Notes"></textarea>
-						</div>
 						<div class="form-row">
 							<div class="col-6">
-								<button class="btn btn-block btn-dark" id="in" onclick="return form_attendance('in')">Clock In</button>
+								<button class="btn btn-block btn-dark" id="in">Clock In</button>
 							</div>
 							<div class="col-6">
-								<button class="btn btn-block btn-dark" id="out" onclick="return form_attendance('out')" disabled>Clock Out</button>
+								<button class="btn btn-block btn-dark" id="out">Clock Out</button>
 							</div>
 						</div>
 					</div>
@@ -57,7 +55,7 @@
 						<h6 class="mb-0">Attendance log</h6>
 						<i class="mdi mdi-24px mdi-tune pr-0" role="button" data-toggle="modal" data-target="#modal-filter"></i>
 					</div>
-					<table class="table" id="table"></table>
+					<table class="table table-sm table-middle" id="table"></table>
 				</div>
 			</div>
 		</div>
@@ -76,15 +74,18 @@
                 <div class="modal-body">
                     <div id="photo-body" class="none">
                     	<div id="photo-preview"></div>
-                    	<div class="text-center">
+                    	<!-- <div class="text-center">
 	                        <i class="mdi mdi-24px mdi-refresh mdi-flip-h" id="RotateClockwise" role="button"></i>
 	                        <i class="mdi mdi-24px mdi-refresh" id="RotateAntiClockwise" role="button"></i>
-                    	</div>
+                    	</div> -->
                     </div>
+					<div class="form-group">
+						<textarea class="form-control form-control-sm" rows="3" id="description" placeholder="Notes"></textarea>
+					</div>
                 </div>
 	            <div class="modal-footer border-top-0">
 	                <button class="btn btn-outline-dark" data-dismiss="modal">Cancel</button>
-	                <button class="btn btn-dark" id="apply">Apply</button>
+	                <button class="btn btn-dark" id="apply"></button>
 	            </div>
             </div>
         </div>
@@ -93,7 +94,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
 	            <div class="modal-header border-bottom-0">
-	                <h5 class="modal-title">Filter Attendance</h5>
+	                <h5 class="modal-title">Filter</h5>
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	                    <i class="mdi mdi-close pr-0"></i>
 	                </button>

@@ -80,18 +80,21 @@ function get_attendance(date) {
             // console.log(result.data)
             if (result.data.length != 0) {
                 $.each(result.data, function(index, value) {
-                    append = `<tr>
-			            <td>${date_format(value.login_time.substr(0,10))}</td>
-			            <td>Clock In</td>
-			            <td class="text-right">${value.login_time.substr(10,6)}</td>
-			        </tr>`
+                    append = ''
                     if (value.home_time != null) {
-                        append += `<tr>
+                        append += `<tr onclick="return location.href='${root}/attendance/${value.id}'">
 				            <td>${date_format(value.home_time.substr(0,10))}</td>
 				            <td>Clock Out</td>
-				            <td class="text-right">${value.home_time.substr(10,6)}</td>
+				            <td>${value.home_time.substr(10,6)}</td>
+				            <td class="text-right"><i class="mdi mdi-18px mdi-chevron-right pr-0"></i></td>
 				        </tr>`
                     }
+                    append += `<tr onclick="return location.href='${root}/attendance/${value.id}'">
+			            <td>${date_format(value.login_time.substr(0,10))}</td>
+			            <td>Clock In</td>
+			            <td>${value.login_time.substr(10,6)}</td>
+			            <td class="text-right"><i class="mdi mdi-18px mdi-chevron-right pr-0"></i></td>
+			        </tr>`
                     $('#table').append(append)
                 })
             } else {
@@ -105,77 +108,89 @@ function get_attendance(date) {
     })
 }
 
-// Clock In & Clock Out
-function form_attendance(type) {
-    $('.is-invalid').removeClass('is-invalid')
-    let formData = new FormData()
-    if (type == 'in') {
-        formData.append('employee_id', employee_id)
-        formData.append('login_time', time)
-        latitude != null ? formData.append('login_latitude', latitude) : ''
-        longitude != null ? formData.append('login_longitude', longitude) : ''
-        photo != null ? formData.append('login_image', photo, photoname) : ''
-        formData.append('login_description', $('#description').val())
-        $.ajax({
-            url: `${api_url}/attendance/attendance_login`,
-            type: 'POST',
-            data: formData,
-            processData: false,
-            contentType: false,
-            success: function(result) {
-                customAlert('success', 'Clock In success')
-                check_attendance()
-                get_attendance()
-            },
-            error: function(xhr) {
-                let err = xhr.responseJSON.errors
-                // console.log(err)
-                if (err.login_image) {
-                    customAlert('danger', 'Take a photo first')
-                }
-                if (err.login_latitude) {
-                    customAlert('warning', 'Please allow location permission')
-                }
-            }
-        })
-    } else {
-        formData.append('home_time', time)
-        latitude != null ? formData.append('home_latitude', latitude) : ''
-        longitude != null ? formData.append('home_longitude', longitude) : ''
-        photo != null ? formData.append('home_image', photo, photoname) : ''
-        formData.append('home_description', $('#description').val())
-        $.ajax({
-            url: `${api_url}/attendance/${attendance_id}/attendance_home`,
-            type: 'POST',
-            data: formData,
-            processData: false,
-            contentType: false,
-            success: function(result) {
-                customAlert('success', 'Clock Out success')
-                check_attendance()
-                get_attendance()
-            },
-            error: function(xhr) {
-                let err = xhr.responseJSON.errors
-                // console.log(err)
-                if (err.home_image) {
-                    customAlert('danger', 'Take a photo first')
-                }
-                if (err.home_latitude) {
-                    customAlert('warning', 'Please allow location permission')
-                }
-            }
-        })
-    }
-}
+$('#in').click(function() {
+    $('input[type=file]').click()
+    $('#apply').html('Clock In')
+    $('#apply').attr('data-type', 'in')
+})
 
+$('#out').click(function() {
+    $('input[type=file]').click()
+    $('#apply').html('Clock Out')
+    $('#apply').attr('data-type', 'out')
+})
+
+// Clock In & Clock Out
 $('#apply').click(function() {
-    $('#image').parent('div').removeClass('none')
-    $('.custom-file').addClass('none')
+    $('.is-invalid').removeClass('is-invalid')
+    let type = $(this).attr('data-type')
+    let formData = new FormData()
+    setTimeout(function() {
+        if (type == 'in') {
+        	$('#in').attr('disabled', true)
+            formData.append('employee_id', employee_id)
+            formData.append('login_time', time)
+            latitude != null ? formData.append('login_latitude', latitude) : ''
+            longitude != null ? formData.append('login_longitude', longitude) : ''
+            photo != null ? formData.append('login_image', photo, photoname) : ''
+            formData.append('login_description', $('#description').val())
+            $.ajax({
+                url: `${api_url}/attendance/attendance_login`,
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(result) {
+                    customAlert('success', 'Clock In success')
+                    check_attendance()
+                    get_attendance()
+                },
+                error: function(xhr) {
+                    let err = xhr.responseJSON.errors
+                    // console.log(err)
+                    if (err.login_image) {
+                        customAlert('danger', 'Take a photo first')
+                    }
+                    if (err.login_latitude) {
+                        customAlert('warning', 'Please allow location permission')
+                    }
+                }
+            })
+        } else {
+        	$('#out').attr('disabled', true)
+            formData.append('home_time', time)
+            latitude != null ? formData.append('home_latitude', latitude) : ''
+            longitude != null ? formData.append('home_longitude', longitude) : ''
+            photo != null ? formData.append('home_image', photo, photoname) : ''
+            formData.append('home_description', $('#description').val())
+            $.ajax({
+                url: `${api_url}/attendance/${attendance_id}/attendance_home`,
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(result) {
+                    customAlert('success', 'Clock Out success')
+                    check_attendance()
+                    get_attendance()
+                },
+                error: function(xhr) {
+                    let err = xhr.responseJSON.errors
+                    // console.log(err)
+                    if (err.home_image) {
+                        customAlert('danger', 'Take a photo first')
+                    }
+                    if (err.home_latitude) {
+                        customAlert('warning', 'Please allow location permission')
+                    }
+                }
+            })
+        }
+    }, 500)
 })
 
 $('#filter').click(function() {
-	let date = $('#date').val()
-	get_attendance(date)
-	$('#modal-filter').modal('hide')
+    let date = $('#date').val()
+    get_attendance(date)
+    $('#modal-filter').modal('hide')
 })
