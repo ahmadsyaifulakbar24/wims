@@ -12,7 +12,7 @@ class SessionController extends Controller
 	}
 
 	public function deleteSession(Request $request) {
-		$request->session()->forget('token');
-		$request->session()->forget('role');
+		$request->session()->forget(['token', 'role']);
+		$request->session()->flush();
 	}
 }
