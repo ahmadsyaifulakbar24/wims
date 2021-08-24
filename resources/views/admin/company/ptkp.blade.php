@@ -8,10 +8,11 @@
 			<div class="card-header border-bottom-0">
 				<div class="d-flex align-items-center justify-content-between">
 					<h4 class="mb-0">PTKP</h4>
+					@if(session("role") == 1)
 					<div class="d-flex align-items-center">
-						<!-- <i class="mdi mdi-24px mdi-magnify" role="button"></i> -->
 						<i class="mdi mdi-24px mdi-plus-circle-outline pr-0" id="add" data-toggle="tooltip" data-placement="bottom" title="Add PTKP" role="button"></i>
 					</div>
+					@endif
 				</div>
 			</div>
 			<div class="table-responsive">

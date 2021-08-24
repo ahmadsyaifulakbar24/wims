@@ -9,15 +9,18 @@ function get_data() {
 	        // console.log(result)
 	        if (result.data != '') {
 	            $.each(result.data, function(index, value) {
+	            	if (role == 1) {
+		            	option = `<i class="mdi mdi-24px mdi-pencil-outline pr-0 mr-2 edit" role="button"></i>
+						<i class="mdi mdi-24px mdi-trash-can-outline pr-0 delete" role="button"></i>`
+					} else {
+						option = ''
+					}
 	                append = `<tr data-id="${value.id}" data-title="${value.ptkp}" data-rate="${fnumber(value.rate)}" data-description="${value.description}">
 						<td class="text-center">${index + 1}.</td>
 						<td class="text-truncate">${value.ptkp}</td>
 						<td class="text-truncate">${fntr(value.rate)}</td>
 						<td class="text-truncate">${value.description}</td>
-						<td class="d-flex align-items-center">
-							<i class="mdi mdi-24px mdi-pencil-outline pr-0 mr-2 edit" role="button"></i>
-							<i class="mdi mdi-24px mdi-trash-can-outline pr-0 delete" role="button"></i>
-						</td>
+						<td class="d-flex align-items-center">${option}</td>
 					</tr>`
 	                $('#table').append(append)
 	            })
