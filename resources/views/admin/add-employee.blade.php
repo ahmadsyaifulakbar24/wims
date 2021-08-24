@@ -332,33 +332,12 @@
 									</div>
 								</div>
 							</div>
-							<!-- <div class="form-group">
-								<label for="profile_photo" class="col-form-label">Profile Photo</label>
-								<div class="custom-file">
-									<label class="custom-file-label" for="profile_photo">Select Foto</label>
-									<input type="file" class="custom-file-input" id="profile_photo" accept="image/*" role="button">
-									<div class="invalid-feedback"></div>
-								</div>
-							</div> -->
 							<div class="form-group">
 								<div class="text-right mt-4">
 									<button class="btn btn-dark" id="submit">Submit</button>
 								</div>
 							</div>
                         </form>
-                    	<div class="state text-center none" id="success">
-                    		<i class="mdi mdi-48px mdi-check-circle-outline"></i>
-                    		<h5>Employee added</h5>
-                    		<p class="text-secondary">You have successfully added employee data.</p>
-                    		<div class="row">
-                    			<div class="col-md-4 offset-md-2 mb-2">
-		                    		<a href="{{url('employee/create')}}" class="btn btn-block btn-dark">Add another employee</a>
-		                    	</div>
-                    			<div class="col-md-4">
-		                    		<a href="{{url('employee')}}" class="btn btn-block btn-outline-dark">Back to employees</a>
-		                    	</div>
-	                    	</div>
-                    	</div>
 					</div>
 				</div>
 			</div>

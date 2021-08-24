@@ -50,7 +50,7 @@ $('#province_id').change(function() {
 	get_city($(this).val())
 })
 
-stop = false
+let stop = false
 $(document).ajaxStop(function() {
 	if (stop == false) {
 		get_data()
