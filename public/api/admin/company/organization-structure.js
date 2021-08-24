@@ -118,14 +118,13 @@ $('form').submit(function(e) {
             error: function(xhr) {
                 // console.log(xhr)
                 let err = xhr.responseJSON.errors
-                if (err != undefined) {
-                    if (err.organization_name) {
-                        $('#organization_name').addClass('is-invalid')
-                        $('#organization_name').siblings('.invalid-feedback').html(err.organization_name)
-                    }
-                } else {
+                if (err.organization_name) {
                     $('#organization_name').addClass('is-invalid')
-                    $('#organization_name').siblings('.invalid-feedback').html(`The ${xhr.responseJSON.data.message}.`)
+                    $('#organization_name').siblings('.invalid-feedback').html(err.organization_name)
+                }
+                if (err.parent_id) {
+                    $('#parent_id').addClass('is-invalid')
+                    $('#parent_id').siblings('.invalid-feedback').html(err.parent_id)
                 }
             },
             complete: function() {
@@ -148,14 +147,13 @@ $('form').submit(function(e) {
             error: function(xhr) {
                 // console.log(xhr)
                 let err = xhr.responseJSON.errors
-                if (err != undefined) {
-                    if (err.organization_name) {
-                        $('#organization_name').addClass('is-invalid')
-                        $('#organization_name').siblings('.invalid-feedback').html(err.organization_name)
-                    }
-                } else {
+                if (err.organization_name) {
                     $('#organization_name').addClass('is-invalid')
-                    $('#organization_name').siblings('.invalid-feedback').html(`The ${xhr.responseJSON.data.message}.`)
+                    $('#organization_name').siblings('.invalid-feedback').html(err.organization_name)
+                }
+                if (err.parent_id) {
+                    $('#parent_id').addClass('is-invalid')
+                    $('#parent_id').siblings('.invalid-feedback').html(err.parent_id)
                 }
             },
             complete: function() {
