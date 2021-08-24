@@ -33,8 +33,8 @@ Route::group(['middleware'=>['beforeMiddleware']], function () {
 		Route::get('attendance', function () {
 			return view('attendance');
 		});
-		Route::get('attendance/{type}/{date}', function ($type, $date) {
-			return view('view-attendance', compact('type', 'date'));
+		Route::get('attendance/{date}/{type}', function ($date, $type) {
+			return view('view-attendance', compact('date', 'type'));
 		});
 		Route::get('task', function () {
 			return view('task');

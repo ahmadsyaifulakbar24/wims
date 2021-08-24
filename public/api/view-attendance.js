@@ -5,7 +5,7 @@ $.ajax({
         login_time: date
     },
     success: function(result) {
-        console.log(result.data)
+        // console.log(result.data)
         if (result.data.length != 0) {
             $.each(result.data, function(index, value) {
             	if (type == 'in') {
