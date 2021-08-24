@@ -38,7 +38,7 @@ class CreateRegistrationController extends Controller
             'email' => $request->email,
             'phone_number' => $request->phone_number,
             'password' => Hash::make($request->password),
-            'role_id' => 1,
+            'role_id' => 100,
             'active' => true,
         ]);
 
