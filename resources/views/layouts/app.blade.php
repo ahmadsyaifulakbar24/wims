@@ -17,10 +17,20 @@
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark {{Request::is('logout')?'none':''}}">
     	<div class="d-flex align-items-center">
+    		@if(session("role") == 1)
 	        <div class="navbar-toggler border-0 pl-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	        	<i class="mdi mdi-24px mdi-menu pr-0"></i>
-	        </div>
+	        </div>	        
 	        <a class="navbar-brand" href="{{url('dashboard')}}">WIMS</a>
+	        @endif
+    		@if(session("role") == 101)
+	    		@if(Request::is('home')) <div class="navbar-brand">Home</div>
+	    		@elseif(Request::is('attendance')) <div class="navbar-brand"><i class="mdi mdi-arrow-left" onclick="return history.back()"></i> Attendance</div>
+	    		@elseif(Request::is('task-management/division')) <div class="navbar-brand"><i class="mdi mdi-arrow-left" onclick="return history.back()"></i> Select Division</div>
+	    		@elseif(Request::is('task-management/project/{{id}}')) <div class="navbar-brand"><i class="mdi mdi-arrow-left" onclick="return history.back()"></i> Select Project</div>
+	    		@elseif(Request::is('report')) <div class="navbar-brand"><i class="mdi mdi-arrow-left" onclick="return history.back()"></i> Report</div>
+		        @endif
+	        @endif
 	    </div>
 	    <div class="collapse navbar-collapse order-2 order-sm-1" id="navbarSupportedContent">
 	    	@if(session("role") == 1)
@@ -65,24 +75,6 @@
                     </div>
                 </li>
             </ul>
-            @else
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item d-none d-lg-block {{Request::is('home')?'active':''}}">
-                    <a class="nav-link" href="{{url('home')}}">Home</a>
-                </li>
-                <li class="nav-item {{Request::is('attendance')?'active':''}}">
-                    <a class="nav-link" href="{{url('attendance')}}">Attendance</a>
-                </li>
-                <li class="nav-item {{Request::is('task-management/division')?'active':''}}">
-                    <a class="nav-link" href="{{url('task-management/division')}}">Task</a>
-                </li>
-                <li class="nav-item {{Request::is('report')?'active':''}}">
-                    <a class="nav-link" href="{{url('report')}}">Report</a>
-                </li>
-                <!-- <li class="nav-item {{Request::is('leave')?'active':''}}">
-                    <a class="nav-link" href="{{url('leave')}}">Leave</a>
-                </li> -->
-            </ul>
             @endif
         </div>
         <div class="dropdown order-1 order-sm-2">
@@ -111,33 +103,39 @@
     </nav>
     <div class="overlay"></div>
 	<div class="main">
-	@yield('content')
-    	<!-- <div class="d-block d-md-none fixed-bottom bg-white border-top w-100" style="bottom: 0">
+		@yield('content')
+		@if(session("role") == 101)
+    	<div class="fixed-bottom bg-white border-top w-100" style="bottom: 0">
     		<div class="container text-center">
-	    		<div class="row">
-	    			<a href="{{url('dashboard')}}" class="col px-1 py-2 {{Request::is('dashboard')?'text-dark':'text-black-50'}}">
-	    				<i class="mdi mdi-18px mdi-home pr-0"></i>
-	    				<small class="d-block">Home</small>
-	    			</a>
-	    			<a href="{{url('employee')}}" class="col px-1 py-2 {{Request::is('employee')?'text-dark':'text-black-50'}}">
-	    				<i class="mdi mdi-18px mdi-account-group pr-0"></i>
-	    				<small class="d-block">Employee</small>
-	    			</a>
-	    			<a href="{{url('task-management/division')}}" class="col px-1 py-2 {{Request::is('task-management/division')?'text-dark':'text-black-50'}}">
-	    				<i class="mdi mdi-18px mdi-clipboard-check-outline pr-0"></i>
-	    				<small class="d-block">Division</small>
-	    			</a>
-	    			<a href="{{url('time-management/attendance')}}" class="col px-1 py-2 {{Request::is('time-management')?'text-dark':'text-black-50'}}">
-	    				<i class="mdi mdi-18px mdi-timer pr-0"></i>
-	    				<small class="d-block">Attendance</small>
-	    			</a>
-	    			<a href="{{url('company')}}" class="col px-1 py-2 {{Request::is('company')?'text-dark':'text-black-50'}}">
-	    				<i class="mdi mdi-18px mdi-office-building pr-0"></i>
-	    				<small class="d-block">Company</small>
-	    			</a>
+				<div class="row">
+					<div class="col-lg-6 col-md-8 offset-lg-3 offset-md-2">
+			    		<div class="row">
+			    			<a href="{{url('home')}}" class="col px-1 py-2 {{Request::is('home')?'text-dark':'text-black-50'}}">
+			    				<i class="mdi mdi-18px mdi-home pr-0"></i>
+			    				<small class="d-block">Home</small>
+			    			</a>
+			    			<a href="{{url('attendance')}}" class="col px-1 py-2 {{Request::is('attendance')?'text-dark':'text-black-50'}}">
+			    				<i class="mdi mdi-18px mdi-clock-outline pr-0"></i>
+			    				<small class="d-block">Attendance</small>
+			    			</a>
+			    			<a href="{{url('task-management/division')}}" class="col px-1 py-2 {{Request::is('task')?'text-dark':'text-black-50'}}">
+			    				<i class="mdi mdi-18px mdi-file-document-box-check-outline pr-0"></i>
+			    				<small class="d-block">Tasks</small>
+			    			</a>
+			    			<a href="{{url('report')}}" class="col px-1 py-2 {{Request::is('report')?'text-dark':'text-black-50'}}">
+			    				<i class="mdi mdi-18px mdi-pencil-outline pr-0"></i>
+			    				<small class="d-block">Report</small>
+			    			</a>
+			    			<a href="{{url('account')}}" class="col px-1 py-2 {{Request::is('account')?'text-dark':'text-black-50'}}">
+			    				<i class="mdi mdi-18px mdi-account-circle-outline pr-0"></i>
+			    				<small class="d-block">Account</small>
+			    			</a>
+			    		</div>
+		    		</div>
 	    		</div>
 	    	</div>
-    	</div> -->
+    	</div>
+    	@endif
     </div>
     <div class="modal" id="modal-logout" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
         <div class="modal-dialog modal-dialog-centered">

@@ -14,10 +14,6 @@
 	</style>
 @endsection
 
-@section('style')
-	<link rel="stylesheet" href="{{asset('assets/vendors/croppie/croppie.css')}}">
-@endsection
-
 @section('content')
 	<div class="container none" id="card">
 		<div class="row">
