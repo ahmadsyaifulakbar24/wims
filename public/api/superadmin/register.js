@@ -35,10 +35,10 @@ $('form').submit(function(e) {
         },
         success: function(result) {
             // console.log(result)
-            location.href = `${root}/login?registration=success`
+            location.href = `${root}/company`
         },
         error: function(xhr) {
-            removeLoading('Register')
+            removeLoading('Submit')
             let err = xhr.responseJSON.errors
             // console.clear()
             // console.log(err)
