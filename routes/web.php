@@ -77,10 +77,10 @@ Route::group(['middleware'=>['beforeMiddleware']], function () {
 
 	    // Time Management
 		Route::get('time-management/attendance', function () {
-			return view('admin/attendance');
+			return view('admin/time-management/attendance');
 		});
-		Route::get('time-management/attendance/{id}', function ($id) {
-			return view('admin/view-attendance', compact('id'));
+		Route::get('time-management/attendance/{id}/{type}', function ($id, $type) {
+			return view('admin/time-management/view-attendance', compact('id', 'type'));
 		});
 
 		Route::get('time-management/leave', function () {
