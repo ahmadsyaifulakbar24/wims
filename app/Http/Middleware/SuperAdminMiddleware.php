@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class AdminMiddleware
+class SuperAdminMiddleware
 {
     /**
      * Handle an incoming request.
@@ -18,9 +18,9 @@ class AdminMiddleware
     {
     	$role = session()->get('role');
     	if ($role == 1) {
-	        return redirect('superadmin');
-    	} else if ($role == 100) {
 	        return $next($request);
+    	} else if ($role == 100) {
+	        return redirect('dashboard');
     	} else {
 	        return redirect('home');
     	}

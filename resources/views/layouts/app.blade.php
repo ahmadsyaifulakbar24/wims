@@ -17,7 +17,7 @@
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark {{Request::is('logout')?'none':''}}">
     	<div class="d-flex align-items-center">
-    		@if(session("role") == 1)
+    		@if(session("role") != 101)
 	        <div class="navbar-toggler border-0 pl-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	        	<i class="mdi mdi-24px mdi-menu pr-0"></i>
 	        </div>	        
@@ -35,7 +35,19 @@
 	    <div class="collapse navbar-collapse order-2 order-sm-1" id="navbarSupportedContent">
 	    	@if(session("role") == 1)
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item d-none d-lg-block {{Request::is('dashboard')?'active':''}}">
+                <li class="nav-item {{Request::is('superadmin')?'active':''}}">
+                    <a class="nav-link" href="{{url('superadmin')}}">Dashboard</a>
+                </li>
+                <li class="nav-item {{Request::is('company')?'active':''}}">
+                    <a class="nav-link" href="{{url('company')}}">Company</a>
+                </li>
+                <li class="nav-item {{Request::is('company/ptkp')?'active':''}}">
+                    <a class="nav-link" href="{{url('company/ptkp')}}">PTKP</a>
+                </li>
+            </ul>
+	    	@elseif(session("role") == 100)
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item {{Request::is('dashboard')?'active':''}}">
                     <a class="nav-link" href="{{url('dashboard')}}">Dashboard</a>
                 </li>
                 <li class="nav-item {{Request::is('employee')?'active':''}}">
@@ -47,7 +59,7 @@
                     </div>
                     <div class="dropdown-menu rounded rounded border-0 mt-0 mt-sm-3" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{url('task-management/division')}}">Division</a>
-                        <a class="dropdown-item" href="{{url('task-management/leave')}}">Leave</a>
+                        <a class="dropdown-item" href="{{url('task-management/report')}}">Report</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -56,6 +68,8 @@
                     </div>
                     <div class="dropdown-menu rounded rounded border-0 mt-0 mt-sm-3" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{url('time-management/attendance')}}">Attendance</a>
+                        <a class="dropdown-item" href="javascript:void(0)">Leave</a>
+                        <!-- <a class="dropdown-item" href="{{url('task-management/leave')}}">Leave</a> -->
                         <!-- <a class="dropdown-item" href="{{url('time-management/overtime')}}">Overtime</a> -->
                         <!-- <a class="dropdown-item" href="{{url('time-management/time-off')}}">Time Off</a> -->
                     </div>
@@ -82,13 +96,13 @@
                 <img src="{{asset('assets/images/user.jpg')}}" class="avatar rounded-circle" width="30">
             </a>
             <div class="dropdown-menu dropdown-menu-right rounded border-0 mt-3" aria-labelledby="dropdownMenu">
-                <a href="{{url('account/detail')}}" class="dropdown-item d-flex align-items-center">
+                <div class="px-3 py-2 d-flex align-items-center">
                     <img src="{{asset('assets/images/user.jpg')}}" class="avatar rounded-circle border" width="40">
                     <div class="ml-3 text-truncate">
                         <h6 class="name text-truncate mb-0"></h6>
                         <small class="username">@</small>
                     </div>
-                </a>
+                </div>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{{url('account/password')}}">
                     <i class="mdi mdi-18px mdi-lock-outline"></i>

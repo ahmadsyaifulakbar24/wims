@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class UserMiddleware
+class EmployeeMiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,10 +17,12 @@ class UserMiddleware
     public function handle(Request $request, Closure $next)
     {
     	$role = session()->get('role');
-    	if($role == 101) {
-	        return $next($request);
-    	} else {
+    	if ($role == 1) {
+	        return redirect('superadmin');
+    	} else if ($role == 100) {
 	        return redirect('dashboard');
+    	} else {
+	        return $next($request);
     	}
     }
 }

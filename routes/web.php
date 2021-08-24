@@ -13,9 +13,6 @@ Route::group(['middleware'=>['afterMiddleware']], function () {
 	Route::get('login', function () {
 		return view('auth/login');
 	});
-	Route::get('register', function () {
-		return view('auth/register');
-	});
 });
 
 Route::group(['middleware'=>['beforeMiddleware']], function () {
@@ -26,7 +23,7 @@ Route::group(['middleware'=>['beforeMiddleware']], function () {
 		return view('account/password');
 	});
 
-	Route::group(['middleware'=>['userMiddleware']], function () {
+	Route::group(['middleware'=>['employeeMiddleware']], function () {
 		Route::get('home', function () {
 			return view('home');
 		});
@@ -57,6 +54,11 @@ Route::group(['middleware'=>['beforeMiddleware']], function () {
     Route::get('task-management/task/{id}', function ($id) {
         return view('admin/task-management/task', compact('id'));
     });
+
+    // PTKP
+	Route::get('company/ptkp', function () {
+		return view('admin/company/ptkp');
+	});
 
 	Route::group(['middleware'=>['adminMiddleware']], function () {
 		Route::get('dashboard', function () {
@@ -121,8 +123,17 @@ Route::group(['middleware'=>['beforeMiddleware']], function () {
 		Route::get('company/employee-status', function () {
 			return view('admin/company/employee-status');
 		});
-		Route::get('company/ptkp', function () {
-			return view('admin/company/ptkp');
+	});
+
+	Route::group(['middleware'=>['superadminMiddleware']], function () {
+		Route::get('superadmin', function () {
+			return view('superadmin/dashboard');
+		});
+		Route::get('company', function () {
+			return view('superadmin/company');
+		});
+		Route::get('company/register', function () {
+			return view('superadmin/register');
 		});
 	});
 });

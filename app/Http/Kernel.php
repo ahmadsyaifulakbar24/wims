@@ -52,12 +52,16 @@ class Kernel extends HttpKernel
         	\App\Http\Middleware\AfterMiddleware::class,
         ],
 
+        'superadminMiddleware' => [
+        	\App\Http\Middleware\SuperAdminMiddleware::class,
+        ],
+
         'adminMiddleware' => [
         	\App\Http\Middleware\AdminMiddleware::class,
         ],
         
-        'userMiddleware' => [
-        	\App\Http\Middleware\UserMiddleware::class,
+        'employeeMiddleware' => [
+        	\App\Http\Middleware\EmployeeMiddleware::class,
         ],
     ];
 

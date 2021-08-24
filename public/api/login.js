@@ -32,6 +32,8 @@ $('#form').submit(function(e) {
                 },
                 success: function(result) {
                 	if (value.user.role_id.id == 1) {
+	                    location.href = `${root}/superadmin`
+                	} else if (value.user.role_id.id == 100) {
 	                    location.href = `${root}/dashboard`
 		            } else {
 	                    location.href = `${root}/home`
