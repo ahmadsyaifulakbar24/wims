@@ -17,6 +17,9 @@ class AttendanceResource extends JsonResource
         return [
             'id' => $this->id,
 
+            // Eploye data
+            'employe_name' => $this->employee->first_name .' '. $this->employee->last_name,
+
             // login time
             'login_image_url' => $this->login_image_url,
             'login_time' => $this->login_time,
