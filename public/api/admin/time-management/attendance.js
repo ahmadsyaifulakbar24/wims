@@ -25,11 +25,8 @@ function get_attendance(date) {
 	                $('#table').append(append)
 	            })
 	        } else {
-                append = `<td class="text-center" colspan="10">
-	            	<div class="font-weight-bold">No attendance</div>
-	            	<div class="text-secondary">${date != undefined ? date_format(date) : 'Clock In for attendance'}</div>
-	            </td>`
-                $('#table').append(append)
+	        	append = `<td class="text-truncate" colspan="10">Data not found.</td>`
+	            $('#table').append(append)
 	        }
 	    }
 	})
