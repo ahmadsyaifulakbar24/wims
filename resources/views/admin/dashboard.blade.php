@@ -4,20 +4,10 @@
 
 @section('content')
 	<div class="container">
-		<div class="card mb-3" id="card-admin">
+		<div class="card mb-3">
 			<div class="card-body">
-				<h5>Welcome, Nur Hilmi</h5>
+				<h5>Welcome, <span class="name"></span></h5>
 				<p class="text-secondary" id="dateNow"></p>
-			</div>
-		</div>
-		<div class="card none mb-3" id="card-employee">
-			<div class="card-body">
-				<div class="row">
-					<div class="col-3 text-center px-0">
-						<i class="mdi mdi-24px mdi-timer text-success pr-0"></i>
-						<div class="small">Attendance</div>
-					</div>
-				</div>
 			</div>
 		</div>
 		<div class="row">
@@ -27,15 +17,15 @@
 						<span class="font-weight-bold">Quick Links</span>
 						<ul class="nav flex-column">
 							<li class="nav-item">
-								<a class="nav-link pb-0 pl-0 text-secondary" href="{{url('profile')}}">
+								<a class="nav-link pb-0 pl-0 text-secondary" href="{{url('company/head-office')}}">
 									<i class="mdi mdi-account-circle"></i>My Info
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link pb-0 pl-0 text-secondary" href="{{url('employee/create')}}">
+								<a class="nav-link pb-0 pl-0 text-secondary" href="{{url('employee/add')}}">
 									<i class="mdi mdi-account-plus"></i>Add Employee
 								</a>
-							</li>
+							</li>	
 							<li class="nav-item">
 								<a class="nav-link pb-0 pl-0 text-secondary" href="{{url('task-management/division')}}">
 									<i class="mdi mdi-clipboard-check-outline"></i>Division
@@ -47,7 +37,12 @@
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link pb-0 pl-0 text-secondary" href="{{url('company')}}">
+								<a class="nav-link pb-0 pl-0 text-secondary" href="{{url('task-management/report')}}">
+									<i class="mdi mdi-pencil-outline"></i>Report
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link pb-0 pl-0 text-secondary" href="{{url('company/head-office')}}">
 									<i class="mdi mdi-office-building"></i>Company Settings
 								</a>
 							</li>
