@@ -57,9 +57,17 @@ $.ajax({
     success: function(result) {
         // console.log(result)
         $.each(result.data, function(index, value) {
-            append = `<option value="${value.id}">${value.param}</option>`
+            append = `<option data-option="${value.option}" value="${value.id}">${value.param}</option>`
             $('#employee_status_id').append(append)
         })
+    }
+})
+$('#employee_status_id').change(function() {
+    let option = $(this).find(':selected').data('option')
+    if (option == 1) {
+        $('#end_date').parents('.form-group').removeClass('none')
+    } else {
+        $('#end_date').parents('.form-group').addClass('none')
     }
 })
 
@@ -179,7 +187,7 @@ $('form').submit(function(e) {
     formData.append('employee_id', $('#employee_id').val())
     formData.append('employee_status_id', $('#employee_status_id').val())
     formData.append('join_date', $('#join_date').val())
-    formData.append('end_date', $('#end_date').val())
+    $('#employee_status_id').find(':selected').data('option') == 1 ? formData.append('end_date', $('#end_date').val()) : formData.append('end_date', '')
     formData.append('company_id', $('#company_id').val())
     formData.append('organization_id', $('#organization_id').val())
     formData.append('job_position_id', $('#job_position_id').val())

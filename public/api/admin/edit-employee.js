@@ -57,9 +57,17 @@ $.ajax({
     success: function(result) {
         // console.log(result)
         $.each(result.data, function(index, value) {
-            append = `<option value="${value.id}">${value.param}</option>`
+            append = `<option data-option="${value.option}" value="${value.id}">${value.param}</option>`
             $('#employee_status_id').append(append)
         })
+    }
+})
+$('#employee_status_id').change(function() {
+    let option = $(this).find(':selected').data('option')
+    if (option == 1) {
+        $('#end_date').parents('.form-group').removeClass('none')
+    } else {
+        $('#end_date').parents('.form-group').addClass('none')
     }
 })
 
@@ -144,7 +152,7 @@ $.ajax({
 let stop = false
 $(document).ajaxStop(function() {
     if (stop == false) {
-		get_data()
+        get_data()
         $('#card').show()
         $('#loading').remove()
     }
@@ -155,8 +163,9 @@ function get_data() {
         url: `${api_url}/employee/fetch/${employee_id}`,
         type: 'GET',
         success: function(result) {
-            console.log(result)
+            // console.log(result.data)
             let value = result.data
+
             // Personal Data
             $('#image').attr('src', value.profile_photo_url)
             $('#first_name').val(value.first_name)
@@ -180,39 +189,44 @@ function get_data() {
             $('#identity_address').val(value.identity_address)
             $('#residential_address').val(value.residential_address)
 
-		    // Employment Data
-		    $('#employee_id').val(value.employee_id)
-		    value.employee_status_id != null ? $('#employee_status_id').val(value.employee_status_id.id) : ''
-		    $('#join_date').val(value.join_date)
-		    $('#end_date').val(value.end_date)
-		    value.company_id != null ? $('#company_id').val(value.company_id.id) : ''
-		    value.organization_id != null ? $('#organization_id').val(value.organization_id.id) : ''
-		    value.job_position_id != null ? $('#job_position_id').val(value.job_position_id.id) : ''
-		    value.job_level_id != null ? $('#job_level_id').val(value.job_level_id.id) : ''
+            // Employment Data
+            $('#employee_id').val(value.employee_id)
+            if (value.employee_status_id != null) {
+                $('#employee_status_id').val(value.employee_status_id.id)
+                if (value.employee_status_id.option != "1") {
+                    $('#end_date').parents('.form-group').addClass('none')
+                }
+            }
+            $('#join_date').val(value.join_date)
+            $('#end_date').val(value.end_date)
+            value.company_id != null ? $('#company_id').val(value.company_id.id) : ''
+            value.organization_id != null ? $('#organization_id').val(value.organization_id.id) : ''
+            value.job_position_id != null ? $('#job_position_id').val(value.job_position_id.id) : ''
+            value.job_level_id != null ? $('#job_level_id').val(value.job_level_id.id) : ''
 
-		    // Salary
-		    $('#basic_salary').val(fnumber(value.basic_salary))
-		    $('#type_salary').val(value.type_salary)
+            // Salary
+            $('#basic_salary').val(fnumber(value.basic_salary))
+            $('#type_salary').val(value.type_salary)
 
-		    // Bank Account
-		    value.bank_id != null ? $('#bank_id').val(value.bank_id.id) : ''
-		    $('#bank_account').val(value.bank_account)
-		    $('#bank_account_holder').val(value.bank_account_holder)
+            // Bank Account
+            value.bank_id != null ? $('#bank_id').val(value.bank_id.id) : ''
+            $('#bank_account').val(value.bank_account)
+            $('#bank_account_holder').val(value.bank_account_holder)
 
-		    // Tax Configuration
-		    $('#npwp').val(value.npwp)
-		    value.ptkp_id != null ? $('#ptkp_id').val(value.ptkp_id) : ''
+            // Tax Configuration
+            $('#npwp').val(value.npwp)
+            value.ptkp_id != null ? $('#ptkp_id').val(value.ptkp_id) : ''
 
-		    // BPJS Configuration
-		    $('#bpjs_ketenagakerjaan').val(value.bpjs_ketenagakerjaan)
-		    $('#bpjs_kesehatan').val(value.bpjs_kesehatan)
-		    $('#bpjs_kesehatan_family').val(value.bpjs_kesehatan_family)
+            // BPJS Configuration
+            $('#bpjs_ketenagakerjaan').val(value.bpjs_ketenagakerjaan)
+            $('#bpjs_kesehatan').val(value.bpjs_kesehatan)
+            $('#bpjs_kesehatan_family').val(value.bpjs_kesehatan_family)
 
-		    // Login Account
-		    $('#username').val(value.username)
-		    $('#active').val(value.active)
+            // Login Account
+            $('#username').val(value.username)
+            $('#active').val(value.active)
 
-		    stop = true
+            stop = true
         }
     })
 }
@@ -250,7 +264,7 @@ $('form').submit(function(e) {
     formData.append('employee_id', $('#employee_id').val())
     formData.append('employee_status_id', $('#employee_status_id').val())
     formData.append('join_date', $('#join_date').val())
-    formData.append('end_date', $('#end_date').val())
+    $('#employee_status_id').find(':selected').data('option') == 1 ? formData.append('end_date', $('#end_date').val()) : formData.append('end_date', '')
     formData.append('company_id', $('#company_id').val())
     formData.append('organization_id', $('#organization_id').val())
     formData.append('job_position_id', $('#job_position_id').val())
