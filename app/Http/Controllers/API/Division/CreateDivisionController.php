@@ -26,7 +26,7 @@ class CreateDivisionController extends Controller
 
         $inputDivision = $request->all();
         $user = User::find($request->user()->id);
-        $inputDivision['ref_company_code'] = ($user->role_id == '1') ? $user->company_code : $user->company_code_parent;
+        $inputDivision['ref_company_code'] = ($user->role_id == '1' || $user->role_id == '100') ? $user->company_code : $user->company_code_parent;
         $division = Division::create($inputDivision);
         return ResponseFormatter::success(
             new DivisionResource($division),
