@@ -142,10 +142,10 @@
 			    				<i class="mdi mdi-18px mdi-pencil-outline pr-0"></i>
 			    				<small class="d-block">Report</small>
 			    			</a>
-			    			<a href="{{url('account')}}" class="col px-1 py-2 {{Request::is('account')?'text-dark':'text-black-50'}}">
+			    			<!-- <a href="{{url('account')}}" class="col px-1 py-2 {{Request::is('account')?'text-dark':'text-black-50'}}">
 			    				<i class="mdi mdi-18px mdi-account-circle-outline pr-0"></i>
 			    				<small class="d-block">Account</small>
-			    			</a>
+			    			</a> -->
 			    		</div>
 		    		</div>
 	    		</div>
