@@ -17,6 +17,7 @@ class UserReportResource extends JsonResource
         return [
             'id' => $this->id,
             'user_id' => $this->user_id,
+            'employee_name' => $this->user->name
             'title' => $this->title,
             'description' => $this->description,
             'created_at' => $this->created_at,
