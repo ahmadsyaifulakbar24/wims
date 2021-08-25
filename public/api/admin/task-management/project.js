@@ -1,4 +1,5 @@
 let board_id = null
+let pic_id = null
 if (role != 101) $('#modal').removeClass('none')
 
 get_data()
@@ -44,6 +45,7 @@ $.ajax({
     success: function(result) {
         let value = result.data
         // console.log(result)
+        pic_id = value.pic.id
         $('title').prepend(value.name)
         $('#project').html(value.name)
     }
@@ -61,11 +63,13 @@ $.ajax({
     success: function(result) {
     	// console.log(result)
         $.each(result.data, function(index, value) {
-            append = `<div class="dropdown-item members" data-id="${value.id}" data-name="${value.name}" role="button">
-				<img src="${value.profile_photo_url}" class="rounded-circle mr-2" width="24">
-				<span class="pl-0">${value.name}</span>
-			</div>`
-            $('#list-members').append(append)
+        	if (value.user_id != pic_id) {
+	            append = `<div class="dropdown-item members" data-id="${value.id}" data-name="${value.name}" role="button">
+					<img src="${value.profile_photo_url}" class="rounded-circle mr-2" width="24">
+					<span class="pl-0">${value.name}</span>
+				</div>`
+	            $('#list-members').append(append)
+	        }
         })
     }
 })
@@ -145,7 +149,8 @@ function get_member(id_member) {
         success: function(result) {
             // console.log(result)
             $.each(result.data, function(index, value) {
-                let append = `<div class="dropdown">
+            	index != 0 ? remove = `<div class="dropdown-item remove-member" data-id="${value.id}" data-name="${value.name}" role="button">Remove from project</div>` : remove = ''
+                append = `<div class="dropdown">
 					<img src="${value.profile_photo_url}" class="rounded-circle mr-1" width="24" data-toggle="dropdown" role="button">
 					<div class="dropdown-menu py-0" aria-labelledby="dropdown-member">
 						<div class="p-3 border-bottom">
@@ -157,7 +162,7 @@ function get_member(id_member) {
 								</div>
 							</div>
 						</div>
-						<div class="dropdown-item remove-member" data-id="${value.id}" data-name="${value.name}" role="button">Remove from project</div>
+						${remove}
 					</div>
 				</div>`
                 $('#members').append(append)
