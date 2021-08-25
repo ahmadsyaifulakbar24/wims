@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="container">
-		<h4 class="mb-3" id="board"></h4>
+		<h4 class="d-none d-md-block mb-3" id="board"></h4>
 		<div class="row">
 			<div class="col-lg-4">
 				<div class="mb-4 none" id="card">

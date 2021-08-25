@@ -26,8 +26,10 @@
     		@if(session("role") == 101)
 	    		@if(Request::is('home')) <div class="navbar-brand">Home</div>
 	    		@elseif(Request::is('attendance')) <div class="navbar-brand"><i class="mdi mdi-arrow-left" onclick="return history.back()"></i> Attendance</div>
+	    		@elseif(Request::is('attendance/*/*')) <div class="navbar-brand"><i class="mdi mdi-arrow-left" onclick="return history.back()"></i> View Attendance</div>
 	    		@elseif(Request::is('task-management/division')) <div class="navbar-brand"><i class="mdi mdi-arrow-left" onclick="return history.back()"></i> Select Division</div>
-	    		@elseif(Request::is('task-management/project/{{id}}')) <div class="navbar-brand"><i class="mdi mdi-arrow-left" onclick="return history.back()"></i> Select Project</div>
+	    		@elseif(Request::is('task-management/project/*')) <div class="navbar-brand"><i class="mdi mdi-arrow-left" onclick="return history.back()"></i> Select Project</div>
+	    		@elseif(Request::is('task-management/task/*')) <div class="navbar-brand"><i class="mdi mdi-arrow-left" onclick="return history.back()"></i> Tasks</div>
 	    		@elseif(Request::is('report')) <div class="navbar-brand"><i class="mdi mdi-arrow-left" onclick="return history.back()"></i> Report</div>
 		        @endif
 	        @endif

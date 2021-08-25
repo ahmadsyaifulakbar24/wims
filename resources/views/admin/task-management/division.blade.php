@@ -4,7 +4,7 @@
 
 @section('content')
 	<div class="container">
-		<h4 class="mb-3">Division</h4>
+		<h4 class="d-none d-md-block mb-3">Division</h4>
 		<div class="none" id="card">
 			<div class="row" id="data">
 				<div class="col-xl-3 col-lg-4 col-md-6 mb-3 none" id="modal">
