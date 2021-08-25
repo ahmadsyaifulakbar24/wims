@@ -27,4 +27,10 @@ class UserReport extends Model
     {
         return $this->hasMany(Comment::class, 'user_report_id');
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
 }
