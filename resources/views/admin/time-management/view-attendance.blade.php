@@ -17,7 +17,7 @@
 					<div class="card-body">
 						<div class="form-group">
 							<h6>Name</h6>
-							<p class="text-secondary"></p>
+							<p class="text-secondary" id="name"></p>
 						</div>
 						<div class="form-row">
 							<div class="col-6">

@@ -15,7 +15,7 @@ function get_attendance(date) {
 	            $.each(result.data, function(index, value) {
 	                append = `<tr>
 	                	<td class="text-center">${index + 1}.</td>
-			            <td class="text-truncate"></td>
+			            <td class="text-truncate">${value.employe_name}</td>
 			            <td class="text-truncate">${date_format(value.login_time.substr(0,10))}</td>
 			            <td><a href="${root}/time-management/attendance/${value.id}/in">${value.login_time.substr(10,6)}</a></td>
 			            <td>${value.login_description != null ? value.login_description : '-'}</td>

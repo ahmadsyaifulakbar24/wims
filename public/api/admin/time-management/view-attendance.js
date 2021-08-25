@@ -5,6 +5,7 @@ $.ajax({
         // console.log(result.data)
         if (result.data.length != 0) {
         	let value = result.data
+        	$('#name').html(value.employe_name)
             if (type == 'in') {
                 $('#type').html('Clock In')
                 $('#image').attr('src', value.login_image_url)
