@@ -16,8 +16,8 @@ Route::group(['middleware'=>['afterMiddleware']], function () {
 });
 
 Route::group(['middleware'=>['beforeMiddleware']], function () {
-	Route::get('account/detail', function () {
-		return view('account/detail');
+	Route::get('account', function () {
+		return view('account');
 	});
 	Route::get('account/password', function () {
 		return view('account/password');

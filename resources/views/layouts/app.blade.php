@@ -31,6 +31,7 @@
 	    		@elseif(Request::is('task-management/project/*')) <div class="navbar-brand"><i class="mdi mdi-arrow-left" onclick="return history.back()"></i> Select Project</div>
 	    		@elseif(Request::is('task-management/task/*')) <div class="navbar-brand"><i class="mdi mdi-arrow-left" onclick="return history.back()"></i> Tasks</div>
 	    		@elseif(Request::is('report')) <div class="navbar-brand"><i class="mdi mdi-arrow-left" onclick="return history.back()"></i> Report</div>
+	    		@elseif(Request::is('account')) <div class="navbar-brand"><i class="mdi mdi-arrow-left" onclick="return history.back()"></i> Personal Info</div>
 		        @endif
 	        @endif
 	    </div>
@@ -106,11 +107,15 @@
                     </div>
                 </div>
                 <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{{url('account')}}">
+                    <i class="mdi mdi-18px mdi-account-box-outline"></i>
+                    <span>Personal info</span>
+                </a>
                 <a class="dropdown-item" href="{{url('account/password')}}">
                     <i class="mdi mdi-18px mdi-lock-outline"></i>
-                    <span>Change Password</span>
+                    <span>Change password</span>
                 </a>
-                <a class="dropdown-item" onclick="return logout()" data-toggle="modal" data-target="#modal-logout" role="button">
+                <a class="dropdown-item" href="javascript:void(0)" onclick="return logout()" data-toggle="modal" data-target="#modal-logout" role="button">
                     <i class="mdi mdi-18px mdi-login-variant"></i>
                     <span>Log out</span>
                 </a>
@@ -142,8 +147,8 @@
 			    				<i class="mdi mdi-18px mdi-pencil-outline pr-0"></i>
 			    				<small class="d-block">Report</small>
 			    			</a>
-			    			<!-- <a href="{{url('account')}}" class="col px-1 py-2 {{Request::is('account')?'text-dark':'text-black-50'}}">
-			    				<i class="mdi mdi-18px mdi-account-circle-outline pr-0"></i>
+			    			<!-- <a href="javascript:void(0)" class="col px-1 py-2 text-black-50" id="account">
+			    				<img class="avatar rounded-circle" width="26" alt="">
 			    				<small class="d-block">Account</small>
 			    			</a> -->
 			    		</div>
