@@ -30,7 +30,7 @@ class GetEmployeeController extends Controller
         }
 
         $user = User::find($request->user()->id);
-        $company_code = ($user->role_id == 1) ? $user->company_code : $user->company_code_parent;
+        $company_code = ($user->role_id == 1 || $user->role_id == 100) ? $user->company_code : $user->company_code_parent;
 
         $employee = Employe::joinUser()->where('company_code_parent', $company_code);
         $limit = $request->post('limit', 15);
