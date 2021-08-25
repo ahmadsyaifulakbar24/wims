@@ -127,7 +127,6 @@ $('#apply').click(function() {
     let formData = new FormData()
     setTimeout(function() {
         if (type == 'in') {
-        	$('#in').attr('disabled', true)
             formData.append('employee_id', employee_id)
             formData.append('login_time', time)
             latitude != null ? formData.append('login_latitude', latitude) : ''
@@ -141,6 +140,7 @@ $('#apply').click(function() {
                 processData: false,
                 contentType: false,
                 success: function(result) {
+		        	$('#in').attr('disabled', true)
                     customAlert('success', 'Clock In success')
                     check_attendance()
                     get_attendance()
@@ -157,7 +157,6 @@ $('#apply').click(function() {
                 }
             })
         } else {
-        	$('#out').attr('disabled', true)
             formData.append('home_time', time)
             latitude != null ? formData.append('home_latitude', latitude) : ''
             longitude != null ? formData.append('home_longitude', longitude) : ''
@@ -170,6 +169,7 @@ $('#apply').click(function() {
                 processData: false,
                 contentType: false,
                 success: function(result) {
+		        	$('#out').attr('disabled', true)
                     customAlert('success', 'Clock Out success')
                     check_attendance()
                     get_attendance()
