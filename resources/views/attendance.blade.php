@@ -41,7 +41,7 @@
 								<button class="btn btn-block btn-dark" id="in">Clock In</button>
 							</div>
 							<div class="col-6">
-								<button class="btn btn-block btn-dark" id="out">Clock Out</button>
+								<button class="btn btn-block btn-dark" id="out" disabled>Clock Out</button>
 							</div>
 						</div>
 					</div>
