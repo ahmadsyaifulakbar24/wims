@@ -16,7 +16,7 @@
 				<div id="list-task"></div>
 			</div>
 			<div class="col-lg-8">
-				<div class="card none mb-5" id="detail-task">
+				<div class="card none" id="detail-task">
 					<div class="card-header">
 						<div class="d-flex justify-content-between align-items-center flex-wrap">
 							<div class="text-truncate">

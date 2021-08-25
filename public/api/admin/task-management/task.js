@@ -704,7 +704,7 @@ function get_comment() {
         url: `${api_url}/task/${task_id}/get_comment`,
         type: 'GET',
         success: function(result) {
-            console.log(result)
+            // console.log(result)
             $.each(result.data, function(index, value) {
             	option = `<div class="dropdown ml-auto">
 					<i class="mdi mdi-24px mdi-dots-horizontal pr-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button"></i>
