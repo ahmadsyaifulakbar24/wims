@@ -34,7 +34,7 @@ class GetDivisionController extends Controller
         }
 
         $user = User::find($request->user()->id);
-        $company_code = ($user->role_id == 1) ? $user->company_code : $user->company_code_parent;
+        $company_code = ($user->role_id == 1 || $user->role_id == 100) ? $user->company_code : $user->company_code_parent;
         $division = Division::query();
         $division->where('ref_company_code', $company_code);
         if($request->pic_id) {

@@ -50,7 +50,7 @@ class CreateCompanyController extends Controller
         }
 
         $user = User::find($request->user()->id);
-        $input['ref_company_code'] = ($user->role_id == '1') ? $user->company_code : $user->company_code_parent;
+        $input['ref_company_code'] = ($user->role_id == '1' || $user->role_id == '100') ? $user->company_code : $user->company_code_parent;
         $input['type'] = 'branch';
         $company = Company::create($input);
         
