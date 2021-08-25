@@ -77,6 +77,12 @@ Route::group(['middleware'=>['beforeMiddleware']], function () {
 		});
 
 
+		// Report
+		Route::get('task-management/report', function () {
+			return view('admin/task-management/report');
+		});
+
+
 	    // Time Management
 		Route::get('time-management/attendance', function () {
 			return view('admin/time-management/attendance');

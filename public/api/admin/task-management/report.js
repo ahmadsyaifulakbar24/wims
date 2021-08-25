@@ -1,23 +1,3 @@
-let url_string = window.location.href
-let url = new URL(url_string)
-let detail = url.searchParams.get('detail')
-if (detail != null) {
-    $.ajax({
-        url: `${api_url}/user_report/fetch/${detail}`,
-        type: 'GET',
-        success: function(result) {
-            // console.log(result.data)
-        	let value = result.data
-		    attachment_detail(detail)
-		    get_comment(detail)
-		    $('#title-detail').html(value.title)
-		    $('#date-detail').html(date_format(value.created_at.substr(0,10)))
-		    $('#form-comment').attr('data-id', detail)
-		    $('#modal-detail').modal('show')
-        }
-    })
-}
-
 get_data()
 
 function get_data() {
@@ -25,22 +5,16 @@ function get_data() {
     $.ajax({
         url: `${api_url}/user_report/fetch`,
         type: 'GET',
-        data: {
-            user_id: user_id
-        },
         success: function(result) {
             // console.log(result.data)
             if (result.data != '') {
                 $.each(result.data, function(index, value) {
                     append = `<tr data-id="${value.id}" data-title="${value.title}" data-date="${date_format(value.created_at.substr(0,10))}">
 						<td class="text-center">${index + 1}.</td>
+						<td class="text-truncate"></div>
 						<td class="text-truncate">${date_format(value.created_at.substr(0,10))}</div>
-						<td class="text-truncate">
+						<td class="text-truncate" width="50%">
 							<div class="text-primary detail" role="button">${value.title}</div>
-						</td>
-						<td class="d-flex align-items-center">
-							<i class="mdi mdi-24px mdi-pencil-outline pr-0 mr-2 edit" role="button"></i>
-							<i class="mdi mdi-24px mdi-trash-can-outline pr-0 delete" role="button"></i>
 						</td>
 					</tr>`
                     $('#table').append(append)
@@ -53,20 +27,11 @@ function get_data() {
     })
 }
 
-$(document).ajaxStop(function() {
-	$('#card').show()
-	$('#loading').remove()
-})
-
 $('#add').click(function() {
     $('#modal h5').html('Add Report')
     $('form').attr('data-type', 'create')
     $('#submit').html('Create')
     $('#modal').modal('show')
-})
-
-$('.modal').on('shown.bs.modal', function() {
-    $('input:first').focus()
 })
 
 $('.modal').on('hidden.bs.modal', function() {
