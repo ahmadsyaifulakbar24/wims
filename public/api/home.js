@@ -1,5 +1,3 @@
-$('.navbar-brand').html('Home')
-
 // Attendance Log
 $.ajax({
     url: `${api_url}/attendance/fetch`,

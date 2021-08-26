@@ -3,4 +3,3 @@
 	<script>const root = '{{Request::root()}}'</script>
 	<script>const api_url = '{{Request::root()}}/api'</script>
 	<script src="{{asset('assets/js/app.js')}}"></script>
-	<!-- <script src="{{asset('assets/js/number.js')}}"></script> -->
