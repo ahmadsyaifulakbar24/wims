@@ -18,13 +18,9 @@
 					<thead>
 						<tr>
 							<th class="text-truncate text-center">No.</th>
-							<th class="text-truncate">Name</th>
-							<th class="text-truncate">Email</th>
 							<th class="text-truncate">Company Name</th>
-							<th class="text-truncate">Number of Employee</th>
+							<th class="text-truncate">Email</th>
 							<th class="text-truncate">Phone Number</th>
-							<th class="text-truncate">Username</th>
-							<th class="text-truncate"></th>
 						</tr>
 					</thead>
 					<tbody id="table"></tbody>
