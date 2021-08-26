@@ -1,44 +1,6 @@
 let board_id = null
 let pic_id = null
 
-if (role == 100) {
-	$('#modal').removeClass('none')
-}
-
-get_data()
-
-function get_data() {
-    $('#modal').nextAll().remove()
-    $.ajax({
-        url: `${api_url}/board/fetch`,
-        type: 'GET',
-        data: {
-            division_id: division_id
-        },
-        success: function(result) {
-            $.each(result.data, function(index, value) {
-                // console.log(value)
-                option = `<div class="d-flex ml-2">
-					<i class="mdi mdi-18px mdi-pencil-outline pr-0 mr-2 edit" role="button"></i>
-					<i class="mdi mdi-18px mdi-trash-can-outline pr-0 delete" role="button"></i>
-				</div>`
-                append = `<div class="col-xl-3 col-lg-4 col-md-6 mb-3">
-		        	<div class="card card-height" data-id="${value.id}" data-title="${value.title}">
-						<div class="card-header d-flex justify-content-between align-items-center">
-							<h6 class="mb-0">${value.title}</h6>
-							${role != 101 ? option : ''}
-						</div>
-						<a href="${root}/task-management/task/${value.id}" class="card-body text-dark">
-							<p class="text-secondary text-truncate mb-0">${value.description != null ? value.description : '-'}</p>
-						</a>
-					</div>
-				</div>`
-                $('#data').append(append)
-            })
-        }
-    })
-}
-
 $.ajax({
     url: `${api_url}/division/fetch/${division_id}`,
     type: 'GET',
@@ -51,8 +13,10 @@ $.ajax({
         pic_id = value.pic.id
         $('title').prepend(value.name)
         $('#project').html(value.name)
-		if (pic_id == user_id) {
-			$('#modal').removeClass('none')
+        if (role == 100 || role == 101) {
+        	if (pic_id == user_id) {
+				$('#modal').removeClass('none')
+        	}
 		}
     }
 })
@@ -80,6 +44,45 @@ $.ajax({
         })
     }
 })
+
+get_data()
+
+function get_data() {
+    $('#modal').nextAll().remove()
+    $.ajax({
+        url: `${api_url}/board/fetch`,
+        type: 'GET',
+        data: {
+            division_id: division_id
+        },
+        success: function(result) {
+            $.each(result.data, function(index, value) {
+                // console.log(value)
+                option = ''
+                if (role == 100 || role == 101) {
+                	if (pic_id == user_id) {
+		                option = `<div class="d-flex ml-2">
+							<i class="mdi mdi-18px mdi-pencil-outline pr-0 mr-2 edit" role="button"></i>
+							<i class="mdi mdi-18px mdi-trash-can-outline pr-0 delete" role="button"></i>
+						</div>`
+                	}
+                }
+                append = `<div class="col-xl-3 col-lg-4 col-md-6 mb-3">
+		        	<div class="card card-height" data-id="${value.id}" data-title="${value.title}">
+						<div class="card-header d-flex justify-content-between align-items-center">
+							<h6 class="mb-0">${value.title}</h6>
+							${option}
+						</div>
+						<a href="${root}/task-management/task/${value.id}" class="card-body text-dark">
+							<p class="text-secondary text-truncate mb-0">${value.description != null ? value.description : '-'}</p>
+						</a>
+					</div>
+				</div>`
+                $('#data').append(append)
+            })
+        }
+    })
+}
 
 $(document).ajaxStop(function() {
     $('#card').show()
