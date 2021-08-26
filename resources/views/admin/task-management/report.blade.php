@@ -73,7 +73,7 @@
 						<div class="font-weight-bold" id="date-detail"></div>
 					</div>
 					<div class="form-group">
-						<label>Title</label>
+						<label>Description</label>
 						<div id="description-detail"></div>
 					</div>
 					<div class="form-group">
