@@ -14,7 +14,8 @@ class GetAttendanceController extends Controller
     {
         $this->validate($request, [
             'login_time' => ['nullable', 'date'],
-            'limit' => ['nullable', 'numeric']
+            'limit' => ['nullable', 'numeric'],
+            'employee_id' => ['nullable', 'exists:employes,id']
         ]);
 
         if($attendance_id) {
@@ -31,9 +32,10 @@ class GetAttendanceController extends Controller
             $attendance->whereDate('login_time', $request->login_time);
         }
 
-        return ResponseFormatter::success(
-            AttendanceResource::collection($attendance->orderBy('id', 'desc')->paginate($limit)),
-            'success get attendance data'
-        );
+        if($request->employee_id) {
+            $attendance->where('employee_id', $request->employee_id);
+        }
+
+        return AttendanceResource::collection($attendance->orderBy('id', 'desc')->paginate($limit));
     }
 }
