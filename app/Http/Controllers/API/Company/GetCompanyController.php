@@ -12,7 +12,7 @@ use PHPUnit\Framework\MockObject\Stub\ReturnReference;
 
 class GetCompanyController extends Controller
 {
-    public function __invoke(Request $request, $company_id = null)
+    public function fetch(Request $request, $company_id = null)
     {
         $this->validate($request, [
             'type' => ['nullable', 'in:center,branch']
@@ -52,5 +52,17 @@ class GetCompanyController extends Controller
             $company->get(),
             $message
         );
+    }
+
+    public function company_center(Request $request) 
+    { 
+        $this->validate($request, [
+            'limit' => ['nullable', 'numeric']
+        ]);
+
+        $limit = $request->input('limit', 15);
+        $company = Company::orderBy('id', 'desc')->where('type', 'center')->paginate($limit);
+
+        return CompanyResource::collection($company);
     }
 }

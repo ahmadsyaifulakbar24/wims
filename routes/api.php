@@ -77,7 +77,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('reset_password', ResetPasswordController::class);
 
     Route::prefix('company')->group(function () {
-        Route::get('/fetch/{company_id?}', GetCompanyController::class);
+        Route::get('/fetch/{company_id?}', [GetCompanyController::class, 'fetch']);
+        Route::get('/all_company_center', [GetCompanyController::class, 'company_center']);
         Route::post('/create', CreateCompanyController::class);
         Route::post('{company:id}/update', UpdateCompanyController::class);
         Route::delete('{company:id}/delete', DeleteCompanyController::class);
