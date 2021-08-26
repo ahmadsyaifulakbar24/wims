@@ -1,6 +1,10 @@
 let board_id = null
 let pic_id = null
 
+if (role == 100) {
+	$('#modal').removeClass('none')
+}
+
 get_data()
 
 function get_data() {
@@ -47,14 +51,12 @@ $.ajax({
         pic_id = value.pic.id
         $('title').prepend(value.name)
         $('#project').html(value.name)
+		if (pic_id == user_id) {
+			$('#modal').removeClass('none')
+		}
     }
 })
 
-if (role != 101) {
-	if (pic_id == user_id) {
-		$('#modal').removeClass('none')
-	}
-}
 
 $.ajax({
     url: `${api_url}/employee/fetch`,
