@@ -17,10 +17,10 @@ class User extends Seeder
     {
         DB::table('users')->insert([
             'company_code' => rand(1, 999999),
-            'name' => 'Ahmad Syaiful Akbar',
-            'username' => 'syaiful',
-            'email' => 'ipulbelcram@gmail.com',
-            'phone_number' => '089657341120',
+            'name' => 'Admin',
+            'username' => 'admin',
+            'email' => null,
+            'phone_number' => null,
             'password' => Hash::make('12345678'),
             'role_id' => '1',
             'active' => true,
