@@ -49,7 +49,8 @@ function check_attendance() {
         url: `${api_url}/attendance/fetch`,
         type: 'GET',
         data: {
-            login_time: date
+            login_time: date,
+            employee_id: employee_id
         },
         success: function(result) {
             // console.log(result.data)
@@ -74,7 +75,8 @@ function get_attendance(date) {
         url: `${api_url}/attendance/fetch`,
         type: 'GET',
         data: {
-            login_time: date
+            login_time: date,
+            employee_id: employee_id
         },
         success: function(result) {
             // console.log(result.data)
