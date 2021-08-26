@@ -48,6 +48,11 @@
 							<div class="invalid-feedback"></div>
 						</div>
 						<div class="form-group">
+							<label for="description">Description</label>
+							<textarea class="form-control form-control-sm" rows="3" id="description"></textarea>
+							<div class="invalid-feedback"></div>
+						</div>
+						<div class="form-group">
 							<label for="title">Attachment</label>
 							<div id="attachments"></div>
 							<label class="card p-1" for="attachment" role="button">
@@ -103,6 +108,10 @@
 					<div class="form-group">
 						<label>Date</label>
 						<div class="font-weight-bold" id="date-detail"></div>
+					</div>
+					<div class="form-group">
+						<label>Description</label>
+						<div id="description-detail"></div>
 					</div>
 					<div class="form-group">
 						<label>Attachment</label>

@@ -11,7 +11,7 @@ function get_data() {
                 $.each(result.data, function(index, value) {
                     append = `<tr data-id="${value.id}" data-title="${value.title}" data-date="${date_format(value.created_at.substr(0,10))}">
 						<td class="text-center">${index + 1}.</td>
-						<td class="text-truncate"></div>
+						<td class="text-truncate">${value.employee_name}</div>
 						<td class="text-truncate">${date_format(value.created_at.substr(0,10))}</div>
 						<td class="text-truncate" width="50%">
 							<div class="text-primary detail" role="button">${value.title}</div>
@@ -23,6 +23,24 @@ function get_data() {
                 append = `<td class="text-truncate" colspan="10">Data not found.</td>`
                 $('#table').append(append)
             }
+        }
+    })
+}
+
+function get_detail(id) {
+    $.ajax({
+        url: `${api_url}/user_report/fetch/${id}`,
+        type: 'GET',
+        success: function(result) {
+            // console.log(result.data)
+            let value = result.data
+            get_attachment(id)
+            get_comment(id)
+            $('#title-detail').html(value.title)
+            $('#description-detail').html(value.description)
+            $('#date-detail').html(date_format(value.created_at.substr(0, 10)))
+            $('#form-comment').attr('data-id', id)
+            $('#modal-detail').modal('show')
         }
     })
 }
@@ -111,17 +129,12 @@ function attachment_edit(id) {
 
 $(document).on('click', '.detail', function() {
     let id = $(this).parents('tr').attr('data-id')
-    let title = $(this).parents('tr').attr('data-title')
-    let date = $(this).parents('tr').attr('data-date')
-    attachment_detail(id)
-    get_comment(id)
+    get_detail(id)
     $('#form-comment').attr('data-id', id)
-    $('#title-detail').html(title)
-    $('#date-detail').html(date)
     $('#modal-detail').modal('show')
 })
 
-function attachment_detail(id) {
+function get_attachment(id) {
     $('#attachments-detail').empty()
     $.ajax({
         url: `${api_url}/user_report/attachment/${id}/fetch`,

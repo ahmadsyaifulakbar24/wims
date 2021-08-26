@@ -1,22 +1,7 @@
 let url_string = window.location.href
 let url = new URL(url_string)
 let detail = url.searchParams.get('detail')
-if (detail != null) {
-    $.ajax({
-        url: `${api_url}/user_report/fetch/${detail}`,
-        type: 'GET',
-        success: function(result) {
-            // console.log(result.data)
-        	let value = result.data
-		    attachment_detail(detail)
-		    get_comment(detail)
-		    $('#title-detail').html(value.title)
-		    $('#date-detail').html(date_format(value.created_at.substr(0,10)))
-		    $('#form-comment').attr('data-id', detail)
-		    $('#modal-detail').modal('show')
-        }
-    })
-}
+if (detail != null) get_detail(detail)
 
 get_data()
 
@@ -32,7 +17,7 @@ function get_data() {
             // console.log(result.data)
             if (result.data != '') {
                 $.each(result.data, function(index, value) {
-                    append = `<tr data-id="${value.id}" data-title="${value.title}" data-date="${date_format(value.created_at.substr(0,10))}">
+                    append = `<tr data-id="${value.id}" data-title="${value.title}" data-date="${date_format(value.created_at.substr(0,10))}" data-description="${value.description}">
 						<td class="text-center">${index + 1}.</td>
 						<td class="text-truncate">${date_format(value.created_at.substr(0,10))}</div>
 						<td class="text-truncate">
@@ -53,9 +38,27 @@ function get_data() {
     })
 }
 
+function get_detail(id) {
+    $.ajax({
+        url: `${api_url}/user_report/fetch/${id}`,
+        type: 'GET',
+        success: function(result) {
+            // console.log(result.data)
+            let value = result.data
+            get_attachment(id)
+            get_comment(id)
+            $('#title-detail').html(value.title)
+            $('#description-detail').html(value.description)
+            $('#date-detail').html(date_format(value.created_at.substr(0, 10)))
+            $('#form-comment').attr('data-id', id)
+            $('#modal-detail').modal('show')
+        }
+    })
+}
+
 $(document).ajaxStop(function() {
-	$('#card').show()
-	$('#loading').remove()
+    $('#card').show()
+    $('#loading').remove()
 })
 
 $('#add').click(function() {
@@ -73,6 +76,7 @@ $('.modal').on('hidden.bs.modal', function() {
     $('.is-invalid').removeClass('is-invalid')
     $('.card-attachment').remove()
     $('#title').val('')
+    $('#description').val('')
     attachments = []
     attachment_staging()
 })
@@ -112,8 +116,10 @@ function attachment_staging(value) {
 $(document).on('click', '.edit', function() {
     let id = $(this).parents('tr').attr('data-id')
     let title = $(this).parents('tr').attr('data-title')
+    let description = $(this).parents('tr').attr('data-description')
     attachment_edit(id)
     $('#title').val(title)
+    $('#description').val(description)
     $('#modal h5').html('Edit Report')
     $('#form').attr('data-id', id)
     $('#form').attr('data-type', 'edit')
@@ -146,17 +152,12 @@ function attachment_edit(id) {
 
 $(document).on('click', '.detail', function() {
     let id = $(this).parents('tr').attr('data-id')
-    let title = $(this).parents('tr').attr('data-title')
-    let date = $(this).parents('tr').attr('data-date')
-    attachment_detail(id)
-    get_comment(id)
+    get_detail(id)
     $('#form-comment').attr('data-id', id)
-    $('#title-detail').html(title)
-    $('#date-detail').html(date)
     $('#modal-detail').modal('show')
 })
 
-function attachment_detail(id) {
+function get_attachment(id) {
     $('#attachments-detail').empty()
     $.ajax({
         url: `${api_url}/user_report/attachment/${id}/fetch`,
@@ -196,6 +197,7 @@ $('#form').submit(function(e) {
         let formData = new FormData()
         formData.append('user_id', user_id)
         formData.append('title', $('#title').val())
+        formData.append('description', $('#description').val())
         $.ajax({
             url: `${api_url}/user_report/create`,
             type: 'POST',
@@ -238,6 +240,7 @@ $('#form').submit(function(e) {
             type: 'PATCH',
             data: {
                 title: $('#title').val(),
+                description: $('#description').val()
             },
             success: function(result) {
                 if (attachments.length > 0) {
