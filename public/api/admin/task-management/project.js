@@ -51,7 +51,7 @@ $.ajax({
 })
 
 if (role != 101) {
-	if (pic_id != user_id) {
+	if (pic_id == user_id) {
 		$('#modal').removeClass('none')
 	}
 }
