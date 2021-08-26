@@ -1,8 +1,20 @@
 // Date & Time
 let date = moment().format().substr(0, 10)
 let time = null
+let employee_id = null
+let attendance_id = null
 $(document).ready(function() {
-    get_attendance()
+	// Get Employee Id
+    $.ajax({
+        url: `${api_url}/employee/fetch/${user_id}`,
+        type: 'GET',
+        success: function(result) {
+            // console.log(result.data)
+            employee_id = result.data.id
+            check_attendance()
+            get_attendance()
+        }
+    })
     var interval = setInterval(function() {
         var momentNow = moment()
         $('#date-part').html(momentNow.format('dddd') + ', ' + momentNow.format('DD MMMM YYYY'))
@@ -25,21 +37,7 @@ function showPosition(position) {
     longitude = position.coords.longitude
 }
 
-// Employee
-let employee_id = null
-$.ajax({
-    url: `${api_url}/employee/fetch/${user_id}`,
-    type: 'GET',
-    success: function(result) {
-        // console.log(result.data)
-        employee_id = result.data.id
-    }
-})
-
 // Check Attendance
-let attendance_id = null
-check_attendance()
-
 function check_attendance() {
     $('#image').parent('div').addClass('none')
     $('.custom-file').removeClass('none')
@@ -142,7 +140,7 @@ $('#apply').click(function() {
                 processData: false,
                 contentType: false,
                 success: function(result) {
-		        	$('#in').attr('disabled', true)
+                    $('#in').attr('disabled', true)
                     customAlert('success', 'Clock In success')
                     check_attendance()
                     get_attendance()
@@ -171,7 +169,7 @@ $('#apply').click(function() {
                 processData: false,
                 contentType: false,
                 success: function(result) {
-		        	$('#out').attr('disabled', true)
+                    $('#out').attr('disabled', true)
                     customAlert('success', 'Clock Out success')
                     check_attendance()
                     get_attendance()
