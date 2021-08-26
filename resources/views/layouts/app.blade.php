@@ -24,14 +24,17 @@
 	        <a class="navbar-brand" href="{{url('dashboard')}}">WIMS</a>
 	        @endif
     		@if(session("role") == 101)
-	    		@if(Request::is('home')) <div class="navbar-brand">Home</div>
-	    		@elseif(Request::is('attendance')) <div class="navbar-brand"><i class="mdi mdi-arrow-left" onclick="return history.back()"></i> Attendance</div>
-	    		@elseif(Request::is('attendance/*/*')) <div class="navbar-brand"><i class="mdi mdi-arrow-left" onclick="return history.back()"></i> View Attendance</div>
-	    		@elseif(Request::is('task-management/division')) <div class="navbar-brand"><i class="mdi mdi-arrow-left" onclick="return history.back()"></i> Select Division</div>
-	    		@elseif(Request::is('task-management/project/*')) <div class="navbar-brand"><i class="mdi mdi-arrow-left" onclick="return history.back()"></i> Select Project</div>
-	    		@elseif(Request::is('task-management/task/*')) <div class="navbar-brand"><i class="mdi mdi-arrow-left" onclick="return history.back()"></i> Tasks</div>
-	    		@elseif(Request::is('report')) <div class="navbar-brand"><i class="mdi mdi-arrow-left" onclick="return history.back()"></i> Report</div>
-	    		@elseif(Request::is('account')) <div class="navbar-brand"><i class="mdi mdi-arrow-left" onclick="return history.back()"></i> Personal Info</div>
+	    		@if(Request::is('home')) <div class="navbar-brand">WIMS</div>
+	    		@else<div class="navbar-brand"><i class="mdi mdi-arrow-left" onclick="return history.back()"></i>
+		    		@if(Request::is('attendance')) Attendance
+		    		@elseif(Request::is('attendance/*/*')) View Attendance
+		    		@elseif(Request::is('task-management/division')) Select Division
+		    		@elseif(Request::is('task-management/project/*')) Select Project
+		    		@elseif(Request::is('task-management/task/*')) Tasks
+		    		@elseif(Request::is('report')) Report
+		    		@elseif(Request::is('account')) Personal Info
+		    		@elseif(Request::is('account/password')) Change Password
+		    		@endif</div>
 		        @endif
 	        @endif
 	    </div>
@@ -107,10 +110,12 @@
                     </div>
                 </div>
                 <div class="dropdown-divider"></div>
+                @if(session("role") == 101)
                 <a class="dropdown-item" href="{{url('account')}}">
                     <i class="mdi mdi-18px mdi-account-box-outline"></i>
                     <span>Personal info</span>
                 </a>
+                @endif
                 <a class="dropdown-item" href="{{url('account/password')}}">
                     <i class="mdi mdi-18px mdi-lock-outline"></i>
                     <span>Change password</span>

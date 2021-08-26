@@ -316,7 +316,7 @@
 								<div class="col-sm-6">
 									<div class="form-group position-relative">
 										<label for="password">Password*</label>
-										<input type="password" class="form-control" id="password">
+										<input type="password" class="form-control" id="password" minlength="8" maxlength="8">
 										<i class="password mdi mdi-eye-off mdi-18px" data-id="password"></i>
 										<div class="invalid-feedback"></div>
 									</div>
@@ -326,7 +326,7 @@
 								<div class="col-sm-6">
 									<div class="form-group position-relative">
 										<label for="cpassword">Password Confirmation*</label>
-										<input type="password" class="form-control" id="cpassword">
+										<input type="password" class="form-control" id="cpassword" minlength="8" maxlength="8">
 										<i class="password mdi mdi-eye-off mdi-18px" data-id="cpassword"></i>
 										<div class="invalid-feedback"></div>
 									</div>
