@@ -107,10 +107,12 @@
                     </div>
                 </div>
                 <div class="dropdown-divider"></div>
+                @if(session("role") == 101)
                 <a class="dropdown-item" href="{{url('account')}}">
                     <i class="mdi mdi-18px mdi-account-box-outline"></i>
                     <span>Personal info</span>
                 </a>
+                @endif
                 <a class="dropdown-item" href="{{url('account/password')}}">
                     <i class="mdi mdi-18px mdi-lock-outline"></i>
                     <span>Change password</span>
