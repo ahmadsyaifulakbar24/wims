@@ -1,11 +1,4 @@
-if (role == 100 || role == 101) {
-	if (pic_id == user_id) {
-		$('#card').removeClass('none')
-		$('.button-add').removeClass('none')
-		$('#detail-task .dropdown').removeClass('none')
-		$('#member').siblings('.dropdown').removeClass('none')
-	}
-}
+let pic_id = null
 
 // Board
 $.ajax({
@@ -16,6 +9,13 @@ $.ajax({
         let value = result.data
         $('title').prepend(value.title)
         $('#board').html(value.title)
+        pic_id = value.division.pic.id
+        if (role == 100 || value.division.pic.id == user_id) {
+			$('#card').removeClass('none')
+			$('.button-add').removeClass('none')
+			$('#detail-task .dropdown').removeClass('none')
+			$('#member').siblings('.dropdown').removeClass('none')
+		}
     }
 })
 
@@ -248,10 +248,8 @@ function get_task_member() {
             // console.log(result)
             $.each(result.data, function(index, value) {
             	remove = ''
-            	if (role == 100 || role == 101) {
-					if (pic_id == user_id) {
-		            	remove = `<div class="dropdown-item remove-member" data-id="${value.user_id}" data-name="${value.name}" role="button">Remove from board</div>`
-		            }
+            	if (role == 100 || pic_id == user_id) {
+	            	remove = `<div class="dropdown-item remove-member" data-id="${value.user_id}" data-name="${value.name}" role="button">Remove from board</div>`
 		        }
                 append = `<div class="dropdown">
 					<img src="${value.profile_photo_url}" class="rounded-circle mr-1" width="24" data-toggle="dropdown" role="button">
@@ -385,22 +383,20 @@ function get_checklist() {
             $.each(result.data, function(index, value) {
             	option = ''
             	additem = ''
-            	if (role == 100 || role == 101) {
-					if (pic_id == user_id) {
-		            	option = `<div class="dropdown ml-auto">
-							<i class="mdi mdi-24px mdi-dots-horizontal px-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button"></i>
-							<div class="dropdown-menu dropdown-menu-right py-0">
-								<div class="dropdown-item modal-checklist edit-checklist" role="button">Edit</div>
-								<div class="dropdown-item delete delete-checklist" role="button">Delete</div>
-							</div>
-						</div>`
-						additem = `<div class="card p-1 mx-3 modal-checklist-item create-checklist-item" role="button">
-							<div class="d-flex align-items-center justify-content-center">
-								<i class="mdi mdi-18px mdi-plus"></i>
-								<span>Add item</span>
-							</div>
-						</div>`
-					}
+            	if (role == 100 || pic_id == user_id) {
+	            	option = `<div class="dropdown ml-auto">
+						<i class="mdi mdi-24px mdi-dots-horizontal px-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button"></i>
+						<div class="dropdown-menu dropdown-menu-right py-0">
+							<div class="dropdown-item modal-checklist edit-checklist" role="button">Edit</div>
+							<div class="dropdown-item delete delete-checklist" role="button">Delete</div>
+						</div>
+					</div>`
+					additem = `<div class="card p-1 mx-3 modal-checklist-item create-checklist-item" role="button">
+						<div class="d-flex align-items-center justify-content-center">
+							<i class="mdi mdi-18px mdi-plus"></i>
+							<span>Add item</span>
+						</div>
+					</div>`
 				}
                 append = `<div class="card card-checklist mb-2" data-id="${value.id}" data-title="${value.title}">
 					<div class="d-flex align-items-center mt-2">
@@ -434,16 +430,14 @@ function get_checklist() {
                         item = val.item
                     }
                     option = ''
-                    if (role == 100 || role == 101) {
-						if (pic_id == user_id) {
-		                    option = `<div class="dropdown ml-auto">
-								<i class="mdi mdi-24px mdi-dots-horizontal pr-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button"></i>
-								<div class="dropdown-menu dropdown-menu-right py-0">
-									<div class="dropdown-item modal-checklist-item edit-checklist-item" role="button">Edit</div>
-									<div class="dropdown-item delete-checklist-item" role="button">Delete</div>
-								</div>
-							</div>`
-						}
+                    if (role == 100 || pic_id == user_id) {
+	                    option = `<div class="dropdown ml-auto">
+							<i class="mdi mdi-24px mdi-dots-horizontal pr-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button"></i>
+							<div class="dropdown-menu dropdown-menu-right py-0">
+								<div class="dropdown-item modal-checklist-item edit-checklist-item" role="button">Edit</div>
+								<div class="dropdown-item delete-checklist-item" role="button">Delete</div>
+							</div>
+						</div>`
 					}
                     append = `<div class="form-check card-checklist-item pt-0" data-id="${val.id}" data-title="${val.item}" data-start="${val.start_due_date}" data-finish="${val.finish_due_date}" data-done="${val.done}">
                     	<div class="d-flex align-items-start">

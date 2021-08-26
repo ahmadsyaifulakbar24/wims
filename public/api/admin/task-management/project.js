@@ -13,11 +13,9 @@ $.ajax({
         pic_id = value.pic.id
         $('title').prepend(value.name)
         $('#project').html(value.name)
-        if (role == 100 || role == 101) {
-        	if (pic_id == user_id) {
-				$('#modal').removeClass('none')
-        	}
-		}
+        if (role == 100 || pic_id == user_id) {
+			$('#modal').removeClass('none')
+    	}
     }
 })
 
@@ -59,13 +57,11 @@ function get_data() {
             $.each(result.data, function(index, value) {
                 // console.log(value)
                 option = ''
-                if (role == 100 || role == 101) {
-                	if (pic_id == user_id) {
-		                option = `<div class="d-flex ml-2">
-							<i class="mdi mdi-18px mdi-pencil-outline pr-0 mr-2 edit" role="button"></i>
-							<i class="mdi mdi-18px mdi-trash-can-outline pr-0 delete" role="button"></i>
-						</div>`
-                	}
+                if (role == 100 || pic_id == user_id) {
+	                option = `<div class="d-flex ml-2">
+						<i class="mdi mdi-18px mdi-pencil-outline pr-0 mr-2 edit" role="button"></i>
+						<i class="mdi mdi-18px mdi-trash-can-outline pr-0 delete" role="button"></i>
+					</div>`
                 }
                 append = `<div class="col-xl-3 col-lg-4 col-md-6 mb-3">
 		        	<div class="card card-height" data-id="${value.id}" data-title="${value.title}">
