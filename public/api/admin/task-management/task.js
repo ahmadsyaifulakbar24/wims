@@ -1,8 +1,10 @@
-if (role != 101) {
-	$('#card').removeClass('none')
-	$('.button-add').removeClass('none')
-	$('#detail-task .dropdown').removeClass('none')
-	$('#member').siblings('.dropdown').removeClass('none')
+if (role == 100 || role == 101) {
+	if (pic_id == user_id) {
+		$('#card').removeClass('none')
+		$('.button-add').removeClass('none')
+		$('#detail-task .dropdown').removeClass('none')
+		$('#member').siblings('.dropdown').removeClass('none')
+	}
 }
 
 // Board
@@ -245,7 +247,12 @@ function get_task_member() {
         success: function(result) {
             // console.log(result)
             $.each(result.data, function(index, value) {
-            	remove = `<div class="dropdown-item remove-member" data-id="${value.user_id}" data-name="${value.name}" role="button">Remove from board</div>`
+            	remove = ''
+            	if (role == 100 || role == 101) {
+					if (pic_id == user_id) {
+		            	remove = `<div class="dropdown-item remove-member" data-id="${value.user_id}" data-name="${value.name}" role="button">Remove from board</div>`
+		            }
+		        }
                 append = `<div class="dropdown">
 					<img src="${value.profile_photo_url}" class="rounded-circle mr-1" width="24" data-toggle="dropdown" role="button">
 					<div class="dropdown-menu py-0">
@@ -258,7 +265,7 @@ function get_task_member() {
 								</div>
 							</div>
 						</div>
-						${role != 101 ? remove : ''}
+						${remove}
 					</div>
 				</div>`
                 $('#members').append(append)
@@ -376,30 +383,36 @@ function get_checklist() {
         success: function(result) {
             // console.log(result)
             $.each(result.data, function(index, value) {
-            	option = `<div class="dropdown ml-auto">
-					<i class="mdi mdi-24px mdi-dots-horizontal px-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button"></i>
-					<div class="dropdown-menu dropdown-menu-right py-0">
-						<div class="dropdown-item modal-checklist edit-checklist" role="button">Edit</div>
-						<div class="dropdown-item delete delete-checklist" role="button">Delete</div>
-					</div>
-				</div>`
-				additem = `<div class="card p-1 mx-3 modal-checklist-item create-checklist-item" role="button">
-					<div class="d-flex align-items-center justify-content-center">
-						<i class="mdi mdi-18px mdi-plus"></i>
-						<span>Add item</span>
-					</div>
-				</div>`
+            	option = ''
+            	additem = ''
+            	if (role == 100 || role == 101) {
+					if (pic_id == user_id) {
+		            	option = `<div class="dropdown ml-auto">
+							<i class="mdi mdi-24px mdi-dots-horizontal px-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button"></i>
+							<div class="dropdown-menu dropdown-menu-right py-0">
+								<div class="dropdown-item modal-checklist edit-checklist" role="button">Edit</div>
+								<div class="dropdown-item delete delete-checklist" role="button">Delete</div>
+							</div>
+						</div>`
+						additem = `<div class="card p-1 mx-3 modal-checklist-item create-checklist-item" role="button">
+							<div class="d-flex align-items-center justify-content-center">
+								<i class="mdi mdi-18px mdi-plus"></i>
+								<span>Add item</span>
+							</div>
+						</div>`
+					}
+				}
                 append = `<div class="card card-checklist mb-2" data-id="${value.id}" data-title="${value.title}">
 					<div class="d-flex align-items-center mt-2">
 						<div class="d-flex align-items-center text-truncate ml-3" style="width: 90%">
 							<div class="text-truncate mb-0"><b>${value.title}</b></div>
 						</div>
-						${role != 101 ? option : ''}
+						${option}
 					</div>
 					<div class="progress mx-3 my-2">
 						<div class="progress-bar bg-dark" id="progress${value.id}" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
 					</div>
-					${role != 101 ? additem : ''}
+					${additem}
 					<div class="mx-3 mb-2" id="checklist-item-list${value.id}"></div>
 				</div>`
                 $('#checklist-task').prepend(append)
@@ -420,20 +433,25 @@ function get_checklist() {
                     } else {
                         item = val.item
                     }
-                    option = `<div class="dropdown ml-auto">
-						<i class="mdi mdi-24px mdi-dots-horizontal pr-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button"></i>
-						<div class="dropdown-menu dropdown-menu-right py-0">
-							<div class="dropdown-item modal-checklist-item edit-checklist-item" role="button">Edit</div>
-							<div class="dropdown-item delete-checklist-item" role="button">Delete</div>
-						</div>
-					</div>`
+                    option = ''
+                    if (role == 100 || role == 101) {
+						if (pic_id == user_id) {
+		                    option = `<div class="dropdown ml-auto">
+								<i class="mdi mdi-24px mdi-dots-horizontal pr-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button"></i>
+								<div class="dropdown-menu dropdown-menu-right py-0">
+									<div class="dropdown-item modal-checklist-item edit-checklist-item" role="button">Edit</div>
+									<div class="dropdown-item delete-checklist-item" role="button">Delete</div>
+								</div>
+							</div>`
+						}
+					}
                     append = `<div class="form-check card-checklist-item pt-0" data-id="${val.id}" data-title="${val.item}" data-start="${val.start_due_date}" data-finish="${val.finish_due_date}" data-done="${val.done}">
                     	<div class="d-flex align-items-start">
                     		<div class="pt-2">
 								<input class="form-check-input" type="checkbox" value="${val.id}" ${val.done == 1 ? 'checked' : ''}>
 								<label class="form-check-label mr-3">${item}</label>
 							</div>
-							${role != 101 ? option : ''}
+							${option}
 						</div>
 						<div class="small text-secondary">${duedate}</div>
 					</div>`
