@@ -14,7 +14,8 @@ class GetLeaveController extends Controller
     public function fetch(Request $request, $leave_id = null)
     {
         $this->validate($request, [
-            'limit' => ['nullable', 'numeric']
+            'limit' => ['nullable', 'numeric'],
+            'employee_id' => ['nullable', 'exists:employes,id']
         ]);
         $limit = $request->post('limit', 15);
         if($leave_id) {
@@ -25,9 +26,13 @@ class GetLeaveController extends Controller
             );
         }
 
-        $leave = Leave::paginate($limit);
+        $leave = Leave::query();
+        if($request->employee_id) {
+            $leave->where('employee_id', $request->employee_id);
+        }
+
         return ResponseFormatter::success(
-            LeaveResource::collection($leave),
+            LeaveResource::collection($leave->paginate($limit)),
             'success get leave data'
         );
     }
