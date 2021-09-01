@@ -32,7 +32,7 @@ class GetLeaveController extends Controller
         }
 
         return ResponseFormatter::success(
-            LeaveResource::collection($leave->paginate($limit)),
+            LeaveResource::collection($leave->orderBy('id', 'desc')->paginate($limit)),
             'success get leave data'
         );
     }

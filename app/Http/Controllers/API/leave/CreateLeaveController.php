@@ -9,6 +9,7 @@ use App\Http\Resources\Task\CommentResource;
 use App\Models\Comment;
 use App\Models\Leave;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CreateLeaveController extends Controller
 {
@@ -37,7 +38,10 @@ class CreateLeaveController extends Controller
             'comment' => ['required', 'string']
         ]);
 
-        $comment = $leave->comment()->create($request->all());
+        $input = $request->all();
+        $input['user_id'] = Auth::user()->id;
+
+        $comment = $leave->comment()->create($input);
         return ResponseFormatter::success(
             new CommentResource($comment),
             'success create comment'

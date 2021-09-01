@@ -17,6 +17,7 @@ class LeaveResource extends JsonResource
         return [
             'id' => $this->id,
             'employee_id' => $this->employee_id,
+            'employee_name' => $this->employee->user->name,
             'total_leave' => $this->total_leave,
             'description' => $this->description,
             'from_date' => $this->from_date,
