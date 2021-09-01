@@ -32,6 +32,7 @@
 		    		@elseif(Request::is('task-management/project/*')) Select Project
 		    		@elseif(Request::is('task-management/task/*')) Tasks
 		    		@elseif(Request::is('report')) Report
+		    		@elseif(Request::is('leave')) Leave
 		    		@elseif(Request::is('account')) Personal Info
 		    		@elseif(Request::is('account/password')) Change Password
 		    		@endif</div>
@@ -74,10 +75,7 @@
                     </div>
                     <div class="dropdown-menu rounded rounded border-0 mt-0 mt-sm-3" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{url('time-management/attendance')}}">Attendance</a>
-                        <a class="dropdown-item" href="javascript:void(0)">Leave</a>
-                        <!-- <a class="dropdown-item" href="{{url('task-management/leave')}}">Leave</a> -->
-                        <!-- <a class="dropdown-item" href="{{url('time-management/overtime')}}">Overtime</a> -->
-                        <!-- <a class="dropdown-item" href="{{url('time-management/time-off')}}">Time Off</a> -->
+                        <a class="dropdown-item" href="{{url('time-management/leave')}}">Leave</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -152,8 +150,8 @@
 			    				<i class="mdi mdi-18px mdi-pencil-outline pr-0"></i>
 			    				<small class="d-block">Report</small>
 			    			</a>
-			    			<!-- <a href="javascript:void(0)" class="col px-1 py-2 text-black-50" id="account">
-			    				<img class="avatar rounded-circle" width="26" alt="">
+			    			<!-- <a href="{{url('account')}}" class="col px-1 py-2 text-black-50" id="account">
+			    				<img class="avatar rounded-circle" width="27" alt="">
 			    				<small class="d-block">Account</small>
 			    			</a> -->
 			    		</div>

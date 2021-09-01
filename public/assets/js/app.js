@@ -346,6 +346,18 @@ function icon(param) {
     return icon
 }
 
+function status_format(param) {
+    let status
+    if (param == 'pending') {
+        status = `<span class="text-capitalize text-warning">${param}</span>`
+    } else if (param == 'approve') {
+        status = `<span class="text-capitalize text-success">${param}</span>`
+    } else if (param == 'reject') {
+        status = `<span class="text-capitalize text-danger">${param}</span>`
+    }
+    return status
+}
+
 function DataURIToBlob(dataURI) {
     const splitDataURI = dataURI.split(',')
     const byteString = splitDataURI[0].indexOf('base64') >= 0 ? atob(splitDataURI[1]) : decodeURI(splitDataURI[1])
