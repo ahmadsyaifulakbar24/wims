@@ -127,24 +127,24 @@
 	            <div class="modal-body">
 					<div class="form-row">
 						<div class="form-group col">
-							<label class="font-weight-bold">Total</label>
+							<div class="font-weight-bold mb-2">Total</div>
 							<div id="total-detail"></div>
 						</div>
 						<div class="form-group col-9">
-							<label class="font-weight-bold">Date</label>
+							<div class="font-weight-bold mb-2">Date</div>
 							<div id="date-detail"></div>
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="font-weight-bold">Description</label>
+						<div class="font-weight-bold mb-2">Description</div>
 						<div id="description-detail"></div>
 					</div>
 					<div class="form-group">
-						<label class="font-weight-bold">Status</label>
+						<div class="font-weight-bold mb-2">Status</div>
 						<div class="text-capitalize" id="status-detail"></div>
 					</div>
 					<div class="form-group">
-						<label class="font-weight-bold">Comment</label>
+						<div class="font-weight-bold mb-2">Comment</div>
 						<form id="form-comment">
 							<div class="d-flex align-items-start mb-3">
 								<img class="avatar rounded-circle mt-1" width="30" alt="">
