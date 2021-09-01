@@ -25,14 +25,14 @@ function get_attendance(employee_id) {
                     append = ''
                     if (value.home_time != null) {
                         append += `<tr onclick="return location.href='${root}/attendance/${value.home_time.substr(0,10)}/out'" role="button">
-				            <td>${date_format(value.home_time.substr(0,10))}</td>
+				            <td style="width:100px">${date_format(value.home_time.substr(0,10))}</td>
 				            <td>Clock Out</td>
 				            <td>${value.home_time.substr(10,6)}</td>
 				            <td class="text-right"><i class="mdi mdi-18px mdi-chevron-right pr-0"></i></td>
 				        </tr>`
                     }
                     append += `<tr onclick="return location.href='${root}/attendance/${value.login_time.substr(0,10)}/in'" role="button">
-			            <td>${date_format(value.login_time.substr(0,10))}</td>
+			            <td style="width:100px">${date_format(value.login_time.substr(0,10))}</td>
 			            <td>Clock In</td>
 			            <td>${value.login_time.substr(10,6)}</td>
 			            <td class="text-right"><i class="mdi mdi-18px mdi-chevron-right pr-0"></i></td>
@@ -62,7 +62,8 @@ $.ajax({
         if (result.data != '') {
             $.each(result.data, function(index, value) {
                 append = `<tr onclick="return location.href='${root}/report?detail=${value.id}'" role="button">
-					<td class="text-truncate">${value.title}</td>
+                	<td style="width:100px">${date_format(value.created_at.substr(0,10))}</td>
+					<td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:250px;">${value.title}</td>
 		            <td class="text-right"><i class="mdi mdi-18px mdi-chevron-right pr-0"></i></td>
 				</tr>`
                 $('#report').append(append)
